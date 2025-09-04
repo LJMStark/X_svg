@@ -1,49 +1,82 @@
-# Python编码标准
+---
+globs: *.py
+description: Python代码规范和最佳实践
+---
 
-## 代码风格
+# Python代码规范
 
-- 遵循PEP 8编码规范
-- 使用4个空格进行缩进，不使用制表符
-- 行长度限制在120字符以内
-- 类名使用PascalCase命名法
-- 函数和变量名使用snake_case命名法
-- 常量使用UPPER_CASE命名法
+## 编码标准
+
+- 使用UTF-8编码，所有文件头部添加 `#!/usr/bin/env python3`
+- 遵循PEP 8代码风格规范
+- 使用4个空格缩进，不使用制表符
+- 行长度限制在88字符以内（Black格式化标准）
 
 ## 导入规范
 
-- 标准库导入放在最前面
-- 第三方库导入放在中间
-- 本地模块导入放在最后
-- 每组导入之间用空行分隔
-- 避免使用通配符导入（import *）
+```python
+# 标准库导入
+import os
+import json
+import time
+import re
+from pathlib import Path
+from typing import Dict, List, Tuple, Optional, Any
+
+# 第三方库导入
+import openai
+from tqdm import tqdm
+from dotenv import load_dotenv
+
+# 本地模块导入
+from api_client import create_api_clients
+```
 
 ## 文档字符串
 
-- 所有公共函数和类都必须有文档字符串
-- 使用Google风格的文档字符串格式
-- 包含参数说明、返回值说明和异常说明
-- 使用中文注释说明关键逻辑
+所有公共函数和类必须包含详细的文档字符串：
+
+```python
+def function_name(param1: str, param2: int = 0) -> Optional[str]:
+    """
+    函数功能描述
+    
+    Args:
+        param1: 参数1的描述
+        param2: 参数2的描述，包含默认值说明
+        
+    Returns:
+        返回值描述，包含None的情况说明
+        
+    Raises:
+        ValueError: 什么情况下抛出此异常
+    """
+```
 
 ## 错误处理
 
-- 使用具体的异常类型而不是通用的Exception
-- 提供有意义的错误消息
-- 实现适当的重试机制
+- 使用具体的异常类型，避免裸露的 `except:`
 - 记录详细的错误日志
+- 提供有意义的错误消息
+- 实现重试机制处理临时性错误
 
-## 类型提示
+## 类型注解
 
-- 在函数参数和返回值中使用类型提示
-- 使用typing模块进行复杂类型定义
-- 为重要的数据结构定义类型别名
+- 所有函数参数和返回值必须包含类型注解
+- 使用 `typing` 模块的类型提示
+- 复杂类型使用 `Dict[str, Any]` 等具体类型
 
 ## 日志记录
 
-- 使用Python标准logging模块
-- 设置适当的日志级别
-- 同时输出到文件和控制台
-- 包含时间戳和日志级别信息
-description:
-globs:
-alwaysApply: true
----
+使用统一的日志格式：
+
+```python
+import logging
+logger = logging.getLogger(__name__)
+
+# 不同级别的日志
+logger.info("信息日志")
+logger.warning("警告日志") 
+logger.error("错误日志")
+logger.debug("调试日志")
+```

@@ -1,0 +1,122 @@
+---
+globs: test_*.py,run_example.py
+description: 测试和调试规范
+---
+
+# 测试和调试规范
+
+## 测试文件结构
+
+### 单元测试
+- 测试文件命名：`test_*.py`
+- 测试函数命名：`test_*`
+- 使用 `pytest` 框架
+
+### 集成测试
+- [run_example.py](mdc:run_example.py) - 示例运行脚本
+- 测试完整的数据处理流程
+- 验证API集成功能
+
+## 调试工具
+
+### 日志调试
+```python
+import logging
+logging.basicConfig(level=logging.DEBUG)
+logger = logging.getLogger(__name__)
+
+# 详细调试信息
+logger.debug(f"API响应内容: {response}")
+logger.debug(f"解析后的标题: {title}")
+```
+
+### 断点调试
+- 使用 `pdb` 进行交互式调试
+- 在关键位置设置断点
+- 检查变量状态和程序流程
+
+## 测试数据管理
+
+### 测试数据集
+- 使用小规模测试数据
+- 包含各种边界情况
+- 模拟真实推文格式
+
+### Mock数据
+```python
+test_tweet = {
+    "id": "test_123",
+    "full_text": "这是一条测试推文内容",
+    "created_at": "2024-01-01T00:00:00Z"
+}
+```
+
+## API测试
+
+### 连接测试
+```python
+def test_api_connection():
+    """测试API连接是否正常"""
+    try:
+        response = client.call_api("测试", "连接测试")
+        assert response is not None
+    except Exception as e:
+        pytest.fail(f"API连接失败: {e}")
+```
+
+### 响应验证
+- 检查API响应格式
+- 验证内容质量
+- 测试错误处理
+
+## 性能测试
+
+### 处理速度测试
+```python
+import time
+
+def test_processing_speed():
+    """测试处理速度"""
+    start_time = time.time()
+    # 处理测试数据
+    end_time = time.time()
+    processing_time = end_time - start_time
+    assert processing_time < 10  # 10秒内完成
+```
+
+### 内存使用测试
+- 监控内存使用情况
+- 检查内存泄漏
+- 优化大数据集处理
+
+## 错误场景测试
+
+### 网络错误测试
+- 模拟网络中断
+- 测试重试机制
+- 验证故障转移
+
+### 数据错误测试
+- 空数据测试
+- 格式错误测试
+- 边界值测试
+
+## 调试最佳实践
+
+### 问题定位
+1. 检查日志文件
+2. 验证配置文件
+3. 测试API连接
+4. 检查文件权限
+
+### 常见问题
+- API密钥无效
+- 文件路径错误
+- 网络连接问题
+- 权限不足
+
+### 调试步骤
+1. 启用详细日志
+2. 使用小数据集测试
+3. 逐步验证每个组件
+4. 检查中间结果

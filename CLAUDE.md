@@ -25,7 +25,7 @@ The tool processes tweets from a sorted JSON dataset and generates organized out
 - **`process_tweets.py`** - Simple processor with basic functionality
 - **`batch_process_tweets.py`** - Advanced processor with class-based architecture, CLI arguments, and enhanced error handling
 - **`TweetProcessor` class** - Main processing logic with retry mechanisms and progress tracking
-- **API Integration** - Uses OpenRouter API with deepseek/deepseek-chat-v3-1:free model for both SVG and content generation
+- **API Integration** - Uses OpenRouter API with moonshotai/kimi-k2:free model for both SVG and content generation
 - **Configuration Files** - `config.json` and `.env` support for flexible configuration
 
 ### Key Dependencies
@@ -96,7 +96,7 @@ output/
 
 Uses OpenRouter API (https://openrouter.ai/keys) with:
 - **Base URL**: `https://openrouter.ai/api/v1`
-- **Model**: `deepseek/deepseek-chat-v3-1:free` for both SVG and content generation
+- **Model**: `moonshotai/kimi-k2:free` for both SVG and content generation
 - **Rate limiting**: 4-second intervals between calls (auto-handled)
 - **Retry mechanism**: 3 attempts with special handling for 429 errors
 - **Headers**: Includes HTTP-Referer and X-Title headers
@@ -173,7 +173,7 @@ Uses OpenRouter API (https://openrouter.ai/keys) with:
 
 ### Key Changes
 1. **API Endpoint**: Changed from Poe to OpenRouter
-2. **Model**: Switched from Claude-Sonnet-4 to deepseek/deepseek-chat-v3-1:free
+2. **Model**: Switched from Claude-Sonnet-4 to moonshotai/kimi-k2:free
 3. **Rate Limiting**: Enhanced handling for OpenRouter's 16 req/min limit
 4. **Headers**: Added OpenRouter-specific HTTP headers
 5. **Error Handling**: Improved 429 error handling

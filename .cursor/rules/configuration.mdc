@@ -1,0 +1,103 @@
+---
+globs: config.json,config.example.json
+description: 配置文件和参数管理规范
+---
+
+# 配置文件管理规范
+
+## 配置文件结构
+
+主配置文件 [config.json](mdc:config.json) 包含以下部分：
+
+### API配置
+```json
+{
+  "primary_api": "openrouter",
+  "openrouter": {
+    "enabled": true,
+    "key": "",
+    "model": "moonshotai/kimi-k2:free",
+    "base_url": "https://openrouter.ai/api/v1",
+    "timeout": 30
+  },
+  "gemini": {
+    "enabled": false,
+    "key": "",
+    "model": "gemini-2.5-flash", 
+    "base_url": "http://xai-studio.top:8000/openai/v1",
+    "timeout": 30
+  }
+}
+```
+
+### 速度限制配置
+```json
+{
+  "rate_limit": {
+    "openrouter_interval": 4.0,
+    "gemini_interval": 2.0,
+    "retry_attempts": 3,
+    "retry_delay_seconds": 5
+  }
+}
+```
+
+### 文件路径配置
+```json
+{
+  "files": {
+    "input_json": "twillot-public-post-sorted.json",
+    "svg_prompt": "svg提示词.txt",
+    "xiaohongshu_prompt": "小红书文案提示词.txt",
+    "output_dir": "output"
+  }
+}
+```
+
+### 日志配置
+```json
+{
+  "logging": {
+    "level": "INFO",
+    "file": "batch_process.log",
+    "console": true
+  }
+}
+```
+
+## 环境变量覆盖
+
+配置文件支持环境变量覆盖：
+
+- `OPENROUTER_API_KEY` - 覆盖OpenRouter API密钥
+- `GEMINI_API_KEY` - 覆盖Gemini API密钥
+- `CONFIG_FILE` - 指定自定义配置文件路径
+
+## 配置验证
+
+### 必需配置项
+- 至少一个启用的API配置
+- 有效的模型名称
+- 正确的文件路径
+- 合理的速度限制设置
+
+### 默认值处理
+- API密钥为空时从环境变量读取
+- 文件路径不存在时抛出错误
+- 超时时间使用默认值30秒
+- 重试次数默认为3次
+
+## 配置加载顺序
+
+1. 读取配置文件
+2. 应用环境变量覆盖
+3. 验证配置完整性
+4. 设置默认值
+5. 初始化API客户端
+
+## 安全注意事项
+
+- API密钥不应提交到版本控制
+- 使用 [config.example.json](mdc:config.example.json) 作为模板
+- 敏感信息通过环境变量传递
+- 配置文件权限设置为600（仅所有者可读写）

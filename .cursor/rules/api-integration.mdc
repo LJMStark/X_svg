@@ -1,38 +1,82 @@
+---
+globs: api_client.py,batch_process_tweets.py
+description: API集成和客户端管理规范
+---
+
 # API集成规范
 
-## OpenRouter API配置
+## API客户端架构
 
-- 使用 [api_client.py](mdc:api_client.py) 中的create_api_clients函数创建客户端
-- API密钥通过 [config.json](mdc:config.json) 配置文件管理
-- 基础URL设置为 `https://openrouter.ai/api/v1`
-- 设置适当的HTTP头部信息（HTTP-Referer和X-Title）
+项目使用模块化的API客户端设计，支持多个API提供商：
 
-## 模型选择
+### 核心组件
 
-- **SVG生成**: 使用 `deepseek/deepseek-chat-v3-1:free` 模型
-- **文案生成**: 使用 `deepseek/deepseek-chat-v3-1:free` 模型
-- 支持故障转移到Gemini API作为备选方案
+- [api_client.py](mdc:api_client.py) - 包含所有API客户端实现
+- `BaseAPIClient` - 抽象基类，定义通用接口
+- `OpenRouterClient` - OpenRouter API实现
+- `GeminiClient` - Gemini API实现（通过代理）
+- `APIClientManager` - 客户端管理器，支持故障转移
+
+### API配置
+
+配置文件 [config.json](mdc:config.json) 中的API设置：
+
+```json
+{
+  "primary_api": "openrouter",
+  "openrouter": {
+    "enabled": true,
+    "key": "",
+    "model": "moonshotai/kimi-k2:free",
+    "base_url": "https://openrouter.ai/api/v1"
+  },
+  "gemini": {
+    "enabled": false,
+    "key": "",
+    "model": "gemini-2.5-flash",
+    "base_url": "http://xai-studio.top:8000/openai/v1"
+  }
+}
+```
 
 ## 速度限制处理
 
-- 免费模型限制：每分钟16次请求
-- 默认请求间隔：4秒
-- 自动处理429错误，延长等待时间
-- 实现指数退避重试机制
+- OpenRouter: 4秒间隔限制
+- Gemini: 2秒间隔限制
+- 自动重试机制，429错误时递增延迟
+- 全局时间跟踪，确保API调用间隔
 
-## 错误处理和重试
+## 故障转移机制
 
-- 网络错误自动重试3次
-- API调用失败时记录详细错误信息
-- 429错误时自动延长等待时间
-- 实现故障转移机制
+1. 优先使用主API（primary_api）
+2. 主API失败时自动切换到备用API
+3. 所有API都失败时返回错误
+4. 记录API使用统计信息
 
-## 配置管理
+## 错误处理模式
 
-- 敏感信息（API密钥）通过环境变量或配置文件管理
-- 支持多种配置方式：环境变量、配置文件、命令行参数
-- 配置文件使用JSON格式，包含API设置和文件路径配置
-description:
-globs:
-alwaysApply: true
----
+```python
+def call_api_with_retry(self, prompt: str, content: str, max_retries: int = 3):
+    """带重试的API调用"""
+    for attempt in range(max_retries):
+        try:
+            response = self.client.call_api(prompt, content)
+            if response:
+                return response
+        except Exception as e:
+            if "429" in str(e):
+                # 处理速度限制
+                wait_time = 10 * (attempt + 1)
+                time.sleep(wait_time)
+            else:
+                # 其他错误
+                time.sleep(5)
+    
+    return None
+```
+
+## 环境变量支持
+
+- `OPENROUTER_API_KEY` - OpenRouter API密钥
+- `GEMINI_API_KEY` - Gemini API密钥
+- `CONFIG_FILE` - 自定义配置文件路径

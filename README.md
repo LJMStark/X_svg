@@ -140,8 +140,8 @@ client = openai.OpenAI(
 
 ### 使用的模型
 
-- **SVG生成**: deepseek/deepseek-chat-v3-1:free
-- **小红书文案生成**: deepseek/deepseek-chat-v3-1:free
+- **SVG生成**: moonshotai/kimi-k2:free
+- **小红书文案生成**: moonshotai/kimi-k2:free
 
 ### API限制
 

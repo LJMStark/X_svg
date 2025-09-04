@@ -1,18 +1,67 @@
 {
-  "primary_api": "gemini",
-  "openrouter": {
-    "enabled": true,
-    "key": "",
-    "model": "anthropic/claude-3.5-sonnet:free",
-    "base_url": "https://openrouter.ai/api/v1",
-    "timeout": 30
+  "api_providers": {
+    "openrouter": {
+      "enabled": true,
+      "key": "",
+      "base_url": "https://openrouter.ai/api/v1",
+      "timeout": 30
+    },
+    "gemini": {
+      "enabled": false,
+      "key": "",
+      "base_url": "http://xai-studio.top:8000/openai/v1",
+      "timeout": 30
+    },
+    "siliconflow": {
+      "enabled": true,
+      "key": "",
+      "base_url": "https://api.siliconflow.cn/v1",
+      "timeout": 30
+    },
+    "moonshot": {
+      "enabled": true,
+      "key": "",
+      "base_url": "https://api.moonshot.cn/v1",
+      "timeout": 30
+    },
+    "novita": {
+      "enabled": true,
+      "key": "",
+      "base_url": "https://api.novita.ai/openai",
+      "timeout": 30
+    }
   },
-  "gemini": {
-    "enabled": true,
-    "key": "",
-    "model": "gemini-2.5-flash",
-    "base_url": "http://xai-studio.top:8000/openai/v1",
-    "timeout": 30
+  "tasks": {
+    "title": {
+      "primary": {
+        "provider": "siliconflow",
+        "model": "deepseek-ai/DeepSeek-V3.1"
+      },
+      "fallback": {
+        "provider": "moonshot",
+        "model": "kimi-k2-0711-preview"
+      }
+    },
+    "body": {
+      "primary": {
+        "provider": "novita",
+        "model": "deepseek/deepseek-v3.1"
+      },
+      "fallback": {
+        "provider": "moonshot",
+        "model": "kimi-k2-0711-preview"
+      }
+    },
+    "svg": {
+      "primary": {
+        "provider": "openrouter",
+        "model": "moonshotai/kimi-k2:free"
+      },
+      "fallback": {
+        "provider": "openrouter",
+        "model": "deepseek/deepseek-chat"
+      }
+    }
   },
   "rate_limit": {
     "openrouter_interval": 4.0,
@@ -23,6 +72,7 @@
   "files": {
     "input_json": "twillot-public-post-sorted.json",
     "svg_prompt": "svg提示词.txt",
+    "title_prompt": "小红书标题提示词.txt",
     "xiaohongshu_prompt": "小红书文案提示词.txt",
     "output_dir": "output"
   },

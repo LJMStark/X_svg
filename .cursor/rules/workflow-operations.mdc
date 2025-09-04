@@ -1,0 +1,95 @@
+---
+description: 项目工作流程和操作指南
+---
+
+# 项目工作流程和操作指南
+
+## 日常开发流程
+
+### 1. 环境准备
+```bash
+# 安装依赖
+pip install -r requirements.txt
+
+# 配置API密钥
+export OPENROUTER_API_KEY="your_api_key_here"
+# 或编辑 config.json 文件
+```
+
+### 2. 测试运行
+```bash
+# 小规模测试（处理5条记录）
+python batch_process_tweets.py --count 5
+
+# 查看处理结果
+ls -la output/
+```
+
+### 3. 批量处理
+```bash
+# 处理所有数据
+python batch_process_tweets.py
+
+# 从指定位置开始处理
+python batch_process_tweets.py --start 100 --count 50
+```
+
+## 文件管理
+
+### 输入文件检查
+- [twillot-public-post-sorted.json](mdc:twillot-public-post-sorted.json) - 推文数据
+- [svg提示词.txt](mdc:svg提示词.txt) - SVG生成提示词
+- [小红书文案提示词.txt](mdc:小红书文案提示词.txt) - 文案生成提示词
+
+### 输出文件结构
+```
+output/
+├── 标题1/
+│   ├── generated.svg
+│   └── body.txt
+├── 标题2/
+│   ├── generated.svg
+│   └── body.txt
+└── ...
+```
+
+## 故障排除
+
+### 常见问题解决
+1. **API密钥错误**: 检查环境变量或配置文件
+2. **文件不存在**: 确认所有必需文件都在正确位置
+3. **权限错误**: 检查文件读写权限
+4. **网络问题**: 检查网络连接和代理设置
+
+### 日志分析
+```bash
+# 查看处理日志
+tail -f batch_process.log
+
+# 搜索错误信息
+grep "ERROR" batch_process.log
+```
+
+## 性能优化
+
+### 处理速度优化
+- 调整API调用间隔
+- 使用更快的API模型
+- 并行处理（如果API支持）
+
+### 资源管理
+- 监控磁盘空间使用
+- 定期清理临时文件
+- 优化内存使用
+
+## 维护任务
+
+### 定期检查
+- 检查API配额使用情况
+- 验证输出文件质量
+- 更新依赖包版本
+
+### 数据备份
+- 备份重要的配置文件
+- 保存处理结果
+- 记录处理统计信息

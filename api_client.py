@@ -42,29 +42,20 @@ class BaseAPIClient(ABC):
             time.sleep(wait_time)
         self._last_call_time = time.time()
 
-class OpenRouterClient(BaseAPIClient):
-    """OpenRouter API客户端"""
-    
-    def __init__(self, api_key: str, model: str = "moonshotai/kimi-k2:free"):
-        super().__init__(
-            api_key=api_key,
-            base_url="https://openrouter.ai/api/v1",
-            model=model
-        )
-        
+class OpenAICompatibleClient(BaseAPIClient):
+    """通用OpenAI兼容API客户端"""
+    def __init__(self, api_key: str, base_url: str, model: str, default_headers: Optional[Dict] = None, timeout: int = 30):
+        super().__init__(api_key, base_url, model)
         self.client = openai.OpenAI(
-            api_key=api_key,
+            api_key=self.api_key,
             base_url=self.base_url,
-            default_headers={
-                "HTTP-Referer": "https://github.com",
-                "X-Title": "TweetProcessor"
-            }
+            default_headers=default_headers or {},
+            timeout=timeout
         )
     
     def call_api(self, system_prompt: str, user_content: str, **kwargs) -> Optional[str]:
-        """调用OpenRouter API"""
         try:
-            self._enforce_rate_limit(4.0)  # OpenRouter限制: 4秒间隔
+            self._enforce_rate_limit(kwargs.get("min_interval", 1.0))
             
             messages = [
                 {"role": "system", "content": system_prompt},
@@ -74,154 +65,138 @@ class OpenRouterClient(BaseAPIClient):
             response = self.client.chat.completions.create(
                 model=self.model,
                 messages=messages,
-                **kwargs
+                **kwargs.get("extra_params", {})
             )
             
             return response.choices[0].message.content
-            
         except Exception as e:
             error_msg = str(e)
             if "429" in error_msg or "rate limit" in error_msg.lower():
-                logger.warning(f"OpenRouter速度限制: {e}")
+                logger.warning(f"{self.base_url} 速度限制: {e}")
             else:
-                logger.error(f"OpenRouter API调用失败: {e}")
+                logger.error(f"API call to {self.base_url} failed: {e}")
             return None
 
-class GeminiClient(BaseAPIClient):
-    """Gemini API客户端 - 使用代理端点"""
-    
-    def __init__(self, api_key: str, model: str = "gemini-2.5-flash"):
+class OpenRouterClient(OpenAICompatibleClient):
+    """OpenRouter API客户端"""
+    def __init__(self, api_key: str, model: str, **kwargs):
         super().__init__(
             api_key=api_key,
-            base_url="http://xai-studio.top:8000/openai/v1",  # 使用OpenAI兼容端点
-            model=model
+            base_url="https://openrouter.ai/api/v1",
+            model=model,
+            default_headers={
+                "HTTP-Referer": "https://github.com",
+                "X-Title": "TweetProcessor"
+            },
+            **kwargs
         )
-        
-        # 使用OpenAI兼容的客户端连接代理
-        try:
-            self.client = openai.OpenAI(
-                api_key=api_key,
-                base_url=self.base_url
-            )
-            logger.info("Gemini客户端初始化成功")
-        except Exception as e:
-            logger.error(f"Gemini客户端初始化失败: {e}")
-            raise
-    
+
+class GeminiClient(OpenAICompatibleClient):
+    """Gemini API客户端 - 使用代理端点"""
+    def __init__(self, api_key: str, model: str, **kwargs):
+        super().__init__(
+            api_key=api_key,
+            base_url="http://xai-studio.top:8000/openai/v1",
+            model=model,
+            **kwargs
+        )
+
+class MoonshotClient(OpenAICompatibleClient):
+    """Moonshot (月之暗面) API客户端"""
+    def __init__(self, api_key: str, model: str, **kwargs):
+        super().__init__(
+            api_key=api_key,
+            base_url="https://api.moonshot.cn/v1",
+            model=model,
+            **kwargs
+        )
+
+class NovitaAIClient(OpenAICompatibleClient):
+    """Novita.ai API客户端"""
+    def __init__(self, api_key: str, model: str, **kwargs):
+        super().__init__(
+            api_key=api_key,
+            base_url="https://api.novita.ai/openai",
+            model=model,
+            **kwargs
+        )
+
+class SiliconFlowClient(BaseAPIClient):
+    """SiliconFlow API客户端 - 使用requests"""
+    def __init__(self, api_key: str, model: str, **kwargs):
+        super().__init__(
+            api_key=api_key,
+            base_url="https://api.siliconflow.cn/v1",
+            model=model,
+            **kwargs
+        )
+        self.headers = {
+            "Authorization": f"Bearer {self.api_key}",
+            "Content-Type": "application/json"
+        }
+        self.endpoint = f"{self.base_url}/chat/completions"
+        self.timeout = kwargs.get("timeout", 30)
+
     def call_api(self, system_prompt: str, user_content: str, **kwargs) -> Optional[str]:
-        """调用Gemini API通过代理"""
-        try:
-            self._enforce_rate_limit(2.0)  # Gemini限制: 2秒间隔
-            
-            # 使用OpenAI兼容的格式
-            messages = [
+        """调用SiliconFlow API"""
+        payload = {
+            "model": self.model,
+            "messages": [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_content}
-            ]
+            ],
+            **kwargs.get("extra_params", {})
+        }
+        
+        try:
+            self._enforce_rate_limit(kwargs.get("min_interval", 1.0))
             
-            response = self.client.chat.completions.create(
-                model=self.model,
-                messages=messages,
-                max_tokens=kwargs.get('max_tokens', 500),  # 限制token数量避免length问题
-                temperature=kwargs.get('temperature', 0.7),
-                **kwargs
-            )
+            response = requests.post(self.endpoint, json=payload, headers=self.headers, timeout=self.timeout)
+            response.raise_for_status()
             
-            if response.choices and len(response.choices) > 0:
-                content = response.choices[0].message.content
-                logger.debug(f"Gemini API响应内容: {content}")
-                if content and content.strip():
-                    return content.strip()
-                else:
-                    logger.warning("Gemini API返回空文本")
-                    return None
+            data = response.json()
+            if data.get("choices") and data["choices"][0].get("message"):
+                return data["choices"][0]["message"].get("content")
             else:
-                logger.warning(f"Gemini API响应格式异常: 缺少choices，响应: {response}")
+                logger.warning(f"SiliconFlow API响应格式异常: {data}")
                 return None
             
-        except Exception as e:
-            error_msg = str(e)
-            if "429" in error_msg or "rate limit" in error_msg.lower():
-                logger.warning(f"Gemini速度限制: {e}")
-            elif "403" in error_msg or "unauthorized" in error_msg.lower():
-                logger.warning(f"Gemini API密钥无效: {e}")
-            else:
-                logger.error(f"Gemini API调用失败: {e}")
+        except requests.exceptions.RequestException as e:
+            logger.error(f"SiliconFlow API调用失败: {e}")
             return None
 
-class APIClientManager:
-    """API客户端管理器 - 支持故障转移"""
-    
-    def __init__(self, clients: Dict[str, BaseAPIClient], primary: str = "openrouter"):
-        self.clients = clients
-        self.primary = primary
-        self.fallback_order = [c for c in clients.keys() if c != primary] + [primary]
-        
-    def call_with_fallback(self, system_prompt: str, user_content: str, **kwargs) -> tuple[str, Optional[str]]:
-        """
-        带故障转移的API调用
-        
-        Returns:
-            (api_provider, response_content)
-        """
-        # 首先尝试主API
-        if self.primary in self.clients:
-            response = self.clients[self.primary].call_api(system_prompt, user_content, **kwargs)
-            if response:
-                return self.primary, response
-            logger.warning(f"主API {self.primary} 调用失败，尝试备用API")
-        
-        # 按顺序尝试备用API
-        for provider in self.fallback_order:
-            if provider in self.clients:
-                logger.info(f"尝试备用API: {provider}")
-                response = self.clients[provider].call_api(system_prompt, user_content, **kwargs)
-                if response:
-                    return provider, response
-                logger.warning(f"备用API {provider} 调用失败")
-        
-        logger.error("所有API提供商都调用失败")
-        return "none", None
+# --- Client Factory ---
 
-def create_api_clients(config: Dict[str, Any]) -> APIClientManager:
+CLIENT_CLASSES = {
+    "openrouter": OpenRouterClient,
+    "gemini": GeminiClient,
+    "siliconflow": SiliconFlowClient,
+    "moonshot": MoonshotClient,
+    "novita": NovitaAIClient
+}
+
+def create_client(provider: str, api_key: str, model: str, **kwargs) -> Optional[BaseAPIClient]:
     """
-    根据配置创建API客户端管理器
+    根据提供商名称创建API客户端实例
     
     Args:
-        config: 配置字典，包含API设置
+        provider: API提供商名称 (e.g., "openrouter")
+        api_key: API密钥
+        model: 模型名称
+        **kwargs: 传递给客户端构造函数的其他参数
         
     Returns:
-        APIClientManager实例
+        API客户端实例或None
     """
-    clients = {}
+    if provider not in CLIENT_CLASSES:
+        logger.error(f"未知的API提供商: {provider}")
+        return None
     
-    # OpenRouter客户端
-    if config.get("openrouter", {}).get("enabled", True):
-        openrouter_config = config["openrouter"]
-        if openrouter_config.get("key"):
-            clients["openrouter"] = OpenRouterClient(
-                api_key=openrouter_config["key"],
-                model=openrouter_config.get("model", "moonshotai/kimi-k2:free")
-            )
-            logger.info("OpenRouter客户端已启用")
-    
-    # Gemini客户端
-    if config.get("gemini", {}).get("enabled", False):
-        gemini_config = config["gemini"]
-        if gemini_config.get("key"):
-            clients["gemini"] = GeminiClient(
-                api_key=gemini_config["key"],
-                model=gemini_config.get("model", "gemini-2.5-pro")
-            )
-            logger.info("Gemini客户端已启用")
-    
-    if not clients:
-        raise ValueError("没有配置任何可用的API客户端")
-    
-    # 确定主API
-    primary = config.get("primary_api", "openrouter")
-    if primary not in clients:
-        primary = list(clients.keys())[0]
-        logger.warning(f"主API {primary} 不可用，使用 {primary} 作为主API")
-    
-    return APIClientManager(clients, primary)
+    try:
+        client_class = CLIENT_CLASSES[provider]
+        client = client_class(api_key=api_key, model=model, **kwargs)
+        logger.info(f"{provider} 客户端创建成功 (模型: {model})")
+        return client
+    except Exception as e:
+        logger.error(f"创建 {provider} 客户端失败: {e}")
+        return None

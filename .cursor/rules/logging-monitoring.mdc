@@ -1,0 +1,124 @@
+---
+globs: *.py
+description: 日志记录和监控规范
+---
+
+# 日志记录和监控规范
+
+## 日志配置
+
+### 基本设置
+```python
+import logging
+
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.FileHandler('batch_process.log'),
+        logging.StreamHandler()
+    ]
+)
+logger = logging.getLogger(__name__)
+```
+
+### 日志级别使用
+- **INFO**: 正常处理流程、进度信息
+- **WARNING**: 非致命错误、重试操作
+- **ERROR**: 处理失败、API错误
+- **DEBUG**: 详细调试信息（开发时使用）
+
+## 关键事件记录
+
+### 处理开始/结束
+```python
+logger.info(f"开始处理记录 {start_index} 到 {end_index-1} (共 {len(process_data)} 条)")
+logger.info(f"处理完成 - 成功: {success_count}, 失败: {failed_count}")
+```
+
+### API调用记录
+```python
+logger.info(f"API调用成功 - 提供商: {api_provider}")
+logger.warning(f"速度限制错误 (尝试 {attempt + 1}/{API_RETRY_ATTEMPTS}): {e}")
+logger.error(f"API调用最终失败，重试次数已达上限")
+```
+
+### 文件操作记录
+```python
+logger.info(f"文件保存成功: {folder_path}")
+logger.error(f"保存文件失败 {folder_path}: {e}")
+logger.info(f"推文 {index} 已处理，跳过")
+```
+
+## 统计信息收集
+
+### API使用统计
+```python
+self.api_stats = {"openrouter": 0, "gemini": 0, "failed": 0}
+
+# 更新统计
+if api_provider in self.api_stats:
+    self.api_stats[api_provider] += 1
+else:
+    self.api_stats["failed"] += 1
+```
+
+### 处理进度跟踪
+- 使用 `tqdm` 显示进度条
+- 记录成功/失败数量
+- 显示处理速度（条/秒）
+
+## 错误处理日志
+
+### 异常捕获
+```python
+try:
+    # 处理逻辑
+    pass
+except KeyboardInterrupt:
+    logger.info("用户中断处理")
+    break
+except Exception as e:
+    logger.error(f"处理推文 {actual_index} 时发生错误: {e}")
+    failed_count += 1
+```
+
+### 重试日志
+```python
+for attempt in range(max_retries):
+    try:
+        # API调用
+        pass
+    except Exception as e:
+        logger.warning(f"API调用失败 (尝试 {attempt + 1}/{max_retries}): {e}")
+        if attempt < max_retries - 1:
+            wait_time = 5 * (attempt + 1)
+            logger.info(f"等待 {wait_time} 秒后重试")
+            time.sleep(wait_time)
+```
+
+## 性能监控
+
+### 处理时间记录
+- 记录单条记录处理时间
+- 计算平均处理速度
+- 监控API响应时间
+
+### 资源使用监控
+- 内存使用情况
+- 磁盘空间检查
+- 网络连接状态
+
+## 日志文件管理
+
+### 文件轮转
+- 日志文件大小限制
+- 自动备份旧日志
+- 清理过期日志文件
+
+### 日志格式
+```
+2024-01-01 12:00:00 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2024-01-01 12:00:01 - INFO - 数据集包含 1667 条记录
+2024-01-01 12:00:01 - INFO - 开始处理记录 0 到 4 (共 5 条)
+```

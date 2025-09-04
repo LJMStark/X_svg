@@ -12,7 +12,7 @@ from typing import Dict, List, Tuple, Optional, Any
 import logging
 from tqdm import tqdm
 from dotenv import load_dotenv
-from api_client import create_api_clients
+from api_client import create_client, BaseAPIClient
 
 # 加载环境变量
 load_dotenv()
@@ -36,28 +36,22 @@ class TweetProcessor:
         Args:
             config: 配置字典，如果为None则从文件加载
         """
-        # 加载配置
         if config is None:
             config = self._load_config()
-        
         self.config = config
         
         # 读取提示词文件
-        svg_prompt_file = config["files"]["svg_prompt"]
-        xiaohongshu_prompt_file = config["files"]["xiaohongshu_prompt"]
-        self.svg_prompt = self._read_prompt_file(svg_prompt_file)
-        self.xiaohongshu_prompt = self._read_prompt_file(xiaohongshu_prompt_file)
+        self.svg_prompt = self._read_prompt_file(config["files"]["svg_prompt"])
+        self.title_prompt = self._read_prompt_file(config["files"]["title_prompt"])
+        self.xiaohongshu_prompt = self._read_prompt_file(config["files"]["xiaohongshu_prompt"])
         
-        # 创建输出目录
         self.output_dir = Path(config["files"]["output_dir"])
         self.output_dir.mkdir(exist_ok=True)
         
-        # 初始化API客户端管理器
-        self.api_manager = create_api_clients(config)
-        
-        # 统计信息
-        self.api_stats = {"openrouter": 0, "gemini": 0, "failed": 0}
-        
+        self.clients: Dict[str, BaseAPIClient] = {} # API客户端缓存
+        self.task_config = self.config.get("tasks", {})
+        self.api_stats = {} # API使用统计
+
     def _read_prompt_file(self, file_path: str) -> str:
         """读取提示词文件"""
         try:
@@ -69,7 +63,7 @@ class TweetProcessor:
         except Exception as e:
             logger.error(f"读取提示词文件失败 {file_path}: {e}")
             raise
-    
+
     def _sanitize_filename(self, filename: str, max_length: int = 100) -> str:
         """
         清理文件名，移除不合法字符
@@ -94,75 +88,88 @@ class TweetProcessor:
             filename = "untitled"
             
         return filename
-    
-    def _call_api_with_fallback(self, system_prompt: str, user_content: str, 
-                              max_retries: int = 3) -> Tuple[str, Optional[str]]:
-        """
-        带故障转移的API调用
+
+    def _get_client(self, provider: str, model: str) -> Optional[BaseAPIClient]:
+        """获取或创建并缓存API客户端"""
+        client_key = f"{provider}_{model}"
+        if client_key in self.clients:
+            return self.clients[client_key]
+
+        provider_config = self.config.get("api_providers", {}).get(provider, {})
+        api_key = provider_config.get("key")
+        timeout = provider_config.get("timeout", 30)
+
+        if not api_key:
+            logger.error(f"未找到提供商 {provider} 的API密钥")
+            return None
         
-        Args:
-            system_prompt: 系统提示词
-            user_content: 用户输入内容
-            max_retries: 最大重试次数
-            
-        Returns:
-            (api_provider, response_content) 元组
-        """
+        client = create_client(provider, api_key, model, timeout=timeout)
+        if client:
+            self.clients[client_key] = client
+        return client
+
+    def _call_api_for_task(self, task_name: str, system_prompt: str, user_content: str, max_retries: int = 3) -> Optional[str]:
+        """为特定任务调用API，带重试和故障转移"""
+        task_info = self.task_config.get(task_name)
+        if not task_info:
+            logger.error(f"任务 '{task_name}' 未在配置中定义")
+            return None
+
         for attempt in range(max_retries):
-            api_provider, response = self.api_manager.call_with_fallback(
-                system_prompt, user_content
-            )
+            # 尝试主API
+            primary_info = task_info.get("primary")
+            client = self._get_client(primary_info["provider"], primary_info["model"])
+            if client:
+                response = client.call_api(system_prompt, user_content)
+                if response:
+                    logger.info(f"主API {primary_info['provider']} 为任务 {task_name} 调用成功")
+                    self.api_stats[primary_info['provider']] = self.api_stats.get(primary_info['provider'], 0) + 1
+                    return response
             
-            if response:
-                # 更新统计信息
-                if api_provider in self.api_stats:
-                    self.api_stats[api_provider] += 1
-                logger.info(f"API调用成功 - 提供商: {api_provider}")
-                return api_provider, response
-            else:
-                self.api_stats["failed"] += 1
-                logger.warning(f"API调用失败 (尝试 {attempt + 1}/{max_retries})")
-                
-                if attempt < max_retries - 1:
-                    wait_time = 5 * (attempt + 1)  # 递增延迟：5, 10, 15秒
-                    logger.info(f"等待 {wait_time} 秒后重试")
-                    time.sleep(wait_time)
+            logger.warning(f"主API为任务 {task_name} 调用失败 (尝试 {attempt + 1}/{max_retries})")
+
+            # 尝试备用API
+            fallback_info = task_info.get("fallback")
+            if fallback_info:
+                client = self._get_client(fallback_info["provider"], fallback_info["model"])
+                if client:
+                    response = client.call_api(system_prompt, user_content)
+                    if response:
+                        logger.info(f"备用API {fallback_info['provider']} 为任务 {task_name} 调用成功")
+                        self.api_stats[fallback_info['provider']] = self.api_stats.get(fallback_info['provider'], 0) + 1
+                        return response
+                logger.warning(f"备用API为任务 {task_name} 调用失败 (尝试 {attempt + 1}/{max_retries})")
+
+            wait_time = 5 * (attempt + 1)
+            logger.info(f"等待 {wait_time} 秒后重试")
+            time.sleep(wait_time)
         
-        logger.error(f"API调用最终失败，重试次数已达上限")
-        return "none", None
+        logger.error(f"任务 {task_name} 的所有API均调用失败")
+        self.api_stats["failed"] = self.api_stats.get("failed", 0) + 1
+        return None
     
     def _load_config(self) -> Dict[str, Any]:
-        """
-        加载配置文件
-        
-        Returns:
-            配置字典
-        """
-        # 优先从环境变量读取
+        """加载配置文件并使用环境变量覆盖"""
         config_file = os.getenv("CONFIG_FILE", "config.json")
-        
         try:
             with open(config_file, 'r', encoding='utf-8') as f:
                 config = json.load(f)
-        except FileNotFoundError:
-            logger.error(f"配置文件未找到: {config_file}")
+        except (FileNotFoundError, json.JSONDecodeError) as e:
+            logger.error(f"加载或解析配置文件 {config_file} 失败: {e}")
             raise
-        except json.JSONDecodeError as e:
-            logger.error(f"配置文件格式错误: {e}")
-            raise
-        
+
         # 从环境变量覆盖API密钥
-        if "OPENROUTER_API_KEY" in os.environ:
-            if "openrouter" not in config:
-                config["openrouter"] = {}
-            config["openrouter"]["key"] = os.environ["OPENROUTER_API_KEY"]
-            config["openrouter"]["enabled"] = True
-        
-        if "GEMINI_API_KEY" in os.environ:
-            if "gemini" not in config:
-                config["gemini"] = {}
-            config["gemini"]["key"] = os.environ["GEMINI_API_KEY"]
-            config["gemini"]["enabled"] = True
+        providers = config.get("api_providers", {})
+        key_mapping = {
+            "OPENROUTER_API_KEY": "openrouter",
+            "GEMINI_API_KEY": "gemini",
+            "SILICONFLOW_API_KEY": "siliconflow",
+            "MOONSHOT_API_KEY": "moonshot",
+            "NOVITA_API_KEY": "novita"
+        }
+        for env_var, provider_name in key_mapping.items():
+            if env_var in os.environ and provider_name in providers:
+                providers[provider_name]["key"] = os.environ[env_var]
         
         return config
     
@@ -174,7 +181,7 @@ class TweetProcessor:
             API使用统计字典
         """
         return self.api_stats.copy()
-    
+
     def _generate_svg(self, full_text: str) -> Optional[str]:
         """
         生成SVG图像
@@ -186,41 +193,38 @@ class TweetProcessor:
             SVG代码，失败时返回None
         """
         logger.info("生成SVG图像...")
-        api_provider, svg_raw = self._call_api_with_fallback(
+        svg_raw = self._call_api_for_task(
+            task_name="svg",
             system_prompt=self.svg_prompt,
             user_content=full_text
         )
         if not svg_raw:
             return None
+        return self._clean_svg_text(svg_raw)
 
-        cleaned = self._clean_svg_text(svg_raw)
+    def _generate_title(self, full_text: str) -> Optional[str]:
+        """生成小红书标题"""
+        logger.info("生成小红书标题...")
+        title = self._call_api_for_task(
+            task_name="title",
+            system_prompt=self.title_prompt,
+            user_content=full_text
+        )
+        return title.strip() if title else None
 
-        # 若中文检测未通过，则追加强制中文约束重试一次
-        if not self._is_svg_mostly_chinese(cleaned):
-            strengthened_user = (
-                f"{full_text}\n\n"
-                "约束（必须严格遵守）：\n"
-                "1) 所有文本内容必须为中文；\n"
-                "2) 不得出现任何英文字母或英文单词；\n"
-                "3) 仅输出纯 SVG 源码，不要包含代码块围栏。"
-            )
-            retry_api_provider, retry_svg = self._call_api_with_fallback(
-                system_prompt=self.svg_prompt,
-                user_content=strengthened_user
-            )
-            if retry_svg:
-                cleaned_retry = self._clean_svg_text(retry_svg)
-                if self._is_svg_mostly_chinese(cleaned_retry):
-                    return cleaned_retry
-                # 若仍未通过，最后进行一次文本节点英文字母剔除
-                cleaned_retry = self._strip_latin_in_text_nodes(cleaned_retry)
-                return cleaned_retry
-
-        logger.info(f"SVG生成完成 - 使用API: {api_provider}")
-        return cleaned
+    def _generate_body(self, full_text: str, title: str) -> Optional[str]:
+        """生成小红书正文"""
+        logger.info("生成小红书正文...")
+        user_content_for_body = f"标题：{title}\n\n根据这个标题和以下推文内容生成一篇小红书风格的正文和标签。\n\n推文内容：\n{full_text}"
+        body = self._call_api_for_task(
+            task_name="body",
+            system_prompt=self.xiaohongshu_prompt,
+            user_content=user_content_for_body
+        )
+        return body.strip() if body else None
 
     def _clean_svg_text(self, svg_content: str) -> str:
-        """清理SVG文本：去除markdown围栏、移除@import、替换为系统字体。"""
+        """清理SVG文本：去除markdown围栏、移除@import、替换为系统字体、修复XML实体引用。"""
         text = (svg_content or "").strip()
         if text.startswith("```svg"):
             text = text[7:]
@@ -231,6 +235,15 @@ class TweetProcessor:
         # 移除可能的 @import 行（通配任意URL）
         try:
             text = re.sub(r"@import\s+url\([^)]*\);", "", text)
+        except Exception:
+            pass
+
+        # 修复无效的XML实体引用
+        try:
+            # 修复 &; 这种无效的实体引用
+            text = re.sub(r'&;(?![a-zA-Z#])', '•', text)
+            # 修复其他可能的无效实体引用
+            text = re.sub(r'&(?![a-zA-Z#][a-zA-Z0-9]*;)', '&amp;', text)
         except Exception:
             pass
 
@@ -275,88 +288,17 @@ class TweetProcessor:
         except Exception:
             return svg_text
     
-    def _generate_xiaohongshu_content(self, full_text: str) -> Optional[Tuple[str, str]]:
-        """
-        生成小红书文案
-        
-        Args:
-            full_text: 推文内容
-            
-        Returns:
-            (标题, 正文和标签) 元组，失败时返回None
-        """
-        logger.info("生成小红书文案...")
-        api_provider, response = self._call_api_with_fallback(
-            system_prompt=self.xiaohongshu_prompt,
-            user_content=full_text
-        )
-        
-        if not response:
-            return None
-        
-        logger.info(f"小红书文案生成完成 - 使用API: {api_provider}")
-            
-        # 解析响应，提取标题和正文
-        try:
-            lines = response.strip().split('\n')
-            title = ""
-            body_lines = []
-            
-            # 处理API实际返回的格式：第一行是标题，可能有"2. 正文"标记
-            if lines:
-                # 第一行作为标题
-                title = lines[0].strip()
-                
-                # 从第二行开始处理正文
-                for i, line in enumerate(lines[1:], 1):
-                    line = line.strip()
-                    # 跳过"2. 正文"、"正文:"等标记行
-                    if line in ["2. 正文", "正文:", "Body:", "1. 标题", "标题:"]:
-                        continue
-                    # 跳过空行
-                    if not line:
-                        continue
-                    body_lines.append(line)
-            
-            body = '\n'.join(body_lines)
-            return title, body
-            
-        except Exception as e:
-            logger.error(f"解析小红书文案失败: {e}")
-            # 如果解析失败，将整个响应作为正文，生成简单标题
-            return "Generated Content", response
-
     def _save_files(self, folder_path: Path, svg_content: str, title: str, body: str) -> bool:
-        """
-        保存生成的文件
-
-        Args:
-            folder_path: 文件夹路径
-            svg_content: SVG内容
-            title: 标题内容
-            body: 正文内容
-
-        Returns:
-            保存是否成功
-        """
+        """保存所有生成的文件"""
         try:
             folder_path.mkdir(parents=True, exist_ok=True)
-
-            # 保存SVG文件（使用统一清理逻辑）
-            svg_file = folder_path / "generated.svg"
-            cleaned_svg = self._clean_svg_text(svg_content)
             
-            with open(svg_file, 'w', encoding='utf-8') as f:
-                f.write(cleaned_svg)
-
-            # 保存正文文件（第一行作为标题）
-            body_file = folder_path / "body.txt"
-            with open(body_file, 'w', encoding='utf-8') as f:
-                f.write(body)
+            (folder_path / "generated.svg").write_text(self._clean_svg_text(svg_content), encoding='utf-8')
+            (folder_path / "title.txt").write_text(title, encoding='utf-8')
+            (folder_path / "body.txt").write_text(body, encoding='utf-8')
 
             logger.info(f"文件保存成功: {folder_path}")
             return True
-
         except Exception as e:
             logger.error(f"保存文件失败 {folder_path}: {e}")
             return False
@@ -371,7 +313,7 @@ class TweetProcessor:
         Returns:
             是否已处理
         """
-        required_files = ["generated.svg", "body.txt"]
+        required_files = ["generated.svg", "body.txt", "title.txt"]
         return all((folder_path / file).exists() for file in required_files)
 
     def _get_unique_folder_name(self, base_name: str) -> str:
@@ -386,14 +328,11 @@ class TweetProcessor:
         """
         folder_name = self._sanitize_filename(base_name)
         folder_path = self.output_dir / folder_name
-
         counter = 1
-        while folder_path.exists() and not self._is_already_processed(folder_path):
-            folder_name = f"{self._sanitize_filename(base_name)}_{counter}"
-            folder_path = self.output_dir / folder_name
+        while folder_path.exists():
+            folder_path = self.output_dir / f"{folder_name}_{counter}"
             counter += 1
-
-        return folder_name
+        return folder_path.name
 
     def process_single_tweet(self, tweet_data: Dict, index: int) -> bool:
         """
@@ -413,39 +352,35 @@ class TweetProcessor:
 
         logger.info(f"处理推文 {index}: {full_text[:50]}...")
 
-        # 生成SVG
+        # 检查是否已处理 (基于推文内容可能生成不确定标题，所以先生成标题再检查)
+        title = self._generate_title(full_text)
+        if not title:
+            logger.error(f"推文 {index} 标题生成失败")
+            return False
+
+        folder_name = self._sanitize_filename(title)
+        folder_path = self.output_dir / folder_name
+        if self._is_already_processed(folder_path):
+            logger.info(f"推文 {index} (标题: {title}) 已处理，跳过")
+            return True
+
+        body = self._generate_body(full_text, title)
+        if not body:
+            logger.error(f"推文 {index} 正文生成失败")
+            return False
+
         svg_content = self._generate_svg(full_text)
         if not svg_content:
             logger.error(f"推文 {index} SVG生成失败")
             return False
 
-        # 生成小红书文案
-        xiaohongshu_result = self._generate_xiaohongshu_content(full_text)
-        if not xiaohongshu_result:
-            logger.error(f"推文 {index} 小红书文案生成失败")
-            return False
+        # 获取唯一的文件夹名称
+        unique_folder_name = self._get_unique_folder_name(title)
+        final_folder_path = self.output_dir / unique_folder_name
 
-        title, body = xiaohongshu_result
-
-        # 从body的第一行提取文件夹名称
-        body_lines = body.strip().split('\n')
-        folder_title = body_lines[0].strip() if body_lines else f"tweet_{index}"
-        
-        # 创建文件夹
-        folder_name = self._get_unique_folder_name(folder_title)
-        folder_path = self.output_dir / folder_name
-
-        # 检查是否已处理
-        if self._is_already_processed(folder_path):
-            logger.info(f"推文 {index} 已处理，跳过")
-            return True
-
-        # 保存文件
-        success = self._save_files(folder_path, svg_content, title, body)
-
+        success = self._save_files(final_folder_path, svg_content, title, body)
         if success:
             logger.info(f"推文 {index} 处理完成")
-
         return success
 
     def process_dataset(self, json_file: str, start_index: int = 0, max_count: Optional[int] = None):
@@ -493,14 +428,14 @@ class TweetProcessor:
                     logger.info("用户中断处理")
                     break
                 except Exception as e:
-                    logger.error(f"处理推文 {actual_index} 时发生错误: {e}")
+                    logger.error(f"处理推文 {actual_index} 时发生致命错误: {e}", exc_info=True)
                     failed_count += 1
 
             # 输出统计结果
             logger.info(f"处理完成 - 成功: {success_count}, 失败: {failed_count}")
 
         except Exception as e:
-            logger.error(f"批量处理失败: {e}")
+            logger.error(f"批量处理失败: {e}", exc_info=True)
             raise
 
 def main():
@@ -552,4 +487,13 @@ def main():
     return 0
 
 if __name__ == "__main__":
+    # Ensure logging is configured before anything runs
+    logging.basicConfig(
+        level=logging.INFO,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler('batch_process.log', mode='w'),
+            logging.StreamHandler()
+        ]
+    )
     exit(main())

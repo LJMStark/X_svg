@@ -1,0 +1,35 @@
+---
+alwaysApply: true
+description: 项目整体架构和核心功能说明
+---
+
+# 小绿书推文处理项目架构
+
+这是一个基于AI的推文内容处理工具，主要功能是将推文数据转换为小红书风格的SVG图像和文案。
+
+## 核心文件结构
+
+- [README.md](mdc:README.md) - 项目说明文档，包含完整的使用指南
+- [config.json](mdc:config.json) - 主配置文件，包含API设置和文件路径
+- [api_client.py](mdc:api_client.py) - 通用API客户端模块，支持多API提供商
+- [batch_process_tweets.py](mdc:batch_process_tweets.py) - 主要的批量处理脚本
+- [process_tweets.py](mdc:process_tweets.py) - 简化版处理脚本（旧版本）
+
+## 主要功能
+
+1. **SVG图像生成**: 使用AI模型将推文内容转换为高级杂志风格的SVG图像
+2. **小红书文案生成**: 生成符合小红书平台风格的标题和正文内容
+3. **批量处理**: 支持大规模数据集的批量处理，具备断点续传功能
+4. **多API支持**: 支持OpenRouter和Gemini API，具备故障转移机制
+
+## 输入数据
+
+- [twillot-public-post-sorted.json](mdc:twillot-public-post-sorted.json) - 已排序的推文数据集
+- [svg提示词.txt](mdc:svg提示词.txt) - SVG生成的系统提示词
+- [小红书文案提示词.txt](mdc:小红书文案提示词.txt) - 小红书文案生成的系统提示词
+
+## 输出结构
+
+处理结果保存在 `output/` 目录下，每个推文生成一个独立文件夹，包含：
+- `generated.svg` - 生成的SVG图像文件
+- `body.txt` - 小红书文案内容
