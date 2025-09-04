@@ -1,0 +1,38 @@
+# API集成规范
+
+## OpenRouter API配置
+
+- 使用 [api_client.py](mdc:api_client.py) 中的create_api_clients函数创建客户端
+- API密钥通过 [config.json](mdc:config.json) 配置文件管理
+- 基础URL设置为 `https://openrouter.ai/api/v1`
+- 设置适当的HTTP头部信息（HTTP-Referer和X-Title）
+
+## 模型选择
+
+- **SVG生成**: 使用 `deepseek/deepseek-chat-v3-1:free` 模型
+- **文案生成**: 使用 `deepseek/deepseek-chat-v3-1:free` 模型
+- 支持故障转移到Gemini API作为备选方案
+
+## 速度限制处理
+
+- 免费模型限制：每分钟16次请求
+- 默认请求间隔：4秒
+- 自动处理429错误，延长等待时间
+- 实现指数退避重试机制
+
+## 错误处理和重试
+
+- 网络错误自动重试3次
+- API调用失败时记录详细错误信息
+- 429错误时自动延长等待时间
+- 实现故障转移机制
+
+## 配置管理
+
+- 敏感信息（API密钥）通过环境变量或配置文件管理
+- 支持多种配置方式：环境变量、配置文件、命令行参数
+- 配置文件使用JSON格式，包含API设置和文件路径配置
+description:
+globs:
+alwaysApply: true
+---

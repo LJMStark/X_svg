@@ -1,0 +1,1215 @@
+2025-08-21 21:29:12,406 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2025-08-21 21:29:12,421 - INFO - 数据集包含 1667 条记录
+2025-08-21 21:29:12,421 - INFO - 开始处理记录 0 到 4 (共 5 条)
+2025-08-21 21:29:12,430 - INFO - 处理推文 0: Go on more walks. Walk for no reason. Walk to solv...
+2025-08-21 21:29:12,430 - INFO - 生成SVG图像...
+2025-08-21 21:29:52,920 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:29:54,940 - INFO - 生成小红书文案...
+2025-08-21 21:30:07,995 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:30:10,004 - INFO - 文件保存成功: output/1. 标题
+2025-08-21 21:30:10,005 - INFO - 推文 0 处理完成
+2025-08-21 21:30:10,007 - INFO - 处理推文 1: Nobody is coming to save you.
+
+Not your friends. N...
+2025-08-21 21:30:10,008 - INFO - 生成SVG图像...
+2025-08-21 21:30:45,166 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:30:47,173 - INFO - 生成小红书文案...
+2025-08-21 21:30:59,037 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:31:01,059 - INFO - 文件保存成功: output/__标题__
+2025-08-21 21:31:01,059 - INFO - 推文 1 处理完成
+2025-08-21 21:31:01,062 - INFO - 处理推文 2: Wake up.
+Hit snooze 4 times.
+Stare at your phone.
+...
+2025-08-21 21:31:01,062 - INFO - 生成SVG图像...
+2025-08-21 21:31:35,355 - INFO - 用户中断处理
+2025-08-21 21:31:35,366 - INFO - 处理完成 - 成功: 2, 失败: 0
+2025-08-21 21:32:00,871 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2025-08-21 21:32:00,885 - INFO - 数据集包含 1667 条记录
+2025-08-21 21:32:00,886 - INFO - 开始处理记录 0 到 2 (共 3 条)
+2025-08-21 21:32:00,900 - INFO - 处理推文 0: Go on more walks. Walk for no reason. Walk to solv...
+2025-08-21 21:32:00,900 - INFO - 生成SVG图像...
+2025-08-21 21:32:03,579 - INFO - 用户中断处理
+2025-08-21 21:32:03,583 - INFO - 处理完成 - 成功: 0, 失败: 0
+2025-08-21 21:38:53,224 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2025-08-21 21:38:53,236 - INFO - 数据集包含 1667 条记录
+2025-08-21 21:38:53,236 - INFO - 开始处理记录 0 到 4 (共 5 条)
+2025-08-21 21:38:53,245 - INFO - 处理推文 0: Go on more walks. Walk for no reason. Walk to solv...
+2025-08-21 21:38:53,245 - INFO - 生成SVG图像...
+2025-08-21 21:40:49,520 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:40:51,594 - INFO - 生成小红书文案...
+2025-08-21 21:41:05,955 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:41:07,965 - INFO - 文件保存成功: output/__标题__
+2025-08-21 21:41:07,965 - INFO - 推文 0 处理完成
+2025-08-21 21:41:07,967 - INFO - 处理推文 1: Nobody is coming to save you.
+
+Not your friends. N...
+2025-08-21 21:41:07,967 - INFO - 生成SVG图像...
+2025-08-21 21:41:38,879 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:41:40,888 - INFO - 生成小红书文案...
+2025-08-21 21:41:53,476 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:41:55,485 - INFO - 推文 1 已处理，跳过
+2025-08-21 21:41:55,487 - INFO - 处理推文 2: Wake up.
+Hit snooze 4 times.
+Stare at your phone.
+...
+2025-08-21 21:41:55,487 - INFO - 生成SVG图像...
+2025-08-21 21:42:18,268 - INFO - 用户中断处理
+2025-08-21 21:42:18,270 - INFO - 处理完成 - 成功: 2, 失败: 0
+2025-08-21 21:46:53,513 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2025-08-21 21:46:53,524 - INFO - 数据集包含 1667 条记录
+2025-08-21 21:46:53,525 - INFO - 开始处理记录 0 到 4 (共 5 条)
+2025-08-21 21:46:53,534 - INFO - 处理推文 0: Go on more walks. Walk for no reason. Walk to solv...
+2025-08-21 21:46:53,534 - INFO - 生成SVG图像...
+2025-08-21 21:47:29,563 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:47:31,574 - INFO - 生成小红书文案...
+2025-08-21 21:47:45,948 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:47:47,956 - INFO - 文件保存成功: output/1. 标题
+2025-08-21 21:47:47,956 - INFO - 推文 0 处理完成
+2025-08-21 21:47:47,959 - INFO - 处理推文 1: Nobody is coming to save you.
+
+Not your friends. N...
+2025-08-21 21:47:47,959 - INFO - 生成SVG图像...
+2025-08-21 21:48:29,294 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:48:31,304 - INFO - 生成小红书文案...
+2025-08-21 21:48:42,813 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:48:44,824 - INFO - 文件保存成功: output/__标题__
+2025-08-21 21:48:44,825 - INFO - 推文 1 处理完成
+2025-08-21 21:48:44,828 - INFO - 处理推文 2: Wake up.
+Hit snooze 4 times.
+Stare at your phone.
+...
+2025-08-21 21:48:44,828 - INFO - 生成SVG图像...
+2025-08-21 21:49:17,209 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:49:19,214 - INFO - 生成小红书文案...
+2025-08-21 21:49:40,615 - INFO - 用户中断处理
+2025-08-21 21:49:40,616 - INFO - 处理完成 - 成功: 2, 失败: 0
+2025-08-21 21:51:03,680 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2025-08-21 21:51:03,690 - INFO - 数据集包含 1667 条记录
+2025-08-21 21:51:03,690 - INFO - 开始处理记录 0 到 4 (共 5 条)
+2025-08-21 21:51:03,699 - INFO - 处理推文 0: Go on more walks. Walk for no reason. Walk to solv...
+2025-08-21 21:51:03,700 - INFO - 生成SVG图像...
+2025-08-21 21:51:44,566 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:51:46,578 - INFO - 生成小红书文案...
+2025-08-21 21:52:01,372 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:52:03,381 - INFO - 文件保存成功: output/停止摆烂！简单走路竟能改变一切🚶‍♀️
+2025-08-21 21:52:03,381 - INFO - 推文 0 处理完成
+2025-08-21 21:52:03,382 - INFO - 处理推文 1: Nobody is coming to save you.
+
+Not your friends. N...
+2025-08-21 21:52:03,382 - INFO - 生成SVG图像...
+2025-08-21 21:52:46,472 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:52:48,746 - INFO - 生成小红书文案...
+2025-08-21 21:52:59,473 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:53:01,481 - INFO - 文件保存成功: output/💪停止等救世主！你就是自己的英雄
+2025-08-21 21:53:01,481 - INFO - 推文 1 处理完成
+2025-08-21 21:53:01,483 - INFO - 处理推文 2: Wake up.
+Hit snooze 4 times.
+Stare at your phone.
+...
+2025-08-21 21:53:01,483 - INFO - 生成SVG图像...
+2025-08-21 21:53:43,795 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:53:45,837 - INFO - 生成小红书文案...
+2025-08-21 21:53:58,021 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:54:00,314 - INFO - 文件保存成功: output/🚨停止摆烂！这个生活模式绝绝子吓人
+2025-08-21 21:54:00,315 - INFO - 推文 2 处理完成
+2025-08-21 21:54:00,315 - INFO - 处理推文 3: Self-discipline is when the desire to become the h...
+2025-08-21 21:54:00,316 - INFO - 生成SVG图像...
+2025-08-21 21:54:32,479 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:54:34,487 - INFO - 生成小红书文案...
+2025-08-21 21:54:47,260 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:54:49,271 - INFO - 文件保存成功: output/停止摆烂！自律才是逆袭密码💪
+2025-08-21 21:54:49,271 - INFO - 推文 3 处理完成
+2025-08-21 21:54:49,272 - INFO - 处理推文 4: You don't magically become focused. You practice i...
+2025-08-21 21:54:49,272 - INFO - 生成SVG图像...
+2025-08-21 21:55:16,566 - INFO - 用户中断处理
+2025-08-21 21:55:16,568 - INFO - 处理完成 - 成功: 4, 失败: 0
+2025-08-21 21:56:51,394 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2025-08-21 21:56:51,406 - INFO - 数据集包含 1667 条记录
+2025-08-21 21:56:51,407 - INFO - 开始处理记录 0 到 4 (共 5 条)
+2025-08-21 21:56:51,416 - INFO - 处理推文 0: Go on more walks. Walk for no reason. Walk to solv...
+2025-08-21 21:56:51,416 - INFO - 生成SVG图像...
+2025-08-21 21:57:28,754 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:57:30,845 - INFO - 生成小红书文案...
+2025-08-21 21:57:44,057 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:57:46,323 - INFO - 文件保存成功: output/走路改变人生！这个0成本习惯太绝了🚶‍♀️
+2025-08-21 21:57:46,323 - INFO - 推文 0 处理完成
+2025-08-21 21:57:46,326 - INFO - 处理推文 1: Nobody is coming to save you.
+
+Not your friends. N...
+2025-08-21 21:57:46,326 - INFO - 生成SVG图像...
+2025-08-21 21:58:07,250 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:58:09,255 - INFO - 生成小红书文案...
+2025-08-21 21:58:28,951 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:58:30,963 - INFO - 文件保存成功: output/🔥停止摆烂！没人会来拯救你的人生真相
+2025-08-21 21:58:30,963 - INFO - 推文 1 处理完成
+2025-08-21 21:58:30,964 - INFO - 处理推文 2: Wake up.
+Hit snooze 4 times.
+Stare at your phone.
+...
+2025-08-21 21:58:30,964 - INFO - 生成SVG图像...
+2025-08-21 21:58:55,307 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:58:57,312 - INFO - 生成小红书文案...
+2025-08-21 21:59:10,069 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:59:12,074 - INFO - 文件保存成功: output/这个循环太可怕了！你还在重复吗？
+2025-08-21 21:59:12,075 - INFO - 推文 2 处理完成
+2025-08-21 21:59:12,075 - INFO - 处理推文 3: Self-discipline is when the desire to become the h...
+2025-08-21 21:59:12,075 - INFO - 生成SVG图像...
+2025-08-21 21:59:44,327 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 21:59:46,333 - INFO - 生成小红书文案...
+2025-08-21 21:59:59,946 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:00:01,952 - INFO - 文件保存成功: output/停止摆烂！自律让你成为最强版本的自己✨
+2025-08-21 22:00:01,952 - INFO - 推文 3 处理完成
+2025-08-21 22:00:01,954 - INFO - 处理推文 4: You don't magically become focused. You practice i...
+2025-08-21 22:00:01,955 - INFO - 生成SVG图像...
+2025-08-21 22:00:34,151 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:00:36,162 - INFO - 生成小红书文案...
+2025-08-21 22:00:49,327 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:00:51,339 - INFO - 文件保存成功: output/停止摆烂！专注力不是天赋是练出来的💪
+2025-08-21 22:00:51,339 - INFO - 推文 4 处理完成
+2025-08-21 22:00:51,341 - INFO - 处理完成 - 成功: 5, 失败: 0
+2025-08-21 22:06:10,591 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2025-08-21 22:06:10,604 - INFO - 数据集包含 1667 条记录
+2025-08-21 22:06:10,604 - INFO - 开始处理记录 0 到 4 (共 5 条)
+2025-08-21 22:06:10,614 - INFO - 处理推文 0: Go on more walks. Walk for no reason. Walk to solv...
+2025-08-21 22:06:10,614 - INFO - 生成SVG图像...
+2025-08-21 22:06:43,959 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:07:10,955 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:07:12,959 - INFO - 生成小红书文案...
+2025-08-21 22:07:31,556 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:07:33,567 - INFO - 文件保存成功: output/每天走路30分钟，我的人生彻底开挂了！
+2025-08-21 22:07:33,567 - INFO - 推文 0 处理完成
+2025-08-21 22:07:33,569 - INFO - 处理推文 1: Nobody is coming to save you.
+
+Not your friends. N...
+2025-08-21 22:07:33,569 - INFO - 生成SVG图像...
+2025-08-21 22:08:03,620 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:08:29,712 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:08:31,719 - INFO - 生成小红书文案...
+2025-08-21 22:08:47,834 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:08:49,843 - INFO - 文件保存成功: output/🔥停止等待！你必须自己拯救自己
+2025-08-21 22:08:49,843 - INFO - 推文 1 处理完成
+2025-08-21 22:08:49,844 - INFO - 处理推文 2: Wake up.
+Hit snooze 4 times.
+Stare at your phone.
+...
+2025-08-21 22:08:49,844 - INFO - 生成SVG图像...
+2025-08-21 22:09:18,712 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:09:50,284 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:09:54,317 - INFO - 生成小红书文案...
+2025-08-21 22:10:07,935 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:10:09,944 - INFO - 文件保存成功: output/这个循环太可怕了！你还要重复多久？
+2025-08-21 22:10:09,945 - INFO - 推文 2 处理完成
+2025-08-21 22:10:09,945 - INFO - 处理推文 3: Self-discipline is when the desire to become the h...
+2025-08-21 22:10:09,945 - INFO - 生成SVG图像...
+2025-08-21 22:10:34,550 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:11:08,183 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:11:10,476 - INFO - 生成小红书文案...
+2025-08-21 22:11:26,512 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:11:28,518 - INFO - 文件保存成功: output/🔥停止摆烂！自律让你秒变人生赢家
+2025-08-21 22:11:28,518 - INFO - 推文 3 处理完成
+2025-08-21 22:11:28,518 - INFO - 处理推文 4: You don't magically become focused. You practice i...
+2025-08-21 22:11:28,518 - INFO - 生成SVG图像...
+2025-08-21 22:11:57,519 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:12:30,558 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:12:32,820 - INFO - 生成小红书文案...
+2025-08-21 22:12:46,510 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:12:48,773 - INFO - 文件保存成功: output/停止摆烂！专注力不是天赋是练出来的💪
+2025-08-21 22:12:48,773 - INFO - 推文 4 处理完成
+2025-08-21 22:12:48,776 - INFO - 处理完成 - 成功: 5, 失败: 0
+2025-08-21 22:15:15,107 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2025-08-21 22:15:15,117 - INFO - 数据集包含 1667 条记录
+2025-08-21 22:15:15,117 - INFO - 开始处理记录 2 到 3 (共 2 条)
+2025-08-21 22:15:15,125 - INFO - 处理推文 2: Wake up.
+Hit snooze 4 times.
+Stare at your phone.
+...
+2025-08-21 22:15:15,125 - INFO - 生成SVG图像...
+2025-08-21 22:15:35,769 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:16:08,138 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:16:10,146 - INFO - 生成小红书文案...
+2025-08-21 22:16:27,946 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:16:30,404 - INFO - 文件保存成功: output/这个循环真的太可怕了！你还在重复吗？
+2025-08-21 22:16:30,404 - INFO - 推文 2 处理完成
+2025-08-21 22:16:30,405 - INFO - 处理推文 3: Self-discipline is when the desire to become the h...
+2025-08-21 22:16:30,405 - INFO - 生成SVG图像...
+2025-08-21 22:17:00,233 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:17:27,832 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:17:29,840 - INFO - 生成小红书文案...
+2025-08-21 22:17:42,800 - INFO - HTTP Request: POST https://api.poe.com/v1/chat/completions "HTTP/1.1 200 OK"
+2025-08-21 22:17:44,808 - INFO - 文件保存成功: output/自律就是拒绝廉价快乐！🔥
+2025-08-21 22:17:44,808 - INFO - 推文 3 处理完成
+2025-08-21 22:17:44,810 - INFO - 处理完成 - 成功: 2, 失败: 0
+2025-09-03 19:47:17,663 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-09-03 19:47:18,156 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-09-03 19:47:18,498 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-09-03 19:49:03,610 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-09-03 19:49:03,980 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-09-03 19:49:04,338 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 401 Unauthorized"
+2025-09-03 19:50:21,954 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-03 19:50:22,283 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-03 19:50:22,615 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-03 19:50:38,145 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-03 19:50:38,506 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-03 19:50:38,881 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-03 19:50:50,110 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 19:50:50,111 - INFO - Retrying request to /chat/completions in 0.492595 seconds
+2025-09-03 19:50:51,851 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 19:50:51,851 - INFO - Retrying request to /chat/completions in 0.919358 seconds
+2025-09-03 19:50:53,615 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 19:50:54,333 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 19:50:54,333 - INFO - Retrying request to /chat/completions in 0.407397 seconds
+2025-09-03 19:50:55,472 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 19:50:55,473 - INFO - Retrying request to /chat/completions in 0.962945 seconds
+2025-09-03 19:50:57,178 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 19:50:58,022 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 19:50:58,023 - INFO - Retrying request to /chat/completions in 0.388748 seconds
+2025-09-03 19:50:59,166 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 19:50:59,167 - INFO - Retrying request to /chat/completions in 0.949297 seconds
+2025-09-03 19:51:00,861 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:23:33,201 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:23:33,203 - INFO - Retrying request to /chat/completions in 0.385502 seconds
+2025-09-03 20:23:34,311 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:23:34,311 - INFO - Retrying request to /chat/completions in 0.905345 seconds
+2025-09-03 20:23:36,020 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:23:36,021 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:23:36,021 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:23:36,021 - INFO - 尝试备用API: gemini
+2025-09-03 20:23:37,147 - INFO - HTTP Request: POST http://xai-studio.top:8000/chat/completions "HTTP/1.1 307 Temporary Redirect"
+2025-09-03 20:23:37,702 - INFO - HTTP Request: POST http://xai-studio.top:8000/ "HTTP/1.1 405 Method Not Allowed"
+2025-09-03 20:23:37,703 - ERROR - Gemini API调用失败: Error code: 405 - {'error': {'code': 'http_error', 'message': 'Method Not Allowed'}}
+2025-09-03 20:23:37,703 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:23:37,703 - INFO - 尝试备用API: openrouter
+2025-09-03 20:23:38,392 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:23:38,392 - INFO - Retrying request to /chat/completions in 0.405929 seconds
+2025-09-03 20:23:39,596 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:23:39,597 - INFO - Retrying request to /chat/completions in 0.816596 seconds
+2025-09-03 20:23:41,129 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:23:41,130 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:23:41,130 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:23:41,130 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:23:42,309 - INFO - HTTP Request: POST http://xai-studio.top:8000/chat/completions "HTTP/1.1 307 Temporary Redirect"
+2025-09-03 20:23:42,865 - INFO - HTTP Request: POST http://xai-studio.top:8000/ "HTTP/1.1 405 Method Not Allowed"
+2025-09-03 20:23:42,871 - ERROR - Gemini API调用失败: Error code: 405 - {'error': {'code': 'http_error', 'message': 'Method Not Allowed'}}
+2025-09-03 20:24:08,321 - INFO - OpenRouter客户端已启用
+2025-09-03 20:24:08,327 - INFO - Gemini客户端已启用
+2025-09-03 20:24:09,641 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:24:09,642 - INFO - Retrying request to /chat/completions in 0.491838 seconds
+2025-09-03 20:24:10,900 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:24:10,901 - INFO - Retrying request to /chat/completions in 0.958305 seconds
+2025-09-03 20:24:12,622 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:24:12,622 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:24:12,622 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:24:12,622 - INFO - 尝试备用API: gemini
+2025-09-03 20:24:13,792 - INFO - HTTP Request: POST http://xai-studio.top:8000/chat/completions "HTTP/1.1 307 Temporary Redirect"
+2025-09-03 20:24:14,359 - INFO - HTTP Request: POST http://xai-studio.top:8000/ "HTTP/1.1 405 Method Not Allowed"
+2025-09-03 20:24:14,359 - ERROR - Gemini API调用失败: Error code: 405 - {'error': {'code': 'http_error', 'message': 'Method Not Allowed'}}
+2025-09-03 20:24:14,359 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:24:14,360 - INFO - 尝试备用API: openrouter
+2025-09-03 20:24:15,180 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:24:15,180 - INFO - Retrying request to /chat/completions in 0.397742 seconds
+2025-09-03 20:24:16,312 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:24:16,313 - INFO - Retrying request to /chat/completions in 0.882371 seconds
+2025-09-03 20:24:17,971 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:24:17,972 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:24:17,972 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:24:17,972 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:24:19,058 - INFO - HTTP Request: POST http://xai-studio.top:8000/chat/completions "HTTP/1.1 307 Temporary Redirect"
+2025-09-03 20:24:19,944 - INFO - HTTP Request: POST http://xai-studio.top:8000/ "HTTP/1.1 405 Method Not Allowed"
+2025-09-03 20:24:19,945 - ERROR - Gemini API调用失败: Error code: 405 - {'error': {'code': 'http_error', 'message': 'Method Not Allowed'}}
+2025-09-03 20:25:03,939 - INFO - OpenRouter客户端已启用
+2025-09-03 20:25:03,945 - INFO - Gemini客户端已启用
+2025-09-03 20:25:05,309 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:25:05,309 - INFO - Retrying request to /chat/completions in 0.424462 seconds
+2025-09-03 20:25:06,419 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:25:06,420 - INFO - Retrying request to /chat/completions in 0.979357 seconds
+2025-09-03 20:25:08,102 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:25:08,104 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:25:08,104 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:25:08,104 - INFO - 尝试备用API: gemini
+2025-09-03 20:25:09,181 - INFO - HTTP Request: POST http://xai-studio.top:8000/chat/completions "HTTP/1.1 307 Temporary Redirect"
+2025-09-03 20:25:09,699 - INFO - HTTP Request: POST http://xai-studio.top:8000/ "HTTP/1.1 405 Method Not Allowed"
+2025-09-03 20:25:09,700 - ERROR - Gemini API调用失败: Error code: 405 - {'error': {'code': 'http_error', 'message': 'Method Not Allowed'}}
+2025-09-03 20:25:09,700 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:25:09,700 - INFO - 尝试备用API: openrouter
+2025-09-03 20:25:10,375 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:25:10,376 - INFO - Retrying request to /chat/completions in 0.490326 seconds
+2025-09-03 20:25:11,634 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:25:11,634 - INFO - Retrying request to /chat/completions in 0.841347 seconds
+2025-09-03 20:25:13,145 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:25:13,146 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:25:13,146 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:25:13,146 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:25:14,211 - INFO - HTTP Request: POST http://xai-studio.top:8000/chat/completions "HTTP/1.1 307 Temporary Redirect"
+2025-09-03 20:25:14,719 - INFO - HTTP Request: POST http://xai-studio.top:8000/ "HTTP/1.1 405 Method Not Allowed"
+2025-09-03 20:25:14,720 - ERROR - Gemini API调用失败: Error code: 405 - {'error': {'code': 'http_error', 'message': 'Method Not Allowed'}}
+2025-09-03 20:30:40,299 - INFO - OpenRouter客户端已启用
+2025-09-03 20:30:40,299 - INFO - Gemini客户端初始化成功
+2025-09-03 20:30:40,299 - INFO - Gemini客户端已启用
+2025-09-03 20:30:40,304 - INFO - Gemini客户端初始化成功
+2025-09-03 20:30:43,428 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:30:43,429 - INFO - Retrying request to /chat/completions in 0.421154 seconds
+2025-09-03 20:30:44,594 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:30:44,597 - INFO - Retrying request to /chat/completions in 0.798378 seconds
+2025-09-03 20:30:46,115 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:30:46,118 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:30:46,118 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:30:46,118 - INFO - 尝试备用API: gemini
+2025-09-03 20:30:48,245 - ERROR - Gemini API调用失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-09-03 20:30:48,245 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:30:48,245 - INFO - 尝试备用API: openrouter
+2025-09-03 20:30:49,137 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:30:49,137 - INFO - Retrying request to /chat/completions in 0.481926 seconds
+2025-09-03 20:30:50,340 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:30:50,340 - INFO - Retrying request to /chat/completions in 0.865892 seconds
+2025-09-03 20:30:51,930 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:30:51,931 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:30:51,931 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:30:51,931 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:30:51,931 - INFO - Gemini客户端初始化成功
+2025-09-03 20:30:53,421 - ERROR - Gemini API调用失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-09-03 20:31:32,184 - INFO - OpenRouter客户端已启用
+2025-09-03 20:31:32,189 - INFO - Gemini客户端初始化成功
+2025-09-03 20:31:32,189 - INFO - Gemini客户端已启用
+2025-09-03 20:31:32,199 - INFO - Gemini客户端初始化成功
+2025-09-03 20:31:33,623 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:31:33,625 - INFO - Retrying request to /chat/completions in 0.488336 seconds
+2025-09-03 20:31:34,796 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:31:34,796 - INFO - Retrying request to /chat/completions in 0.916976 seconds
+2025-09-03 20:31:36,399 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:31:36,403 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:31:36,403 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:31:36,403 - INFO - 尝试备用API: gemini
+2025-09-03 20:31:37,566 - INFO - HTTP Request: POST http://xai-studio.top:8000/chat/completions "HTTP/1.1 307 Temporary Redirect"
+2025-09-03 20:31:38,094 - INFO - HTTP Request: POST http://xai-studio.top:8000/ "HTTP/1.1 405 Method Not Allowed"
+2025-09-03 20:31:38,095 - ERROR - Gemini API调用失败: Error code: 405 - {'error': {'code': 'http_error', 'message': 'Method Not Allowed'}}
+2025-09-03 20:31:38,095 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:31:38,095 - INFO - 尝试备用API: openrouter
+2025-09-03 20:31:38,839 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:31:38,839 - INFO - Retrying request to /chat/completions in 0.419032 seconds
+2025-09-03 20:31:39,925 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:31:39,925 - INFO - Retrying request to /chat/completions in 0.759547 seconds
+2025-09-03 20:31:41,450 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:31:41,451 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:31:41,451 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:31:41,451 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:31:41,466 - INFO - Gemini客户端初始化成功
+2025-09-03 20:31:42,564 - INFO - HTTP Request: POST http://xai-studio.top:8000/chat/completions "HTTP/1.1 307 Temporary Redirect"
+2025-09-03 20:31:43,112 - INFO - HTTP Request: POST http://xai-studio.top:8000/ "HTTP/1.1 405 Method Not Allowed"
+2025-09-03 20:31:43,113 - ERROR - Gemini API调用失败: Error code: 405 - {'error': {'code': 'http_error', 'message': 'Method Not Allowed'}}
+2025-09-03 20:34:14,305 - INFO - OpenRouter客户端已启用
+2025-09-03 20:34:14,305 - ERROR - Gemini客户端初始化失败: module 'google.generativeai' has no attribute 'Client'
+2025-09-03 20:34:14,309 - ERROR - Gemini客户端初始化失败: module 'google.generativeai' has no attribute 'Client'
+2025-09-03 20:34:29,903 - INFO - OpenRouter客户端已启用
+2025-09-03 20:34:29,903 - INFO - Gemini客户端初始化成功
+2025-09-03 20:34:29,903 - INFO - Gemini客户端已启用
+2025-09-03 20:34:29,908 - INFO - Gemini客户端初始化成功
+2025-09-03 20:34:31,301 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:34:31,302 - INFO - Retrying request to /chat/completions in 0.499953 seconds
+2025-09-03 20:34:32,568 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:34:32,569 - INFO - Retrying request to /chat/completions in 0.936955 seconds
+2025-09-03 20:34:34,256 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:34:34,257 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:34:34,257 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:34:34,257 - INFO - 尝试备用API: gemini
+2025-09-03 20:34:36,593 - ERROR - Gemini API调用失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-09-03 20:34:36,594 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:34:36,594 - INFO - 尝试备用API: openrouter
+2025-09-03 20:34:37,432 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:34:37,433 - INFO - Retrying request to /chat/completions in 0.445697 seconds
+2025-09-03 20:34:38,752 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:34:38,752 - INFO - Retrying request to /chat/completions in 0.848401 seconds
+2025-09-03 20:34:40,501 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:34:40,502 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:34:40,502 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:34:40,502 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:34:40,502 - INFO - Gemini客户端初始化成功
+2025-09-03 20:34:42,220 - ERROR - Gemini API调用失败: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2025-09-03 20:35:12,253 - INFO - OpenRouter客户端已启用
+2025-09-03 20:35:12,261 - INFO - Gemini客户端初始化成功
+2025-09-03 20:35:12,261 - INFO - Gemini客户端已启用
+2025-09-03 20:35:12,272 - INFO - Gemini客户端初始化成功
+2025-09-03 20:35:14,289 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:35:14,290 - INFO - Retrying request to /chat/completions in 0.416666 seconds
+2025-09-03 20:35:15,891 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:35:15,891 - INFO - Retrying request to /chat/completions in 0.991292 seconds
+2025-09-03 20:35:18,001 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:35:18,002 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:35:18,002 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:35:18,002 - INFO - 尝试备用API: gemini
+2025-09-03 20:36:32,461 - INFO - OpenRouter客户端已启用
+2025-09-03 20:36:32,465 - INFO - Gemini客户端初始化成功
+2025-09-03 20:36:32,465 - INFO - Gemini客户端已启用
+2025-09-03 20:36:32,474 - INFO - Gemini客户端初始化成功
+2025-09-03 20:36:33,791 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:36:33,791 - INFO - Retrying request to /chat/completions in 0.440322 seconds
+2025-09-03 20:36:35,262 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:36:35,262 - INFO - Retrying request to /chat/completions in 0.750716 seconds
+2025-09-03 20:36:36,774 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:36:36,778 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:36:36,778 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:36:36,778 - INFO - 尝试备用API: gemini
+2025-09-03 20:36:37,866 - INFO - HTTP Request: POST http://xai-studio.top:8000/gemini/v1beta/chat/completions "HTTP/1.1 404 Not Found"
+2025-09-03 20:36:37,867 - ERROR - Gemini API调用失败: Error code: 404 - {'error': {'code': 'http_error', 'message': 'Not Found'}}
+2025-09-03 20:36:37,867 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:36:37,867 - INFO - 尝试备用API: openrouter
+2025-09-03 20:36:38,813 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:36:38,813 - INFO - Retrying request to /chat/completions in 0.451375 seconds
+2025-09-03 20:36:40,240 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:36:40,254 - INFO - Retrying request to /chat/completions in 0.784151 seconds
+2025-09-03 20:36:41,768 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:36:41,769 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:36:41,769 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:36:41,769 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:36:41,777 - INFO - Gemini客户端初始化成功
+2025-09-03 20:36:42,832 - INFO - HTTP Request: POST http://xai-studio.top:8000/gemini/v1beta/chat/completions "HTTP/1.1 404 Not Found"
+2025-09-03 20:36:42,832 - ERROR - Gemini API调用失败: Error code: 404 - {'error': {'code': 'http_error', 'message': 'Not Found'}}
+2025-09-03 20:36:57,651 - INFO - OpenRouter客户端已启用
+2025-09-03 20:36:57,664 - INFO - Gemini客户端初始化成功
+2025-09-03 20:36:57,664 - INFO - Gemini客户端已启用
+2025-09-03 20:36:57,677 - INFO - Gemini客户端初始化成功
+2025-09-03 20:36:59,842 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:36:59,848 - INFO - Retrying request to /chat/completions in 0.487735 seconds
+2025-09-03 20:37:03,391 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:37:03,392 - INFO - Retrying request to /chat/completions in 0.871146 seconds
+2025-09-03 20:37:05,105 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:37:05,107 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:37:05,107 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:37:05,107 - INFO - 尝试备用API: gemini
+2025-09-03 20:37:06,615 - INFO - HTTP Request: POST http://xai-studio.top:8000/hf/v1/chat/completions "HTTP/1.1 400 Bad Request"
+2025-09-03 20:37:06,616 - ERROR - Gemini API调用失败: Invalid HTTP request received.
+2025-09-03 20:37:06,616 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:37:06,616 - INFO - 尝试备用API: openrouter
+2025-09-03 20:37:07,452 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:37:07,453 - INFO - Retrying request to /chat/completions in 0.428489 seconds
+2025-09-03 20:37:08,717 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:37:08,718 - INFO - Retrying request to /chat/completions in 0.847390 seconds
+2025-09-03 20:37:10,359 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:37:10,359 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:37:10,359 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:37:10,359 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:37:10,373 - INFO - Gemini客户端初始化成功
+2025-09-03 20:37:12,153 - INFO - HTTP Request: POST http://xai-studio.top:8000/hf/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2025-09-03 20:37:12,154 - INFO - Retrying request to /chat/completions in 0.477386 seconds
+2025-09-03 20:37:13,835 - INFO - HTTP Request: POST http://xai-studio.top:8000/hf/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2025-09-03 20:37:13,836 - INFO - Retrying request to /chat/completions in 0.817287 seconds
+2025-09-03 20:37:15,829 - INFO - HTTP Request: POST http://xai-studio.top:8000/hf/v1/chat/completions "HTTP/1.1 500 Internal Server Error"
+2025-09-03 20:37:15,830 - ERROR - Gemini API调用失败: Error code: 500 - {'error': {'code': 'http_error', 'message': 'Internal server error during chat_completion'}}
+2025-09-03 20:42:35,453 - INFO - OpenRouter客户端已启用
+2025-09-03 20:42:35,458 - INFO - Gemini客户端初始化成功
+2025-09-03 20:42:35,458 - INFO - Gemini客户端已启用
+2025-09-03 20:42:35,467 - INFO - Gemini客户端初始化成功
+2025-09-03 20:42:36,912 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:42:36,912 - INFO - Retrying request to /chat/completions in 0.499817 seconds
+2025-09-03 20:42:38,163 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:42:38,164 - INFO - Retrying request to /chat/completions in 0.778908 seconds
+2025-09-03 20:42:39,665 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:42:39,665 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:42:39,665 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:42:39,665 - INFO - 尝试备用API: gemini
+2025-09-03 20:42:41,699 - INFO - Gemini客户端初始化成功
+2025-09-03 20:43:32,607 - INFO - OpenRouter客户端已启用
+2025-09-03 20:43:32,613 - INFO - Gemini客户端初始化成功
+2025-09-03 20:43:32,613 - INFO - Gemini客户端已启用
+2025-09-03 20:43:32,625 - INFO - Gemini客户端初始化成功
+2025-09-03 20:43:34,220 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:43:34,220 - INFO - Retrying request to /chat/completions in 0.482169 seconds
+2025-09-03 20:43:35,470 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:43:35,471 - INFO - Retrying request to /chat/completions in 0.865347 seconds
+2025-09-03 20:43:37,012 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:43:37,012 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:43:37,013 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:43:37,013 - INFO - 尝试备用API: gemini
+2025-09-03 20:43:38,822 - INFO - Gemini客户端初始化成功
+2025-09-03 20:43:52,523 - INFO - OpenRouter客户端已启用
+2025-09-03 20:43:52,530 - INFO - Gemini客户端初始化成功
+2025-09-03 20:43:52,530 - INFO - Gemini客户端已启用
+2025-09-03 20:43:52,542 - INFO - Gemini客户端初始化成功
+2025-09-03 20:43:53,873 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:43:53,949 - INFO - Retrying request to /chat/completions in 0.432089 seconds
+2025-09-03 20:43:55,218 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:43:55,219 - INFO - Retrying request to /chat/completions in 0.882564 seconds
+2025-09-03 20:43:56,803 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:43:56,804 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:43:56,804 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:43:56,804 - INFO - 尝试备用API: gemini
+2025-09-03 20:43:58,523 - INFO - Gemini客户端初始化成功
+2025-09-03 20:44:28,122 - INFO - OpenRouter客户端已启用
+2025-09-03 20:44:28,129 - INFO - Gemini客户端初始化成功
+2025-09-03 20:44:28,129 - INFO - Gemini客户端已启用
+2025-09-03 20:44:28,140 - INFO - Gemini客户端初始化成功
+2025-09-03 20:44:29,674 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:44:29,675 - INFO - Retrying request to /chat/completions in 0.447653 seconds
+2025-09-03 20:44:30,791 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:44:30,791 - INFO - Retrying request to /chat/completions in 0.945446 seconds
+2025-09-03 20:44:32,415 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:44:32,416 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:44:32,417 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:44:32,417 - INFO - 尝试备用API: gemini
+2025-09-03 20:44:34,231 - INFO - Gemini客户端初始化成功
+2025-09-03 20:46:00,525 - INFO - OpenRouter客户端已启用
+2025-09-03 20:46:00,529 - INFO - Gemini客户端初始化成功
+2025-09-03 20:46:00,529 - INFO - Gemini客户端已启用
+2025-09-03 20:46:00,529 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2025-09-03 20:46:00,541 - INFO - 数据集包含 1667 条记录
+2025-09-03 20:46:00,541 - INFO - 开始处理记录 0 到 4 (共 5 条)
+2025-09-03 20:46:00,580 - INFO - 处理推文 0: Go on more walks. Walk for no reason. Walk to solv...
+2025-09-03 20:46:00,580 - INFO - 生成SVG图像...
+2025-09-03 20:46:02,205 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:02,206 - INFO - Retrying request to /chat/completions in 0.442546 seconds
+2025-09-03 20:46:03,387 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:03,390 - INFO - Retrying request to /chat/completions in 0.757482 seconds
+2025-09-03 20:46:04,951 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:04,954 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:46:04,954 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:46:04,955 - INFO - 尝试备用API: gemini
+2025-09-03 20:46:06,409 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:46:06,410 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:46:06,410 - INFO - 尝试备用API: openrouter
+2025-09-03 20:46:07,164 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:07,165 - INFO - Retrying request to /chat/completions in 0.448491 seconds
+2025-09-03 20:46:08,331 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:08,332 - INFO - Retrying request to /chat/completions in 0.810530 seconds
+2025-09-03 20:46:09,889 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:09,891 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:46:09,891 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:46:09,891 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:46:09,891 - WARNING - API调用失败 (尝试 1/3)
+2025-09-03 20:46:09,891 - INFO - 等待 5 秒后重试
+2025-09-03 20:46:16,872 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:16,893 - INFO - Retrying request to /chat/completions in 0.401852 seconds
+2025-09-03 20:46:18,298 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:18,299 - INFO - Retrying request to /chat/completions in 0.963104 seconds
+2025-09-03 20:46:27,686 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:28,148 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:46:28,176 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:46:28,177 - INFO - 尝试备用API: gemini
+2025-09-03 20:46:29,552 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:46:29,552 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:46:29,552 - INFO - 尝试备用API: openrouter
+2025-09-03 20:46:30,317 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:30,318 - INFO - Retrying request to /chat/completions in 0.454761 seconds
+2025-09-03 20:46:32,045 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:32,075 - INFO - Retrying request to /chat/completions in 0.997314 seconds
+2025-09-03 20:46:33,976 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:33,977 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:46:33,977 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:46:33,977 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:46:33,977 - WARNING - API调用失败 (尝试 2/3)
+2025-09-03 20:46:33,978 - INFO - 等待 10 秒后重试
+2025-09-03 20:46:45,706 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:45,707 - INFO - Retrying request to /chat/completions in 0.434342 seconds
+2025-09-03 20:46:46,971 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:46,972 - INFO - Retrying request to /chat/completions in 0.865384 seconds
+2025-09-03 20:46:48,679 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:48,681 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:46:48,681 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:46:48,681 - INFO - 尝试备用API: gemini
+2025-09-03 20:46:49,475 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:46:49,476 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:46:49,476 - INFO - 尝试备用API: openrouter
+2025-09-03 20:46:50,366 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:50,367 - INFO - Retrying request to /chat/completions in 0.410315 seconds
+2025-09-03 20:46:51,535 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:51,536 - INFO - Retrying request to /chat/completions in 0.867764 seconds
+2025-09-03 20:46:53,162 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:53,163 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:46:53,164 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:46:53,164 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:46:53,164 - WARNING - API调用失败 (尝试 3/3)
+2025-09-03 20:46:53,164 - ERROR - API调用最终失败，重试次数已达上限
+2025-09-03 20:46:53,164 - ERROR - 推文 0 SVG生成失败
+2025-09-03 20:46:53,166 - INFO - 处理推文 1: Nobody is coming to save you.
+
+Not your friends. N...
+2025-09-03 20:46:53,166 - INFO - 生成SVG图像...
+2025-09-03 20:46:53,166 - INFO - 等待速度限制: 0.3秒
+2025-09-03 20:46:54,244 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:54,245 - INFO - Retrying request to /chat/completions in 0.404480 seconds
+2025-09-03 20:46:55,413 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:55,422 - INFO - Retrying request to /chat/completions in 0.879339 seconds
+2025-09-03 20:46:57,078 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:57,079 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '20', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756903620000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:46:57,079 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:46:57,079 - INFO - 尝试备用API: gemini
+2025-09-03 20:46:57,853 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:46:57,853 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:46:57,853 - INFO - 尝试备用API: openrouter
+2025-09-03 20:46:58,625 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:46:58,634 - INFO - Retrying request to /chat/completions in 0.380861 seconds
+2025-09-03 20:46:59,762 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:00,332 - INFO - Retrying request to /chat/completions in 0.934270 seconds
+2025-09-03 20:47:01,747 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:01,757 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756903680000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:47:01,758 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:47:01,760 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:47:01,760 - WARNING - API调用失败 (尝试 1/3)
+2025-09-03 20:47:01,760 - INFO - 等待 5 秒后重试
+2025-09-03 20:47:08,406 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:08,409 - INFO - Retrying request to /chat/completions in 0.487899 seconds
+2025-09-03 20:47:09,637 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:09,640 - INFO - Retrying request to /chat/completions in 0.829720 seconds
+2025-09-03 20:47:10,870 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:10,872 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756903680000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:47:10,872 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:47:10,872 - INFO - 尝试备用API: gemini
+2025-09-03 20:47:11,645 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:47:11,646 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:47:11,646 - INFO - 尝试备用API: openrouter
+2025-09-03 20:47:12,447 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:12,447 - INFO - Retrying request to /chat/completions in 0.394227 seconds
+2025-09-03 20:47:13,224 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:13,224 - INFO - Retrying request to /chat/completions in 0.942704 seconds
+2025-09-03 20:47:14,618 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:14,623 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-min. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '16', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756903680000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:47:14,623 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:47:14,624 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:47:14,624 - WARNING - API调用失败 (尝试 2/3)
+2025-09-03 20:47:14,624 - INFO - 等待 10 秒后重试
+2025-09-03 20:47:29,088 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:29,089 - INFO - Retrying request to /chat/completions in 0.437368 seconds
+2025-09-03 20:47:30,253 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:30,253 - INFO - Retrying request to /chat/completions in 0.974617 seconds
+2025-09-03 20:47:31,944 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:31,945 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:47:31,945 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:47:31,946 - INFO - 尝试备用API: gemini
+2025-09-03 20:47:32,730 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:47:32,730 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:47:32,730 - INFO - 尝试备用API: openrouter
+2025-09-03 20:47:33,422 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:33,423 - INFO - Retrying request to /chat/completions in 0.413430 seconds
+2025-09-03 20:47:34,613 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:34,614 - INFO - Retrying request to /chat/completions in 0.913750 seconds
+2025-09-03 20:47:36,297 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:36,298 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:47:36,298 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:47:36,298 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:47:36,298 - WARNING - API调用失败 (尝试 3/3)
+2025-09-03 20:47:36,298 - ERROR - API调用最终失败，重试次数已达上限
+2025-09-03 20:47:36,298 - ERROR - 推文 1 SVG生成失败
+2025-09-03 20:47:36,299 - INFO - 处理推文 2: Wake up.
+Hit snooze 4 times.
+Stare at your phone.
+...
+2025-09-03 20:47:36,299 - INFO - 生成SVG图像...
+2025-09-03 20:47:36,299 - INFO - 等待速度限制: 0.4秒
+2025-09-03 20:47:37,539 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:37,539 - INFO - Retrying request to /chat/completions in 0.447985 seconds
+2025-09-03 20:47:38,695 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:38,696 - INFO - Retrying request to /chat/completions in 0.978745 seconds
+2025-09-03 20:47:40,426 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:40,427 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:47:40,427 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:47:40,427 - INFO - 尝试备用API: gemini
+2025-09-03 20:47:41,783 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:47:41,783 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:47:41,783 - INFO - 尝试备用API: openrouter
+2025-09-03 20:47:42,494 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:42,494 - INFO - Retrying request to /chat/completions in 0.437635 seconds
+2025-09-03 20:47:44,104 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:44,104 - INFO - Retrying request to /chat/completions in 0.931710 seconds
+2025-09-03 20:47:46,006 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:47:46,007 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:47:46,007 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:47:46,007 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:47:46,007 - WARNING - API调用失败 (尝试 1/3)
+2025-09-03 20:47:46,007 - INFO - 等待 5 秒后重试
+2025-09-03 20:49:45,298 - INFO - OpenRouter客户端已启用
+2025-09-03 20:49:45,302 - INFO - Gemini客户端初始化成功
+2025-09-03 20:49:45,302 - INFO - Gemini客户端已启用
+2025-09-03 20:49:45,302 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2025-09-03 20:49:45,314 - INFO - 数据集包含 1667 条记录
+2025-09-03 20:49:45,315 - INFO - 开始处理记录 0 到 0 (共 1 条)
+2025-09-03 20:49:45,323 - INFO - 处理推文 0: Go on more walks. Walk for no reason. Walk to solv...
+2025-09-03 20:49:45,323 - INFO - 生成SVG图像...
+2025-09-03 20:49:47,942 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:49:47,942 - INFO - Retrying request to /chat/completions in 0.472900 seconds
+2025-09-03 20:49:49,286 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:49:49,286 - INFO - Retrying request to /chat/completions in 0.936698 seconds
+2025-09-03 20:49:51,041 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:49:51,043 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:49:51,043 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:49:51,043 - INFO - 尝试备用API: gemini
+2025-09-03 20:49:51,810 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:49:51,810 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:49:51,810 - INFO - 尝试备用API: openrouter
+2025-09-03 20:49:52,553 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:49:52,554 - INFO - Retrying request to /chat/completions in 0.400337 seconds
+2025-09-03 20:49:53,707 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:49:53,708 - INFO - Retrying request to /chat/completions in 0.921709 seconds
+2025-09-03 20:49:55,408 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:49:55,410 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:49:55,410 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:49:55,410 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:49:55,410 - WARNING - API调用失败 (尝试 1/3)
+2025-09-03 20:49:55,410 - INFO - 等待 5 秒后重试
+2025-09-03 20:50:01,788 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:50:01,790 - INFO - Retrying request to /chat/completions in 0.476293 seconds
+2025-09-03 20:50:03,034 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:50:03,035 - INFO - Retrying request to /chat/completions in 0.929245 seconds
+2025-09-03 20:50:04,645 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:50:04,646 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:50:04,646 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:50:04,646 - INFO - 尝试备用API: gemini
+2025-09-03 20:50:05,401 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:50:05,401 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:50:05,401 - INFO - 尝试备用API: openrouter
+2025-09-03 20:50:06,088 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:50:06,088 - INFO - Retrying request to /chat/completions in 0.428687 seconds
+2025-09-03 20:50:07,302 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:50:07,303 - INFO - Retrying request to /chat/completions in 0.774226 seconds
+2025-09-03 20:50:08,769 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:50:08,773 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:50:08,774 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:50:08,775 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:50:08,775 - WARNING - API调用失败 (尝试 2/3)
+2025-09-03 20:50:08,775 - INFO - 等待 10 秒后重试
+2025-09-03 20:50:20,121 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:50:20,122 - INFO - Retrying request to /chat/completions in 0.480456 seconds
+2025-09-03 20:50:27,525 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:50:27,526 - INFO - Retrying request to /chat/completions in 0.754571 seconds
+2025-09-03 20:50:29,365 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:50:29,377 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:50:29,377 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:50:29,377 - INFO - 尝试备用API: gemini
+2025-09-03 20:50:30,220 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:50:30,221 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:50:30,221 - INFO - 尝试备用API: openrouter
+2025-09-03 20:52:31,204 - INFO - OpenRouter客户端已启用
+2025-09-03 20:52:31,209 - INFO - Gemini客户端初始化成功
+2025-09-03 20:52:31,209 - INFO - Gemini客户端已启用
+2025-09-03 20:52:31,209 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2025-09-03 20:52:31,220 - INFO - 数据集包含 1667 条记录
+2025-09-03 20:52:31,220 - INFO - 开始处理记录 0 到 0 (共 1 条)
+2025-09-03 20:52:31,228 - INFO - 处理推文 0: Go on more walks. Walk for no reason. Walk to solv...
+2025-09-03 20:52:31,228 - INFO - 生成SVG图像...
+2025-09-03 20:52:32,642 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:52:32,643 - INFO - Retrying request to /chat/completions in 0.459727 seconds
+2025-09-03 20:52:33,827 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:52:33,827 - INFO - Retrying request to /chat/completions in 0.941591 seconds
+2025-09-03 20:52:35,803 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:52:35,805 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:52:35,805 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:52:35,805 - INFO - 尝试备用API: gemini
+2025-09-03 20:52:37,166 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:52:37,167 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:52:37,167 - INFO - 尝试备用API: openrouter
+2025-09-03 20:52:37,938 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:52:37,939 - INFO - Retrying request to /chat/completions in 0.454964 seconds
+2025-09-03 20:52:39,070 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:52:39,071 - INFO - Retrying request to /chat/completions in 0.796633 seconds
+2025-09-03 20:52:40,557 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:52:40,558 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:52:40,558 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:52:40,558 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:52:40,558 - WARNING - API调用失败 (尝试 1/3)
+2025-09-03 20:52:40,558 - INFO - 等待 5 秒后重试
+2025-09-03 20:52:46,855 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:52:47,156 - INFO - Retrying request to /chat/completions in 0.399575 seconds
+2025-09-03 20:52:48,311 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:52:48,311 - INFO - Retrying request to /chat/completions in 0.795793 seconds
+2025-09-03 20:52:49,780 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:52:49,781 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:52:49,781 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:52:49,781 - INFO - 尝试备用API: gemini
+2025-09-03 20:52:51,144 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:52:51,144 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:52:51,145 - INFO - 尝试备用API: openrouter
+2025-09-03 20:52:51,926 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:52:51,926 - INFO - Retrying request to /chat/completions in 0.390919 seconds
+2025-09-03 20:52:53,389 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:52:53,390 - INFO - Retrying request to /chat/completions in 0.760548 seconds
+2025-09-03 20:52:54,874 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:52:54,875 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:52:54,875 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:52:54,875 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:52:54,875 - WARNING - API调用失败 (尝试 2/3)
+2025-09-03 20:52:54,875 - INFO - 等待 10 秒后重试
+2025-09-03 20:53:06,263 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:53:06,265 - INFO - Retrying request to /chat/completions in 0.440364 seconds
+2025-09-03 20:53:07,433 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:53:07,433 - INFO - Retrying request to /chat/completions in 0.916767 seconds
+2025-09-03 20:53:09,178 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:53:09,179 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:53:09,179 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:53:09,179 - INFO - 尝试备用API: gemini
+2025-09-03 20:53:10,279 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:53:10,279 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:53:10,279 - INFO - 尝试备用API: openrouter
+2025-09-03 20:53:10,993 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:53:10,993 - INFO - Retrying request to /chat/completions in 0.465530 seconds
+2025-09-03 20:53:12,171 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:53:12,172 - INFO - Retrying request to /chat/completions in 0.924123 seconds
+2025-09-03 20:53:13,995 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:53:13,996 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:53:13,996 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:53:13,996 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:53:13,996 - WARNING - API调用失败 (尝试 3/3)
+2025-09-03 20:53:13,996 - ERROR - API调用最终失败，重试次数已达上限
+2025-09-03 20:53:13,996 - ERROR - 推文 0 SVG生成失败
+2025-09-03 20:53:13,997 - INFO - 处理完成 - 成功: 0, 失败: 1
+2025-09-03 20:53:32,539 - INFO - OpenRouter客户端已启用
+2025-09-03 20:53:32,545 - INFO - Gemini客户端初始化成功
+2025-09-03 20:53:32,546 - INFO - Gemini客户端已启用
+2025-09-03 20:53:32,557 - INFO - Gemini客户端初始化成功
+2025-09-03 20:53:33,901 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:53:33,902 - INFO - Retrying request to /chat/completions in 0.422852 seconds
+2025-09-03 20:53:35,062 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:53:35,187 - INFO - Retrying request to /chat/completions in 0.972583 seconds
+2025-09-03 20:53:36,896 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:53:36,897 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:53:36,897 - WARNING - 主API openrouter 调用失败，尝试备用API
+2025-09-03 20:53:36,897 - INFO - 尝试备用API: gemini
+2025-09-03 20:53:38,987 - INFO - Gemini客户端初始化成功
+2025-09-03 20:53:48,469 - INFO - OpenRouter客户端已启用
+2025-09-03 20:53:48,473 - INFO - Gemini客户端初始化成功
+2025-09-03 20:53:48,473 - INFO - Gemini客户端已启用
+2025-09-03 20:53:48,474 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2025-09-03 20:53:48,489 - INFO - 数据集包含 1667 条记录
+2025-09-03 20:53:48,489 - INFO - 开始处理记录 0 到 0 (共 1 条)
+2025-09-03 20:53:48,499 - INFO - 处理推文 0: Go on more walks. Walk for no reason. Walk to solv...
+2025-09-03 20:53:48,499 - INFO - 生成SVG图像...
+2025-09-03 20:53:49,301 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:53:49,302 - WARNING - 主API gemini 调用失败，尝试备用API
+2025-09-03 20:53:49,302 - INFO - 尝试备用API: openrouter
+2025-09-03 20:53:50,875 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:53:50,881 - INFO - Retrying request to /chat/completions in 0.385026 seconds
+2025-09-03 20:53:52,000 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:53:52,001 - INFO - Retrying request to /chat/completions in 0.793941 seconds
+2025-09-03 20:53:53,577 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:53:53,578 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:53:53,579 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:53:53,579 - INFO - 尝试备用API: gemini
+2025-09-03 20:53:54,358 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:53:54,358 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:53:54,358 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:53:54,358 - WARNING - API调用失败 (尝试 1/3)
+2025-09-03 20:53:54,358 - INFO - 等待 5 秒后重试
+2025-09-03 20:54:00,278 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:54:00,280 - WARNING - 主API gemini 调用失败，尝试备用API
+2025-09-03 20:54:00,280 - INFO - 尝试备用API: openrouter
+2025-09-03 20:54:01,627 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:54:01,943 - INFO - Retrying request to /chat/completions in 0.405495 seconds
+2025-09-03 20:54:03,085 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:54:03,085 - INFO - Retrying request to /chat/completions in 0.796602 seconds
+2025-09-03 20:54:04,609 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:54:04,610 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:54:04,610 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:54:04,610 - INFO - 尝试备用API: gemini
+2025-09-03 20:54:05,388 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:54:05,389 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:54:05,389 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:54:05,389 - WARNING - API调用失败 (尝试 2/3)
+2025-09-03 20:54:05,389 - INFO - 等待 10 秒后重试
+2025-09-03 20:54:16,174 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:54:16,175 - WARNING - 主API gemini 调用失败，尝试备用API
+2025-09-03 20:54:16,175 - INFO - 尝试备用API: openrouter
+2025-09-03 20:54:17,504 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:54:17,504 - INFO - Retrying request to /chat/completions in 0.489385 seconds
+2025-09-03 20:54:28,099 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:54:28,101 - INFO - Retrying request to /chat/completions in 0.927671 seconds
+2025-09-03 20:54:29,816 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 20:54:29,818 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 20:54:29,819 - WARNING - 备用API openrouter 调用失败
+2025-09-03 20:54:29,819 - INFO - 尝试备用API: gemini
+2025-09-03 20:54:31,339 - ERROR - Gemini API调用失败: 400 - Invalid HTTP request received.
+2025-09-03 20:54:31,340 - WARNING - 备用API gemini 调用失败
+2025-09-03 20:54:31,340 - ERROR - 所有API提供商都调用失败
+2025-09-03 20:54:31,340 - WARNING - API调用失败 (尝试 3/3)
+2025-09-03 20:54:31,340 - ERROR - API调用最终失败，重试次数已达上限
+2025-09-03 20:54:31,340 - ERROR - 推文 0 SVG生成失败
+2025-09-03 20:54:31,341 - ERROR - 批量处理失败: [Errno 32] Broken pipe
+2025-09-03 20:57:58,642 - ERROR - 程序执行失败: 没有配置任何可用的API客户端
+2025-09-03 20:59:58,646 - INFO - OpenRouter客户端已启用
+2025-09-03 20:59:58,661 - INFO - Gemini客户端初始化成功
+2025-09-03 20:59:58,661 - INFO - Gemini客户端已启用
+2025-09-03 20:59:58,661 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2025-09-03 20:59:58,675 - INFO - 数据集包含 1667 条记录
+2025-09-03 20:59:58,675 - INFO - 开始处理记录 0 到 0 (共 1 条)
+2025-09-03 20:59:58,685 - INFO - 处理推文 0: Go on more walks. Walk for no reason. Walk to solv...
+2025-09-03 20:59:58,686 - INFO - 生成SVG图像...
+2025-09-03 21:00:04,639 - WARNING - Gemini API返回空文本
+2025-09-03 21:00:04,641 - WARNING - 主API gemini 调用失败，尝试备用API
+2025-09-03 21:00:04,641 - INFO - 尝试备用API: openrouter
+2025-09-03 21:00:07,445 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:00:07,446 - INFO - Retrying request to /chat/completions in 0.485928 seconds
+2025-09-03 21:00:09,525 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:00:09,526 - INFO - Retrying request to /chat/completions in 0.756451 seconds
+2025-09-03 21:00:11,176 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:00:11,181 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 21:00:11,181 - WARNING - 备用API openrouter 调用失败
+2025-09-03 21:00:11,181 - INFO - 尝试备用API: gemini
+2025-09-03 21:00:16,829 - WARNING - Gemini API返回空文本
+2025-09-03 21:00:16,829 - WARNING - 备用API gemini 调用失败
+2025-09-03 21:00:16,829 - ERROR - 所有API提供商都调用失败
+2025-09-03 21:00:16,829 - WARNING - API调用失败 (尝试 1/3)
+2025-09-03 21:00:16,829 - INFO - 等待 5 秒后重试
+2025-09-03 21:00:26,743 - WARNING - Gemini API返回空文本
+2025-09-03 21:00:26,744 - WARNING - 主API gemini 调用失败，尝试备用API
+2025-09-03 21:00:26,745 - INFO - 尝试备用API: openrouter
+2025-09-03 21:00:28,456 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:00:28,457 - INFO - Retrying request to /chat/completions in 0.423989 seconds
+2025-09-03 21:00:29,633 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:00:29,634 - INFO - Retrying request to /chat/completions in 0.949333 seconds
+2025-09-03 21:00:31,371 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:00:31,372 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 21:00:31,372 - WARNING - 备用API openrouter 调用失败
+2025-09-03 21:00:31,372 - INFO - 尝试备用API: gemini
+2025-09-03 21:00:35,992 - WARNING - Gemini API返回空文本
+2025-09-03 21:00:35,992 - WARNING - 备用API gemini 调用失败
+2025-09-03 21:00:35,992 - ERROR - 所有API提供商都调用失败
+2025-09-03 21:00:35,992 - WARNING - API调用失败 (尝试 2/3)
+2025-09-03 21:00:35,992 - INFO - 等待 10 秒后重试
+2025-09-03 21:00:50,959 - WARNING - Gemini API返回空文本
+2025-09-03 21:00:50,960 - WARNING - 主API gemini 调用失败，尝试备用API
+2025-09-03 21:00:50,960 - INFO - 尝试备用API: openrouter
+2025-09-03 21:00:52,226 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:00:52,227 - INFO - Retrying request to /chat/completions in 0.461643 seconds
+2025-09-03 21:00:53,598 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:00:53,599 - INFO - Retrying request to /chat/completions in 0.957269 seconds
+2025-09-03 21:00:55,388 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:00:55,388 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 21:00:55,388 - WARNING - 备用API openrouter 调用失败
+2025-09-03 21:00:55,388 - INFO - 尝试备用API: gemini
+2025-09-03 21:01:00,378 - WARNING - Gemini API返回空文本
+2025-09-03 21:01:00,379 - WARNING - 备用API gemini 调用失败
+2025-09-03 21:01:00,379 - ERROR - 所有API提供商都调用失败
+2025-09-03 21:01:00,379 - WARNING - API调用失败 (尝试 3/3)
+2025-09-03 21:01:00,379 - ERROR - API调用最终失败，重试次数已达上限
+2025-09-03 21:01:00,379 - ERROR - 推文 0 SVG生成失败
+2025-09-03 21:01:00,380 - INFO - 处理完成 - 成功: 0, 失败: 1
+2025-09-03 21:02:17,360 - INFO - OpenRouter客户端已启用
+2025-09-03 21:02:17,377 - INFO - Gemini客户端初始化成功
+2025-09-03 21:02:17,377 - INFO - Gemini客户端已启用
+2025-09-03 21:02:17,377 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2025-09-03 21:02:17,395 - INFO - 数据集包含 1667 条记录
+2025-09-03 21:02:17,395 - INFO - 开始处理记录 0 到 0 (共 1 条)
+2025-09-03 21:02:17,412 - INFO - 处理推文 0: Go on more walks. Walk for no reason. Walk to solv...
+2025-09-03 21:02:17,412 - INFO - 生成SVG图像...
+2025-09-03 21:02:27,088 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:02:27,092 - WARNING - Gemini API返回空文本
+2025-09-03 21:02:27,092 - WARNING - 主API gemini 调用失败，尝试备用API
+2025-09-03 21:02:27,092 - INFO - 尝试备用API: openrouter
+2025-09-03 21:02:28,689 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:02:28,689 - INFO - Retrying request to /chat/completions in 0.464138 seconds
+2025-09-03 21:02:30,135 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:02:30,136 - INFO - Retrying request to /chat/completions in 0.783282 seconds
+2025-09-03 21:02:31,718 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:02:31,733 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 21:02:31,733 - WARNING - 备用API openrouter 调用失败
+2025-09-03 21:02:31,733 - INFO - 尝试备用API: gemini
+2025-09-03 21:02:38,940 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:02:38,942 - WARNING - Gemini API返回空文本
+2025-09-03 21:02:38,943 - WARNING - 备用API gemini 调用失败
+2025-09-03 21:02:38,943 - ERROR - 所有API提供商都调用失败
+2025-09-03 21:02:38,943 - WARNING - API调用失败 (尝试 1/3)
+2025-09-03 21:02:38,943 - INFO - 等待 5 秒后重试
+2025-09-03 21:03:00,970 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:03:00,974 - WARNING - Gemini API返回空文本
+2025-09-03 21:03:00,974 - WARNING - 主API gemini 调用失败，尝试备用API
+2025-09-03 21:03:00,974 - INFO - 尝试备用API: openrouter
+2025-09-03 21:03:02,329 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:03:02,329 - INFO - Retrying request to /chat/completions in 0.412993 seconds
+2025-09-03 21:03:03,727 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:03:03,727 - INFO - Retrying request to /chat/completions in 0.992367 seconds
+2025-09-03 21:03:05,768 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:03:05,769 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 21:03:05,769 - WARNING - 备用API openrouter 调用失败
+2025-09-03 21:03:05,769 - INFO - 尝试备用API: gemini
+2025-09-03 21:03:14,135 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:03:14,135 - WARNING - Gemini API返回空文本
+2025-09-03 21:03:14,135 - WARNING - 备用API gemini 调用失败
+2025-09-03 21:03:14,136 - ERROR - 所有API提供商都调用失败
+2025-09-03 21:03:14,136 - WARNING - API调用失败 (尝试 2/3)
+2025-09-03 21:03:14,136 - INFO - 等待 10 秒后重试
+2025-09-03 21:03:35,471 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:03:35,472 - WARNING - Gemini API返回空文本
+2025-09-03 21:03:35,472 - WARNING - 主API gemini 调用失败，尝试备用API
+2025-09-03 21:03:35,472 - INFO - 尝试备用API: openrouter
+2025-09-03 21:03:36,803 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:03:36,803 - INFO - Retrying request to /chat/completions in 0.440493 seconds
+2025-09-03 21:03:38,067 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:03:38,068 - INFO - Retrying request to /chat/completions in 0.983054 seconds
+2025-09-03 21:03:39,894 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:03:39,899 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 21:03:39,899 - WARNING - 备用API openrouter 调用失败
+2025-09-03 21:03:39,899 - INFO - 尝试备用API: gemini
+2025-09-03 21:03:48,193 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:03:48,195 - WARNING - Gemini API返回空文本
+2025-09-03 21:03:48,195 - WARNING - 备用API gemini 调用失败
+2025-09-03 21:03:48,195 - ERROR - 所有API提供商都调用失败
+2025-09-03 21:03:48,195 - WARNING - API调用失败 (尝试 3/3)
+2025-09-03 21:03:48,195 - ERROR - API调用最终失败，重试次数已达上限
+2025-09-03 21:03:48,195 - ERROR - 推文 0 SVG生成失败
+2025-09-03 21:03:48,198 - INFO - 处理完成 - 成功: 0, 失败: 1
+2025-09-03 21:04:12,232 - INFO - OpenRouter客户端已启用
+2025-09-03 21:04:12,244 - INFO - Gemini客户端初始化成功
+2025-09-03 21:04:12,244 - INFO - Gemini客户端已启用
+2025-09-03 21:04:12,244 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2025-09-03 21:04:12,257 - INFO - 数据集包含 1667 条记录
+2025-09-03 21:04:12,257 - INFO - 开始处理记录 0 到 0 (共 1 条)
+2025-09-03 21:04:12,269 - INFO - 处理推文 0: Go on more walks. Walk for no reason. Walk to solv...
+2025-09-03 21:04:12,269 - INFO - 生成SVG图像...
+2025-09-03 21:04:20,332 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:04:20,336 - WARNING - Gemini API返回空文本
+2025-09-03 21:04:20,336 - WARNING - 主API gemini 调用失败，尝试备用API
+2025-09-03 21:04:20,336 - INFO - 尝试备用API: openrouter
+2025-09-03 21:04:21,838 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:04:21,839 - INFO - Retrying request to /chat/completions in 0.486101 seconds
+2025-09-03 21:04:23,460 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:04:23,460 - INFO - Retrying request to /chat/completions in 0.841558 seconds
+2025-09-03 21:04:25,112 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:04:25,113 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 21:04:25,113 - WARNING - 备用API openrouter 调用失败
+2025-09-03 21:04:25,113 - INFO - 尝试备用API: gemini
+2025-09-03 21:04:32,230 - INFO - 用户中断处理
+2025-09-03 21:04:32,230 - INFO - 处理完成 - 成功: 0, 失败: 0
+2025-09-03 21:07:36,268 - INFO - OpenRouter客户端已启用
+2025-09-03 21:07:36,284 - INFO - Gemini客户端初始化成功
+2025-09-03 21:07:36,284 - INFO - Gemini客户端已启用
+2025-09-03 21:07:36,284 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2025-09-03 21:07:36,298 - INFO - 数据集包含 1667 条记录
+2025-09-03 21:07:36,298 - INFO - 开始处理记录 0 到 0 (共 1 条)
+2025-09-03 21:07:36,308 - INFO - 处理推文 0: Go on more walks. Walk for no reason. Walk to solv...
+2025-09-03 21:07:36,308 - INFO - 生成SVG图像...
+2025-09-03 21:07:40,973 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:07:40,975 - WARNING - Gemini API返回空文本
+2025-09-03 21:07:40,975 - WARNING - 主API gemini 调用失败，尝试备用API
+2025-09-03 21:07:40,975 - INFO - 尝试备用API: openrouter
+2025-09-03 21:07:42,203 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:07:42,204 - INFO - Retrying request to /chat/completions in 0.398022 seconds
+2025-09-03 21:07:43,339 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:07:43,340 - INFO - Retrying request to /chat/completions in 0.758045 seconds
+2025-09-03 21:07:44,862 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:07:44,864 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 21:07:44,864 - WARNING - 备用API openrouter 调用失败
+2025-09-03 21:07:44,864 - INFO - 尝试备用API: gemini
+2025-09-03 21:07:50,105 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:07:50,108 - WARNING - Gemini API返回空文本
+2025-09-03 21:07:50,109 - WARNING - 备用API gemini 调用失败
+2025-09-03 21:07:50,109 - ERROR - 所有API提供商都调用失败
+2025-09-03 21:07:50,109 - WARNING - API调用失败 (尝试 1/3)
+2025-09-03 21:07:50,109 - INFO - 等待 5 秒后重试
+2025-09-03 21:07:59,864 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:07:59,868 - WARNING - Gemini API返回空文本
+2025-09-03 21:07:59,868 - WARNING - 主API gemini 调用失败，尝试备用API
+2025-09-03 21:07:59,868 - INFO - 尝试备用API: openrouter
+2025-09-03 21:08:01,224 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:08:01,233 - INFO - Retrying request to /chat/completions in 0.457175 seconds
+2025-09-03 21:08:02,477 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:08:02,479 - INFO - Retrying request to /chat/completions in 0.816387 seconds
+2025-09-03 21:08:04,109 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:08:04,111 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 21:08:04,112 - WARNING - 备用API openrouter 调用失败
+2025-09-03 21:08:04,112 - INFO - 尝试备用API: gemini
+2025-09-03 21:08:09,249 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:08:09,252 - WARNING - Gemini API返回空文本
+2025-09-03 21:08:09,252 - WARNING - 备用API gemini 调用失败
+2025-09-03 21:08:09,252 - ERROR - 所有API提供商都调用失败
+2025-09-03 21:08:09,252 - WARNING - API调用失败 (尝试 2/3)
+2025-09-03 21:08:09,252 - INFO - 等待 10 秒后重试
+2025-09-03 21:08:32,935 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:08:32,939 - WARNING - Gemini API返回空文本
+2025-09-03 21:08:32,939 - WARNING - 主API gemini 调用失败，尝试备用API
+2025-09-03 21:08:32,939 - INFO - 尝试备用API: openrouter
+2025-09-03 21:08:34,357 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:08:34,358 - INFO - Retrying request to /chat/completions in 0.377838 seconds
+2025-09-03 21:08:35,510 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:08:35,511 - INFO - Retrying request to /chat/completions in 0.816883 seconds
+2025-09-03 21:08:37,052 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 429 Too Many Requests"
+2025-09-03 21:08:37,084 - WARNING - OpenRouter速度限制: Error code: 429 - {'error': {'message': 'Rate limit exceeded: free-models-per-day-high-balance. ', 'code': 429, 'metadata': {'headers': {'X-RateLimit-Limit': '2000', 'X-RateLimit-Remaining': '0', 'X-RateLimit-Reset': '1756944000000'}, 'provider_name': None}}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 21:08:37,085 - WARNING - 备用API openrouter 调用失败
+2025-09-03 21:08:37,085 - INFO - 尝试备用API: gemini
+2025-09-03 21:08:41,622 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:08:41,626 - WARNING - Gemini API返回空文本
+2025-09-03 21:08:41,626 - WARNING - 备用API gemini 调用失败
+2025-09-03 21:08:41,626 - ERROR - 所有API提供商都调用失败
+2025-09-03 21:08:41,627 - WARNING - API调用失败 (尝试 3/3)
+2025-09-03 21:08:41,627 - ERROR - API调用最终失败，重试次数已达上限
+2025-09-03 21:08:41,627 - ERROR - 推文 0 SVG生成失败
+2025-09-03 21:08:41,629 - INFO - 处理完成 - 成功: 0, 失败: 1
+2025-09-03 21:13:02,730 - INFO - OpenRouter客户端已启用
+2025-09-03 21:13:02,743 - INFO - Gemini客户端初始化成功
+2025-09-03 21:13:02,743 - INFO - Gemini客户端已启用
+2025-09-03 21:13:02,743 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2025-09-03 21:13:02,754 - INFO - 数据集包含 1667 条记录
+2025-09-03 21:13:02,754 - INFO - 开始处理记录 0 到 0 (共 1 条)
+2025-09-03 21:13:02,764 - INFO - 处理推文 0: Go on more walks. Walk for no reason. Walk to solv...
+2025-09-03 21:13:02,764 - INFO - 生成SVG图像...
+2025-09-03 21:13:07,593 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:13:07,600 - WARNING - Gemini API返回空文本
+2025-09-03 21:13:07,602 - WARNING - 主API gemini 调用失败，尝试备用API
+2025-09-03 21:13:07,602 - INFO - 尝试备用API: openrouter
+2025-09-03 21:13:08,584 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-09-03 21:13:08,589 - ERROR - OpenRouter API调用失败: Error code: 404 - {'error': {'message': 'No endpoints found for anthropic/claude-3.5-sonnet:free.', 'code': 404}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 21:13:08,589 - WARNING - 备用API openrouter 调用失败
+2025-09-03 21:13:08,589 - INFO - 尝试备用API: gemini
+2025-09-03 21:13:13,447 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:13:13,481 - WARNING - Gemini API返回空文本
+2025-09-03 21:13:13,481 - WARNING - 备用API gemini 调用失败
+2025-09-03 21:13:13,482 - ERROR - 所有API提供商都调用失败
+2025-09-03 21:13:13,482 - WARNING - API调用失败 (尝试 1/3)
+2025-09-03 21:13:13,482 - INFO - 等待 5 秒后重试
+2025-09-03 21:13:31,678 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:13:31,687 - WARNING - Gemini API返回空文本
+2025-09-03 21:13:31,687 - WARNING - 主API gemini 调用失败，尝试备用API
+2025-09-03 21:13:31,687 - INFO - 尝试备用API: openrouter
+2025-09-03 21:13:32,423 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-09-03 21:13:32,424 - ERROR - OpenRouter API调用失败: Error code: 404 - {'error': {'message': 'No endpoints found for anthropic/claude-3.5-sonnet:free.', 'code': 404}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 21:13:32,424 - WARNING - 备用API openrouter 调用失败
+2025-09-03 21:13:32,424 - INFO - 尝试备用API: gemini
+2025-09-03 21:13:37,467 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:13:37,472 - WARNING - Gemini API返回空文本
+2025-09-03 21:13:37,472 - WARNING - 备用API gemini 调用失败
+2025-09-03 21:13:37,472 - ERROR - 所有API提供商都调用失败
+2025-09-03 21:13:37,472 - WARNING - API调用失败 (尝试 2/3)
+2025-09-03 21:13:37,472 - INFO - 等待 10 秒后重试
+2025-09-03 21:13:52,572 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:13:52,574 - WARNING - Gemini API返回空文本
+2025-09-03 21:13:52,574 - WARNING - 主API gemini 调用失败，尝试备用API
+2025-09-03 21:13:52,575 - INFO - 尝试备用API: openrouter
+2025-09-03 21:13:53,498 - INFO - HTTP Request: POST https://openrouter.ai/api/v1/chat/completions "HTTP/1.1 404 Not Found"
+2025-09-03 21:13:53,500 - ERROR - OpenRouter API调用失败: Error code: 404 - {'error': {'message': 'No endpoints found for anthropic/claude-3.5-sonnet:free.', 'code': 404}, 'user_id': 'user_2x1obNG1qjnMdSzZlIVmaMC1XLR'}
+2025-09-03 21:13:53,500 - WARNING - 备用API openrouter 调用失败
+2025-09-03 21:13:53,500 - INFO - 尝试备用API: gemini
+2025-09-03 21:13:58,015 - INFO - HTTP Request: POST http://xai-studio.top:8000/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-09-03 21:13:58,017 - WARNING - Gemini API返回空文本
+2025-09-03 21:13:58,017 - WARNING - 备用API gemini 调用失败
+2025-09-03 21:13:58,017 - ERROR - 所有API提供商都调用失败
+2025-09-03 21:13:58,017 - WARNING - API调用失败 (尝试 3/3)
+2025-09-03 21:13:58,017 - ERROR - API调用最终失败，重试次数已达上限
+2025-09-03 21:13:58,017 - ERROR - 推文 0 SVG生成失败
+2025-09-03 21:13:58,025 - INFO - 处理完成 - 成功: 0, 失败: 1

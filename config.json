@@ -1,0 +1,34 @@
+{
+  "primary_api": "gemini",
+  "openrouter": {
+    "enabled": true,
+    "key": "",
+    "model": "anthropic/claude-3.5-sonnet:free",
+    "base_url": "https://openrouter.ai/api/v1",
+    "timeout": 30
+  },
+  "gemini": {
+    "enabled": true,
+    "key": "",
+    "model": "gemini-2.5-flash",
+    "base_url": "http://xai-studio.top:8000/openai/v1",
+    "timeout": 30
+  },
+  "rate_limit": {
+    "openrouter_interval": 4.0,
+    "gemini_interval": 2.0,
+    "retry_attempts": 3,
+    "retry_delay_seconds": 5
+  },
+  "files": {
+    "input_json": "twillot-public-post-sorted.json",
+    "svg_prompt": "svg提示词.txt",
+    "xiaohongshu_prompt": "小红书文案提示词.txt",
+    "output_dir": "output"
+  },
+  "logging": {
+    "level": "INFO",
+    "file": "batch_process.log",
+    "console": true
+  }
+}
