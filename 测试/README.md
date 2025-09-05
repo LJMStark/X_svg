@@ -53,13 +53,14 @@ python batch_generate_svg.py
 
 ## 技术说明
 
-- **生成工具**: 使用OpenRouter API的DeepSeek-Chat模型（主API）
+- **生成工具**: 使用OpenRouter API的deepseek-r1-0528:free模型（主API）
 - **故障转移**: 支持Novita、SiliconFlow、Moonshot等备用API
 - **基础内容**: 所有SVG基于相同的英文内容生成
 - **尺寸规格**: 440px × 580px (小红书竖版封面)
 - **文件格式**: 标准SVG，支持浏览器直接查看
 - **XML验证**: 自动检测和修复XML语法错误
 - **字体优化**: 自动替换网络字体为系统字体
+- **免费模型限制**: 强制使用OpenRouter免费模型，禁止使用付费模型
 
 ## 风格特点
 

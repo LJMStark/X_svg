@@ -45,7 +45,7 @@
     "body": {
       "primary": {
         "provider": "openrouter",
-        "model": "anthropic/claude-3.5-sonnet"
+        "model": "deepseek/deepseek-r1-0528:free"
       },
       "fallback": {
         "provider": "novita",
@@ -59,7 +59,7 @@
     "svg": {
       "primary": {
         "provider": "openrouter",
-        "model": "deepseek/deepseek-chat"
+        "model": "deepseek/deepseek-r1-0528:free"
       },
       "fallback": {
         "provider": "novita",

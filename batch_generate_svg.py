@@ -130,7 +130,7 @@ def main():
         client = create_client(
             provider='openrouter',
             api_key=api_key,
-            model='deepseek/deepseek-chat-v3.1:free',
+            model='deepseek/deepseek-r1-0528:free',
             timeout=180
         )
         logger.info("OpenRouter API客户端创建成功")

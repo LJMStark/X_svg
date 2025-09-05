@@ -41,8 +41,8 @@ The system supports 5 API providers with task-specific model assignment:
 
 **Task-to-Provider Mapping**:
 - **Title Generation**: SiliconFlow (DeepSeek-V3.1) → Moonshot (kimi-k2-0711-preview)
-- **Body Generation**: Novita.ai (DeepSeek-V3.1) → Moonshot (kimi-k2-0711-preview)  
-- **SVG Generation**: OpenRouter (DeepSeek-Chat) → Novita.ai (DeepSeek-V3.1) → SiliconFlow (DeepSeek-V3.1) → Moonshot (kimi-k2-0711-preview)
+- **Body Generation**: OpenRouter (deepseek-r1-0528:free) → Novita.ai (DeepSeek-V3.1) → Moonshot (kimi-k2-0711-preview)  
+- **SVG Generation**: OpenRouter (deepseek-r1-0528:free) → Novita.ai (DeepSeek-V3.1) → SiliconFlow (DeepSeek-V3.1) → Moonshot (kimi-k2-0711-preview)
 
 **Provider Endpoints**:
 - OpenRouter: `https://openrouter.ai/api/v1`
@@ -184,6 +184,14 @@ Multi-provider API configuration with automatic failover:
 - **API retries**: 3 attempts with 5-second delays
 - **File validation**: Checks for required files on startup
 - **Graceful degradation**: Continues processing after individual failures
+
+## Model Usage Restrictions
+
+### OpenRouter Free Model Only
+- **强制使用免费模型**: 所有 OpenRouter API 调用必须使用 `deepseek/deepseek-r1-0528:free` 模型
+- **禁止付费模型**: 严禁配置或使用任何需要付费的 OpenRouter 模型
+- **自动验证**: 系统启动时会验证模型配置，检测到付费模型时拒绝启动
+- **规则强制**: 通过 `.cursor/rules/free-model-only.mdc` 强制执行免费模型政策
 
 ## Important Implementation Details
 

@@ -16,7 +16,7 @@ description: 配置文件和参数管理规范
   "openrouter": {
     "enabled": true,
     "key": "",
-    "model": "moonshotai/kimi-k2:free",
+    "model": "deepseek/deepseek-r1-0528:free",
     "base_url": "https://openrouter.ai/api/v1",
     "timeout": 30
   },

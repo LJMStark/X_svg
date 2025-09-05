@@ -27,7 +27,7 @@ description: API集成和客户端管理规范
   "openrouter": {
     "enabled": true,
     "key": "",
-    "model": "moonshotai/kimi-k2:free",
+    "model": "deepseek/deepseek-r1-0528:free",
     "base_url": "https://openrouter.ai/api/v1"
   },
   "gemini": {

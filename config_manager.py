@@ -314,7 +314,7 @@ class ConfigManager:
                 "svg": {
                     "primary": {
                         "provider": "openrouter",
-                        "model": "deepseek/deepseek-chat"
+                        "model": "deepseek/deepseek-r1-0528:free"
                     },
                     "fallback": {
                         "provider": "novita",

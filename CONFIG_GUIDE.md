@@ -61,10 +61,14 @@
     },
     "body": {
       "primary": {
+        "provider": "openrouter",
+        "model": "deepseek/deepseek-r1-0528:free"
+      },
+      "fallback": {
         "provider": "novita",
         "model": "deepseek/deepseek-v3.1"
       },
-      "fallback": {
+      "fallback2": {
         "provider": "moonshot",
         "model": "kimi-k2-0711-preview"
       }
@@ -72,7 +76,7 @@
     "svg": {
       "primary": {
         "provider": "openrouter",
-        "model": "deepseek/deepseek-chat"
+        "model": "deepseek/deepseek-r1-0528:free"
       },
       "fallback": {
         "provider": "novita",

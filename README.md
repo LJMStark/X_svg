@@ -68,11 +68,12 @@ export GEMINI_API_KEY="your_gemini_key"
       "fallback": {"provider": "moonshot", "model": "kimi-k2-0711-preview"}
     },
     "body": {
-      "primary": {"provider": "novita", "model": "deepseek/deepseek-v3.1"},
-      "fallback": {"provider": "moonshot", "model": "kimi-k2-0711-preview"}
+      "primary": {"provider": "openrouter", "model": "deepseek/deepseek-r1-0528:free"},
+      "fallback": {"provider": "novita", "model": "deepseek/deepseek-v3.1"},
+      "fallback2": {"provider": "moonshot", "model": "kimi-k2-0711-preview"}
     },
     "svg": {
-      "primary": {"provider": "openrouter", "model": "deepseek/deepseek-chat"},
+      "primary": {"provider": "openrouter", "model": "deepseek/deepseek-r1-0528:free"},
       "fallback": {"provider": "novita", "model": "deepseek/deepseek-v3.1"},
       "fallback2": {"provider": "siliconflow", "model": "deepseek-ai/DeepSeek-V3.1"},
       "fallback3": {"provider": "moonshot", "model": "kimi-k2-0711-preview"}
@@ -198,11 +199,12 @@ output/
 2. **备用API**: Moonshot + Kimi-K2
 
 #### 正文生成 (body)
-1. **主API**: Novita + DeepSeek-V3.1
-2. **备用API**: Moonshot + Kimi-K2
+1. **主API**: OpenRouter + deepseek-r1-0528:free
+2. **备用API**: Novita + DeepSeek-V3.1
+3. **备用API2**: Moonshot + Kimi-K2
 
 #### SVG生成 (svg)
-1. **主API**: OpenRouter + DeepSeek-Chat
+1. **主API**: OpenRouter + deepseek-r1-0528:free
 2. **备用API**: Novita + DeepSeek-V3.1
 3. **备用API2**: SiliconFlow + DeepSeek-V3.1
 4. **备用API3**: Moonshot + Kimi-K2
@@ -246,7 +248,7 @@ output/
 
 ## 注意事项
 
-1. **API费用**: 大部分模型目前免费，但请注意各API提供商的价格政策变化
+1. **免费模型限制**: OpenRouter API 强制使用免费模型 `deepseek/deepseek-r1-0528:free`，禁止使用付费模型
 2. **处理时间**: 大量数据处理需要较长时间，建议分批处理
 3. **网络稳定**: 确保网络连接稳定，避免API调用中断
 4. **磁盘空间**: 确保有足够磁盘空间存储生成的文件
