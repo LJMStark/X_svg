@@ -1,0 +1,54 @@
+<svg width="440" height="580" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 580">
+  <defs>
+    <style>
+      
+      .bauhaus-red { fill: #E53935; }
+      .bauhaus-yellow { fill: #FFEB3B; }
+      .bauhaus-blue { fill: #2196F3; }
+      .bauhaus-black { fill: #212121; }
+      .bauhaus-white { fill: #FAFAFA; }
+      .bauhaus-gray { fill: #9E9E9E; }
+      .text { font-family: 'Noto Sans SC', sans-serif; font-weight: 400; }
+      .text-bold { font-family: 'Noto Sans SC', sans-serif; font-weight: 700; }
+    </style>
+  </defs>
+  
+  <rect width="440" height="580" fill="#FAFAFA"/>
+  
+  <rect x="20" y="20" width="400" height="540" fill="none" stroke="#212121" stroke-width="2"/>
+  
+  <circle cx="110" cy="80" r="30" class="bauhaus-red"/>
+  <rect x="180" y="50" width="60" height="60" class="bauhaus-blue"/>
+  <polygon points="300,50 270,110 330,110" class="bauhaus-yellow"/>
+  
+  <text x="220" y="160" text-anchor="middle" class="text-bold" font-size="24" fill="#212121">专注力训练法则</text>
+  <text x="220" y="190" text-anchor="middle" class="text" font-size="14" fill="#9E9E9E">FOCUS TRAINING PRINCIPLES</text>
+  
+  <rect x="40" y="220" width="360" height="2" fill="#212121"/>
+  
+  <text x="40" y="250" class="text" font-size="16" fill="#212121">"专注不是天赋，而是需要反复练习的肌肉"</text>
+  
+  <rect x="30" y="270" width="380" height="120" fill="#EEEEEE" stroke="#212121" stroke-width="1"/>
+  
+  <circle cx="50" cy="290" r="8" class="bauhaus-red"/>
+  <text x="70" y="295" class="text" font-size="14" fill="#212121">觉察分心瞬间并立即回归</text>
+  
+  <circle cx="50" cy="320" r="8" class="bauhaus-blue"/>
+  <text x="70" y="325" class="text" font-size="14" fill="#212121">重复练习直至成为第二本能</text>
+  
+  <circle cx="50" cy="350" r="8" class="bauhaus-yellow"/>
+  <text x="70" y="355" class="text" font-size="14" fill="#212121">多数人高估了自己的专注能力</text>
+  
+  <circle cx="50" cy="380" r="8" class="bauhaus-black"/>
+  <text x="70" y="385" class="text" font-size="14" fill="#212121">专注肌肉需要系统性训练</text>
+  
+  <rect x="40" y="420" width="360" height="80" fill="#E3F2FD" stroke="#2196F3" stroke-width="1"/>
+  <text x="60" y="440" class="text-bold" font-size="14" fill="#2196F3">编辑笔记</text>
+  <text x="60" y="465" class="text" font-size="12" fill="#212121">真正的专注需要刻意练习</text>
+  <text x="60" y="485" class="text" font-size="12" fill="#212121">每日设置专注训练时段</text>
+  
+  <text x="40" y="530" class="text-bold" font-size="18" fill="#E53935">2024</text>
+  <text x="380" y="530" class="text" font-size="12" fill="#9E9E9E" text-anchor="end">BAUHAUS DESIGN</text>
+  
+  <rect x="20" y="550" width="400" height="2" fill="#212121"/>
+</svg>

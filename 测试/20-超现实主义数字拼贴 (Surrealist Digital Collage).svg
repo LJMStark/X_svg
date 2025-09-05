@@ -1,0 +1,72 @@
+<svg width="440" height="580" viewBox="0 0 440 580" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <filter id="dreamyGlow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <linearGradient id="sunsetGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF6B6B"/>
+      <stop offset="50%" stop-color="#4ECDC4"/>
+      <stop offset="100%" stop-color="#556270"/>
+    </linearGradient>
+    <pattern id="marbleTexture" patternUnits="userSpaceOnUse" width="100" height="100">
+      <rect width="100" height="100" fill="#2C3E50"/>
+      <path d="M20,20 Q40,5 60,20 T100,20 Q80,40 60,60 T20,60 Q40,80 20,100" fill="rgba(255,255,255,0.1)"/>
+    </pattern>
+    <clipPath id="floatingClip">
+      <circle cx="220" cy="290" r="120"/>
+    </clipPath>
+  </defs>
+
+  <rect width="440" height="580" fill="url(#sunsetGradient)" opacity="0.8"/>
+  <rect x="20" y="20" width="400" height="540" fill="rgba(255,255,255,0.1)" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+  
+  <g filter="url(#dreamyGlow)">
+    <text x="220" y="70" text-anchor="middle" font-family="Noto Serif SC" font-size="24" font-weight="700" fill="#2C3E50">
+      2024
+    </text>
+    
+    <text x="220" y="110" text-anchor="middle" font-family="Noto Serif SC" font-size="32" font-weight="700" fill="#FFF" letter-spacing="2">
+      L'ART DE LA CONCENTRATION
+    </text>
+    
+    <rect x="50" y="140" width="340" height="2" fill="rgba(255,255,255,0.5)"/>
+    
+    <foreignObject x="50" y="160" width="340" height="120">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Noto Serif SC', serif; font-size: 16px; line-height: 1.6; color: #2C3E50; text-align: justify">
+        "专注不是魔法，而是修行。觉察分心，立即收回，反复练习直至成为本能。"
+      </div>
+    </foreignObject>
+    
+    <g transform="translate(80 300)">
+      <circle cx="0" cy="0" r="8" fill="#FF6B6B"/>
+      <text x="20" y="5" font-family="Noto Sans SC" font-size="14" fill="#2C3E50">觉察分心的瞬间</text>
+      
+      <circle cx="0" cy="40" r="8" fill="#4ECDC4"/>
+      <text x="20" y="45" font-family="Noto Sans SC" font-size="14" fill="#2C3E50">立即收回注意力</text>
+      
+      <circle cx="0" cy="80" r="8" fill="#556270"/>
+      <text x="20" y="85" font-family="Noto Sans SC" font-size="14" fill="#2C3E50">重复直至成为本能</text>
+    </g>
+    
+    <rect x="280" y="380" width="120" height="100" fill="rgba(255,255,255,0.2)" stroke="rgba(255,255,255,0.4)" stroke-width="0.5"/>
+    <text x="340" y="400" text-anchor="middle" font-family="Noto Sans SC" font-size="12" font-weight="500" fill="#2C3E50">
+      EDITOR'S NOTE
+    </text>
+    <foreignObject x="290" y="410" width="100" height="60">
+      <div xmlns="http://www.w3.org/1999/xhtml" style="font-family: 'Noto Sans SC', sans-serif; font-size: 10px; line-height: 1.4; color: #2C3E50">
+        专注如同肌肉，需要每日训练才能保持最佳状态
+      </div>
+    </foreignObject>
+  </g>
+  
+  <g clip-path="url(#floatingClip)">
+    <circle cx="150" cy="200" r="30" fill="#FF6B6B" opacity="0.6"/>
+    <rect x="300" cy="250" width="40" height="40" transform="rotate(45 300 250)" fill="#4ECDC4" opacity="0.6"/>
+    <path d="M350 350 Q370 330 390 350 T430 350" stroke="#556270" stroke-width="2" fill="none" opacity="0.6"/>
+  </g>
+  
+  <path d="M100 500 L120 480 L140 500 L160 480 L180 500" stroke="rgba(255,255,255,0.4)" stroke-width="1" fill="none"/>
+  <circle cx="400" cy="500" r="15" fill="none" stroke="rgba(255,255,255,0.4)" stroke-width="1"/>
+  <rect x="380" cy="520" width="10" height="10" transform="rotate(30 380 520)" fill="rgba(255,255,255,0.3)"/>
+</svg>

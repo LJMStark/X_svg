@@ -1,0 +1,148 @@
+<svg width="440" height="580" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 580">
+  <defs>
+    <style>
+      
+      
+      
+      
+      :root {
+        --primary-red: #e63946;
+        --primary-blue: #457b9d;
+        --primary-yellow: #ffb703;
+        --accent-purple: #9b5de5;
+        --bg-color: #f8f9fa;
+        --text-dark: #2b2d42;
+        --brush-stroke: #2b2d42;
+      }
+      
+      .noto-serif { font-family: 'Noto Serif SC', serif; }
+      .noto-sans { font-family: 'Noto Sans SC', sans-serif; }
+      
+      .brush-stroke {
+        stroke: var(--brush-stroke);
+        stroke-width: 2;
+        fill: none;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      
+      .data-dot {
+        fill: var(--primary-red);
+        stroke: var(--text-dark);
+        stroke-width: 1.5;
+      }
+      
+      .splash-effect {
+        fill: var(--primary-blue);
+        opacity: 0.7;
+        filter: url(#blurFilter);
+      }
+    </style>
+    
+    <filter id="blurFilter" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="8" />
+    </filter>
+    
+    <pattern id="brushPattern" patternUnits="userSpaceOnUse" width="40" height="40">
+      <path d="M5,15 C8,12 12,10 18,12 C25,15 30,18 35,22" class="brush-stroke" />
+      <path d="M10,25 C15,20 22,18 28,22" class="brush-stroke" />
+    </pattern>
+  </defs>
+
+  <!-- Background with subtle texture -->
+  <rect width="440" height="580" fill="var(--bg-color)" />
+  <rect width="440" height="580" fill="url(#brushPattern)" opacity="0.1" />
+
+  <!-- Expressive data visualization elements -->
+  <circle cx="120" cy="180" r="45" fill="var(--primary-yellow)" opacity="0.8" class="splash-effect" />
+  <circle cx="320" cy="220" r="35" fill="var(--primary-red)" opacity="0.6" class="splash-effect" />
+  <circle cx="200" cy="320" r="28" fill="var(--accent-purple)" opacity="0.7" class="splash-effect" />
+  
+  <!-- Data points representing focus practice -->
+  <circle cx="100" cy="150" r="6" class="data-dot" />
+  <circle cx="140" cy="190" r="8" class="data-dot" />
+  <circle cx="180" cy="230" r="7" class="data-dot" />
+  <circle cx="220" cy="270" r="9" class="data-dot" />
+  <circle cx="260" cy="310" r="5" class="data-dot" />
+  <circle cx="300" cy="350" r="7" class="data-dot" />
+  <circle cx="340" cy="390" r="6" class="data-dot" />
+
+  <!-- Hand-drawn connecting lines -->
+  <path d="M100,150 C120,170 140,190 160,210" class="brush-stroke" opacity="0.8" />
+  <path d="M160,210 C180,230 200,250 220,270" class="brush-stroke" opacity="0.8" />
+  <path d="M220,270 C240,290 260,310 280,330" class="brush-stroke" opacity="0.8" />
+  <path d="M280,330 C300,350 320,370 340,390" class="brush-stroke" opacity="0.8" />
+
+  <!-- Year display with expressive typography -->
+  <text x="380" y="50" font-family="'Noto Serif SC', serif" font-size="24" font-weight="700" fill="var(--text-dark)" text-anchor="end" transform="rotate(2 380 50)">
+    2024
+  </text>
+
+  <!-- Main title with brush stroke effect -->
+  <g transform="translate(40 100)">
+    <text x="0" y="0" font-family="'Noto Serif SC', serif" font-size="32" font-weight="700" fill="var(--text-dark)">
+      专注力修炼指南
+    </text>
+    <path d="M0,5 H200" class="brush-stroke" opacity="0.9" />
+  </g>
+
+  <!-- Subtitle -->
+  <text x="40" y="140" font-family="'Noto Sans SC', sans-serif" font-size="16" font-weight="500" fill="var(--text-dark)" opacity="0.8">
+    从分心到专注的艺术之旅
+  </text>
+
+  <!-- Quote section with expressive background -->
+  <rect x="30" y="180" width="380" height="120" rx="10" fill="white" opacity="0.9" />
+  <path d="M30,180 Q20,190 30,200 L30,290 Q20,300 30,310 L410,310 Q420,300 410,290 L410,200 Q420,190 410,180 Z" fill="var(--primary-blue)" opacity="0.1" />
+  
+  <text x="50" y="210" font-family="'Noto Serif SC', serif" font-size="14" font-weight="400" fill="var(--text-dark)" width="340">
+    "专注不是天赋，而是需要反复练习的肌肉记忆。每一次意识到分心并立即收回注意力，都是对专注肌肉的一次锻炼。"
+  </text>
+
+  <!-- Key points list with hand-drawn markers -->
+  <g transform="translate(50 320)">
+    <circle cx="-8" cy="8" r="4" fill="var(--primary-red)" />
+    <text x="0" y="12" font-family="'Noto Sans SC', sans-serif" font-size="14" font-weight="400" fill="var(--text-dark)">
+      专注需要刻意练习，而非魔法般获得
+    </text>
+  </g>
+  
+  <g transform="translate(50 350)">
+    <circle cx="-8" cy="8" r="4" fill="var(--primary-blue)" />
+    <text x="0" y="12" font-family="'Noto Sans SC', sans-serif" font-size="14" font-weight="400" fill="var(--text-dark)">
+      觉察分心并立即回归是核心训练方法
+    </text>
+  </g>
+  
+  <g transform="translate(50 380)">
+    <circle cx="-8" cy="8" r="4" fill="var(--primary-yellow)" />
+    <text x="0" y="12" font-family="'Noto Sans SC', sans-serif" font-size="14" font-weight="400" fill="var(--text-dark)">
+      重复练习直到成为第二本能
+    </text>
+  </g>
+  
+  <g transform="translate(50 410)">
+    <circle cx="-8" cy="8" r="4" fill="var(--accent-purple)" />
+    <text x="0" y="12" font-family="'Noto Sans SC', sans-serif" font-size="14" font-weight="400" fill="var(--text-dark)">
+      多数人高估了自己的专注能力
+    </text>
+  </g>
+
+  <!-- Editor's note with expressive border -->
+  <rect x="30" y="450" width="380" height="100" rx="8" fill="white" opacity="0.95" />
+  <path d="M30,450 Q25,455 30,460 L30,540 Q25,545 30,550 L410,550 Q415,545 410,540 L410,460 Q415,455 410,450 Z" fill="var(--primary-yellow)" opacity="0.1" />
+  
+  <text x="50" y="475" font-family="'Noto Serif SC', serif" font-size="16" font-weight="600" fill="var(--text-dark)">
+    ∮ 编辑笔记
+  </text>
+  
+  <text x="50" y="500" font-family="'Noto Sans SC', sans-serif" font-size="12" font-weight="400" fill="var(--text-dark)" width="340">
+    真正的专注力就像肌肉一样，需要持续训练才能变得强大。每天花5分钟进行专注练习，长期坚持会有显著改善。
+  </text>
+
+  <!-- Signature with brush effect -->
+  <path d="M350,530 Q370,535 360,545 Q350,555 340,550" class="brush-stroke" opacity="0.7" />
+  <text x="370" y="545" font-family="'Noto Serif SC', serif" font-size="10" font-weight="400" fill="var(--text-dark)" text-anchor="end" opacity="0.7">
+    Art de Vivre
+  </text>
+</svg>

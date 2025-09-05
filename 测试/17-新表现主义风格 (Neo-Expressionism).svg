@@ -1,0 +1,93 @@
+<svg width="440" height="580" viewBox="0 0 440 580" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      
+      
+      
+      
+      :root {
+        --primary-red: #E63946;
+        --primary-blue: #457B9D;
+        --primary-yellow: #FCAF17;
+        --primary-black: #1D3557;
+        --primary-white: #F1FAEE;
+        --brush-stroke: url(#brushTexture);
+      }
+      
+      .brush-text {
+        font-family: 'Noto Sans SC', sans-serif;
+        font-weight: 700;
+        fill: var(--primary-black);
+        paint-order: stroke;
+        stroke: var(--primary-white);
+        stroke-width: 4;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+      }
+      
+      .handwritten {
+        font-family: 'Noto Sans SC', sans-serif;
+        font-weight: 500;
+        font-style: italic;
+      }
+    </style>
+    
+    <filter id="splashEffect" x="-20%" y="-20%" width="140%" height="140%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="turbulence"/>
+      <feDisplacementMap in2="turbulence" in="SourceGraphic" scale="10" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
+    
+    <pattern id="brushTexture" patternUnits="userSpaceOnUse" width="100" height="100">
+      <path d="M20,30 Q40,15 60,30 T100,30" stroke="#1D3557" stroke-width="3" fill="none" stroke-linecap="round"/>
+      <path d="M10,60 Q30,45 50,60 T90,60" stroke="#457B9D" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path d="M30,80 Q50,65 70,80 T100,80" stroke="#E63946" stroke-width="4" fill="none" stroke-linecap="round"/>
+    </pattern>
+  </defs>
+
+  <rect width="440" height="580" fill="#F1FAEE"/>
+  
+  <g filter="url(#splashEffect)">
+    <circle cx="80" cy="120" r="45" fill="#E63946" opacity="0.8"/>
+    <rect x="300" y="80" width="60" height="60" fill="#457B9D" opacity="0.7" transform="rotate(15 300 80)"/>
+    <polygon points="350,200 390,180 370,240" fill="#FCAF17" opacity="0.9"/>
+  </g>
+
+  <text x="220" y="70" text-anchor="middle" class="brush-text" font-size="36">2024</text>
+  
+  <text x="220" y="150" text-anchor="middle" class="brush-text" font-size="28" letter-spacing="2">专注的艺术</text>
+  <text x="220" y="190" text-anchor="middle" font-family="'Noto Sans SC'" font-size="16" fill="#1D3557" font-style="italic">The Art of Focus</text>
+
+  <g transform="translate(50 240)">
+    <rect x="0" y="0" width="340" height="120" fill="none" stroke="#1D3557" stroke-width="3" stroke-dasharray="8 6" opacity="0.7"/>
+    <text x="170" y="25" text-anchor="middle" font-family="'Noto Sans SC'" font-size="18" fill="#E63946" font-weight="700">「专注引文」</text>
+    <text x="170" y="60" text-anchor="middle" font-family="'Noto Sans SC'" font-size="14" fill="#1D3557" font-style="italic">
+      <tspan x="170" dy="0">专注不是天赋，而是</tspan>
+      <tspan x="170" dy="24">需要反复练习的技艺</tspan>
+    </text>
+  </g>
+
+  <g transform="translate(50 380)">
+    <path d="M30,0 L0,20 L30,40 L60,20 Z" fill="#FCAF17" opacity="0.6"/>
+    <text x="80" y="25" font-family="'Noto Sans SC'" font-size="16" fill="#1D3557" font-weight="500">核心练习要点</text>
+    
+    <g transform="translate(0 40)">
+      <circle cx="15" cy="15" r="4" fill="#E63946"/>
+      <text x="30" y="20" font-family="'Noto Sans SC'" font-size="14" fill="#1D3557">觉察分心瞬间</text>
+      
+      <circle cx="15" cy="45" r="4" fill="#457B9D"/>
+      <text x="30" y="50" font-family="'Noto Sans SC'" font-size="14" fill="#1D3557">立即回归专注</text>
+      
+      <circle cx="15" cy="75" r="4" fill="#FCAF17"/>
+      <text x="30" y="80" font-family="'Noto Sans SC'" font-size="14" fill="#1D3557">重复直至本能</text>
+    </g>
+  </g>
+
+  <g transform="translate(300 500)">
+    <rect x="0" y="0" width="120" height="60" fill="#1D3557" opacity="0.1" rx="5"/>
+    <text x="60" y="20" text-anchor="middle" font-family="'Noto Sans SC'" font-size="12" fill="#E63946" font-weight="700">编辑笔记</text>
+    <text x="60" y="40" text-anchor="middle" font-family="'Noto Sans SC'" font-size="10" fill="#1D3557">肌肉需要持续训练</text>
+  </g>
+
+  <path d="M100,520 Q220,540 340,520" stroke="#457B9D" stroke-width="2" fill="none" stroke-dasharray="5 3"/>
+  <text x="220" y="540" text-anchor="middle" font-family="'Noto Sans SC'" font-size="11" fill="#1D3557" opacity="0.7">VOL.24 • FOCUS EDITION</text>
+</svg>

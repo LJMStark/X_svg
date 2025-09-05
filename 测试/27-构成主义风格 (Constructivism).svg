@@ -1,0 +1,77 @@
+<svg width="440" height="580" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 580">
+  <defs>
+    <style>
+      
+      
+      
+      
+      :root {
+        --red: #e53935;
+        --black: #212121;
+        --white: #fafafa;
+        --gray: #9e9e9e;
+      }
+      
+      .constructivist-text {
+        font-family: 'Noto Sans SC', sans-serif;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      
+      .constructivist-serif {
+        font-family: 'Noto Serif SC', serif;
+        font-weight: 600;
+      }
+    </style>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="440" height="580" fill="var(--white)"/>
+  
+  <!-- Diagonal elements -->
+  <polygon points="0,0 440,0 300,580 0,580" fill="var(--red)" opacity="0.9"/>
+  <line x1="120" y1="0" x2="320" y2="580" stroke="var(--black)" stroke-width="3"/>
+  <line x1="280" y1="0" x2="400" y2="580" stroke="var(--black)" stroke-width="2"/>
+  
+  <!-- Geometric shapes -->
+  <circle cx="380" cy="120" r="40" fill="var(--red)" stroke="var(--black)" stroke-width="2"/>
+  <rect x="20" y="480" width="80" height="80" fill="var(--black)"/>
+  <polygon points="400,480 440,480 440,520 360,520" fill="var(--red)"/>
+  
+  <!-- Year -->
+  <text x="380" y="50" class="constructivist-text" font-size="24" fill="var(--black)" text-anchor="end">2024</text>
+  
+  <!-- Main title -->
+  <text x="40" y="120" class="constructivist-text" font-size="32" fill="var(--black)">专注力训练</text>
+  <text x="40" y="160" class="constructivist-text" font-size="18" fill="var(--red)">FOCUS MASTERY</text>
+  
+  <!-- Quote section -->
+  <rect x="40" y="200" width="360" height="2" fill="var(--black)"/>
+  <text x="40" y="230" class="constructivist-serif" font-size="14" fill="var(--black)" width="360">
+    专注不是天赋，而是需要反复练习的肌肉记忆
+  </text>
+  <rect x="40" y="250" width="360" height="2" fill="var(--black)"/>
+  
+  <!-- Key points -->
+  <g class="constructivist-serif" font-size="12" fill="var(--black)">
+    <text x="60" y="290">• 觉察分心并立即回归</text>
+    <text x="60" y="320">• 反复练习直至成为本能</text>
+    <text x="60" y="350">• 大多数人的专注力未被充分训练</text>
+    <text x="60" y="380">• 自我评估往往高于实际水平</text>
+  </g>
+  
+  <!-- Editor's note -->
+  <rect x="40" y="420" width="360" height="100" fill="var(--black)" opacity="0.1"/>
+  <text x="50" y="440" class="constructivist-text" font-size="10" fill="var(--black)" text-decoration="underline">EDITOR'S NOTE</text>
+  <text x="50" y="460" class="constructivist-serif" font-size="10" fill="var(--black)" width="340">
+    真正的专注需要刻意练习，而非等待灵感的降临
+  </text>
+  <text x="50" y="480" class="constructivist-serif" font-size="10" fill="var(--black)" width="340">
+    每日5分钟的分心觉察训练，持续30天可见显著改善
+  </text>
+  
+  <!-- Industrial elements -->
+  <line x1="40" y1="520" x2="400" y2="520" stroke="var(--black)" stroke-width="2"/>
+  <circle cx="420" cy="540" r="8" fill="var(--red)" stroke="var(--black)" stroke-width="1"/>
+  <circle cx="400" cy="540" r="6" fill="var(--black)"/>
+</svg>

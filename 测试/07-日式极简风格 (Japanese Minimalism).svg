@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="580" viewBox="0 0 440 580">
+  <defs>
+    <style>
+      
+      
+      
+      :root {
+        --primary-black: #1A1A1A;
+        --secondary-grey: #6B6B6B;
+        --accent-grey: #999999;
+        --bg-white: #FFFFFF;
+      }
+      
+      .font-sans { font-family: 'Noto Sans SC', sans-serif; }
+      .font-serif { font-family: 'Noto Serif SC', serif; }
+    </style>
+  </defs>
+  
+  <rect width="100%" height="100%" fill="var(--bg-white)"/>
+  
+  <text x="80" y="60" class="font-sans" font-size="12" fill="var(--secondary-grey)" text-anchor="start">2024</text>
+  
+  <g transform="translate(80 140)">
+    <text class="font-sans" font-size="22" font-weight="300" fill="var(--primary-black)" text-anchor="start">
+      <tspan x="0" dy="0">专注之道</tspan>
+      <tspan x="0" dy="32" font-size="14" fill="var(--secondary-grey)">L'Art de la Concentration</tspan>
+    </text>
+    
+    <line x1="0" y1="75" x2="280" y2="75" stroke="var(--accent-grey)" stroke-width="0.5"/>
+  </g>
+  
+  <g transform="translate(80 240)">
+    <text class="font-serif" font-size="14" line-height="28" fill="var(--primary-black)" text-anchor="start">
+      <tspan x="0" dy="0">专注非天赋，而是修行。</tspan>
+      <tspan x="0" dy="28">察觉分心，即刻回归。</tspan>
+      <tspan x="0" dy="28">日复一日，终成本能。</tspan>
+    </text>
+  </g>
+  
+  <g transform="translate(80 380)">
+    <g transform="translate(0 0)">
+      <circle cx="0" cy="6" r="2" fill="var(--primary-black)"/>
+      <text x="15" y="10" class="font-sans" font-size="12" fill="var(--primary-black)">专注如肌肉，可锻炼</text>
+    </g>
+    <g transform="translate(0 30)">
+      <circle cx="0" cy="6" r="2" fill="var(--primary-black)"/>
+      <text x="15" y="10" class="font-sans" font-size="12" fill="var(--primary-black)">觉察分心即修行开始</text>
+    </g>
+    <g transform="translate(0 60)">
+      <circle cx="0" cy="6" r="2" fill="var(--primary-black)"/>
+      <text x="15" y="10" class="font-sans" font-size="12" fill="var(--primary-black)">多数人高估专注能力</text>
+    </g>
+  </g>
+  
+  <g transform="translate(280 480)">
+    <rect x="-120" y="0" width="100" height="1" fill="var(--accent-grey)"/>
+    <text x="-60" y="20" class="font-sans" font-size="10" fill="var(--secondary-grey)" text-anchor="middle">修行之道 · 专注为本</text>
+  </g>
+  
+  <g transform="translate(360 520)">
+    <circle cx="0" cy="0" r="16" fill="none" stroke="var(--primary-black)" stroke-width="0.5"/>
+    <text x="0" y="6" class="font-sans" font-size="12" fill="var(--primary-black)" text-anchor="middle">禅</text>
+  </g>
+</svg>

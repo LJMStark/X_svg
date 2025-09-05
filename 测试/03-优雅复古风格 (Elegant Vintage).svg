@@ -1,0 +1,65 @@
+<svg width="440" height="580" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .card {
+      font-family: 'Cormorant Garamond', serif;
+      fill: #2D2321;
+    }
+    .vintage-bg {
+      fill: #F8F3E6;
+    }
+    .ornamental-border {
+      fill: none;
+      stroke: #9E6447;
+      stroke-width: 0.5;
+    }
+    .title {
+      font-size: 28px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+    .subtitle {
+      font-size: 16px;
+      font-style: italic;
+      font-weight: 400;
+    }
+    .quote {
+      font-size: 19px;
+      line-height: 1.6;
+      font-style: italic;
+    }
+    .list {
+      font-size: 15px;
+      line-height: 1.8;
+    }
+    .note {
+      font-size: 13px;
+      font-style: italic;
+    }
+    .decorative {
+      font-size: 12px;
+      fill: #7D5D48;
+      letter-spacing: 0.05em;
+    }
+  </style>
+  <rect width="100%" height="100%" class="vintage-bg" rx="4"/>
+  <path class="ornamental-border" d="M20,20 L420,20 L420,560 L20,560 L20,20 Z M25,25 L415,25 L415,555 L25,555 L25,25 Z"/>
+  <rect x="30" y="30" width="380" height="520" fill="none"/>
+  <text x="50" y="60" class="decorative">VOL. XXIII · MMXXIV</text>
+  <text x="225" y="110" class="title" text-anchor="middle">专注的修行</text>
+  <text x="225" y="135" class="subtitle" text-anchor="middle">L'Art de la Concentration</text>
+  <path d="M60,150 Q220,145 380,150" stroke="#9E6447" stroke-width="0.8" fill="none"/>
+  <text x="225" y="200" class="quote" text-anchor="middle">“专注不是天赋，而是<text style="font-weight:600">日复一日的修行</text>”</text>
+  <g class="list">
+    <text x="70" y="250">• 觉察分心，立即抽离</text>
+    <text x="70" y="280">• 反复练习，成为本能</text>
+    <text x="70" y="310">• 训练专注力如锻炼肌肉</text>
+    <text x="70" y="340">• 多数人高估自己的专注度</text>
+  </g>
+  <rect x="50" y="380" width="340" height="100" fill="#F2EAE0" rx="2"/>
+  <text x="60" y="400" class="note">编辑笔记：真正的专注需要</text>
+  <text x="60" y="420" class="note">刻意练习和持续觉察，而非</text>
+  <text x="60" y="440" class="note">一蹴而就。每一次分心都是</text>
+  <text x="60" y="460" class="note">重新专注的机会。</text>
+  <path d="M60,500 Q225,495 390,500" stroke="#9E6447" stroke-width="0.5" fill="none"/>
+  <text x="225" y="540" class="decorative" text-anchor="middle">Savoir-Faire · Élégance · Discipline</text>
+</svg>

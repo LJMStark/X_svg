@@ -1,0 +1,76 @@
+<svg width="440" height="580" viewBox="0 0 440 580" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="vaporGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FF71CE"/>
+      <stop offset="100%" stop-color="#01CDFE"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <pattern id="grid" patternUnits="userSpaceOnUse" width="20" height="20">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.3)" stroke-width="0.5"/>
+    </pattern>
+  </defs>
+
+  <rect width="100%" height="100%" fill="url(#vaporGradient)"/>
+  <rect width="100%" height="100%" fill="url(#grid)"/>
+  
+  <g transform="translate(40, 40)">
+    <text x="0" y="30" font-family="Times New Roman" font-size="24" fill="#fff" filter="url(#glow)">
+      <tspan font-style="italic">FOCUS</tspan>
+      <tspan x="0" dy="30">MAGAZINE</tspan>
+    </text>
+    
+    <text x="0" y="100" font-family="MS Sans Serif" font-size="14" fill="#fff" letter-spacing="1">
+      2024 · 特別号
+    </text>
+    
+    <text x="0" y="160" font-family="Georgia" font-size="32" fill="#fff" font-weight="bold">
+      专注力修炼指南
+    </text>
+    
+    <text x="0" y="200" font-family="Arial" font-size="16" fill="#fff" font-style="italic">
+      The Art of Deep Work
+    </text>
+    
+    <g transform="translate(0, 250)">
+      <rect x="0" y="0" width="360" height="120" fill="rgba(0,0,0,0.3)" rx="5"/>
+      <text x="20" y="30" font-family="Noto Serif SC" font-size="14" fill="#fff" width="320">
+        <tspan x="20" dy="1.2em">「专注不是天赋，而是需要</tspan>
+        <tspan x="20" dy="1.2em">反复练习的技艺。每一次察觉</tspan>
+        <tspan x="20" dy="1.2em">分心并立即回归，都是对专注</tspan>
+        <tspan x="20" dy="1.2em">肌肉的强化训练。」</tspan>
+      </text>
+    </g>
+    
+    <g transform="translate(0, 390)">
+      <text font-family="Arial" font-size="12" fill="#fff" font-weight="bold">
+        <tspan x="0" y="0">✦ 察觉分心瞬间</tspan>
+        <tspan x="0" dy="20">✦ 立即回归任务</tspan>
+        <tspan x="0" dy="20">✦ 重复形成本能</tspan>
+        <tspan x="0" dy="20">✦ 大多数人高估了自己的专注力</tspan>
+      </text>
+    </g>
+    
+    <g transform="translate(300, 500)">
+      <text font-family="Times New Roman" font-size="10" fill="#fff" text-anchor="end">
+        <tspan x="0" y="0">EDITOR'S NOTE</tspan>
+        <tspan x="0" dy="12">专注如肌肉，越练越强</tspan>
+      </text>
+    </g>
+    
+    <g transform="translate(20, 500)">
+      <path d="M0,0 L20,0 L20,20 L0,20 Z" fill="none" stroke="#fff" stroke-width="2"/>
+      <text x="10" y="12" font-family="Arial" font-size="10" fill="#fff" text-anchor="middle">95</text>
+    </g>
+    
+    <g transform="translate(200, 50)">
+      <path d="M0,0 L40,0 L40,60 L0,60 Z" fill="none" stroke="#fff" stroke-width="1"/>
+      <text x="20" y="30" font-family="Arial" font-size="8" fill="#fff" text-anchor="middle">VHS</text>
+    </g>
+  </g>
+</svg>

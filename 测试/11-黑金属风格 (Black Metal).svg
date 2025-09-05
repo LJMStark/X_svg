@@ -1,0 +1,114 @@
+<svg width="440" height="580" viewBox="0 0 440 580" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      
+      
+      
+      
+      :root {
+        --black: #000000;
+        --dark-gray: #1a1a1a;
+        --light-gray: #333333;
+        --accent: #8b0000;
+        --white: #ffffff;
+      }
+      
+      .gothic {
+        font-family: 'Noto Serif SC', serif;
+        font-weight: 700;
+      }
+      
+      .sans {
+        font-family: 'Noto Sans SC', sans-serif;
+      }
+      
+      .rune {
+        font-family: 'Times New Roman', serif;
+      }
+    </style>
+    
+    <pattern id="noise" patternUnits="userSpaceOnUse" width="100" height="100">
+      <rect width="100" height="100" fill="var(--black)"/>
+      <path d="M0,0 L100,100 M100,0 L0,100" stroke="var(--light-gray)" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+    
+    <symbol id="pentagram" viewBox="0 0 100 100">
+      <path d="M50,10 L60,40 L90,40 L65,60 L75,90 L50,70 L25,90 L35,60 L10,40 L40,40 Z" 
+            stroke="var(--accent)" stroke-width="2" fill="none"/>
+    </symbol>
+    
+    <symbol id="rune1" viewBox="0 0 50 100">
+      <path d="M25,10 L25,90 M15,30 L35,30 M15,60 L35,60" 
+            stroke="var(--white)" stroke-width="3"/>
+    </symbol>
+    
+    <symbol id="rune2" viewBox="0 0 50 100">
+      <path d="M25,10 L10,50 L25,90 L40,50 Z" 
+            stroke="var(--accent)" stroke-width="2" fill="none"/>
+    </symbol>
+  </defs>
+  
+  <rect width="440" height="580" fill="var(--black)"/>
+  <rect width="440" height="580" fill="url(#noise)" opacity="0.3"/>
+  
+  <g opacity="0.8">
+    <use href="#pentagram" x="20" y="20" width="40" height="40"/>
+    <use href="#rune1" x="380" y="120" width="30" height="60"/>
+    <use href="#rune2" x="380" y="220" width="30" height="60"/>
+    <use href="#pentagram" x="380" y="520" width="40" height="40" transform="rotate(180 400 540)"/>
+  </g>
+  
+  <text x="220" y="50" text-anchor="middle" class="gothic" fill="var(--white)" font-size="24">
+    MMXXIV
+  </text>
+  
+  <rect x="40" y="80" width="360" height="2" fill="var(--accent)"/>
+  
+  <text x="220" y="120" text-anchor="middle" class="gothic" fill="var(--white)" font-size="32">
+    专注修炼术
+  </text>
+  
+  <text x="220" y="150" text-anchor="middle" class="sans" fill="var(--light-gray)" font-size="16">
+    THE ART OF FOCUS
+  </text>
+  
+  <rect x="40" y="170" width="360" height="1" fill="var(--light-gray)" opacity="0.5"/>
+  
+  <foreignObject x="50" y="190" width="340" height="120">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="sans" style="color: var(--white); font-size: 14px; line-height: 1.6;">
+      "专注非天赋，而是修行。觉察分心，即刻回归，反复练习直至成为本能。"
+    </div>
+  </foreignObject>
+  
+  <rect x="50" y="320" width="340" height="1" fill="var(--accent)" opacity="0.7"/>
+  
+  <g fill="var(--white)" class="sans" font-size="12">
+    <text x="60" y="350">• 专注是可以通过训练获得的技能</text>
+    <text x="60" y="375">• 觉察分心是专注的第一步</text>
+    <text x="60" y="400">• 反复练习才能形成肌肉记忆</text>
+    <text x="60" y="425">• 大多数人都高估了自己的专注力</text>
+  </g>
+  
+  <rect x="40" y="450" width="160" height="100" stroke="var(--accent)" stroke-width="1" fill="none"/>
+  
+  <text x="50" y="470" class="sans" fill="var(--accent)" font-size="10" font-weight="bold">
+    EDITOR'S NOTE
+  </text>
+  
+  <foreignObject x="50" y="480" width="140" height="60">
+    <div xmlns="http://www.w3.org/1999/xhtml" class="sans" style="color: var(--white); font-size: 10px; line-height: 1.4;">
+      真正的专注需要刻意练习，如同肌肉需要重复训练才能强壮。
+    </div>
+  </foreignObject>
+  
+  <g opacity="0.6">
+    <path d="M300,470 L320,490 L300,510" stroke="var(--accent)" stroke-width="1" fill="none"/>
+    <path d="M340,470 L320,490 L340,510" stroke="var(--accent)" stroke-width="1" fill="none"/>
+  </g>
+  
+  <rect x="40" y="560" width="360" height="1" fill="var(--light-gray)" opacity="0.5"/>
+  
+  <text x="400" y="575" text-anchor="end" class="sans" fill="var(--light-gray)" font-size="10">
+    LUX NOCTIS
+  </text>
+</svg>

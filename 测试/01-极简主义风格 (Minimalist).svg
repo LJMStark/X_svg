@@ -1,0 +1,43 @@
+<svg width="440" height="580" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style type="text/css">
+      :root {
+        --primary-dark: #1A1A1A;
+        --secondary-gray: #666666;
+        --accent-gold: #D4AF37;
+        --background: #FFFFFF;
+        --line-width: 0.25px;
+      }
+      .noto-sans { font-family: 'Noto Sans SC', sans-serif; }
+      .noto-serif { font-family: 'Noto Serif SC', serif; }
+    </style>
+  </defs>
+  <!-- Background -->
+  <rect width="440" height="580" fill="var(--background)"/>
+  <!-- Header Section -->
+  <text x="220" y="60" text-anchor="middle" class="noto-sans" font-size="12" fill="var(--secondary-gray)" letter-spacing="1">VOL. 2024</text>
+  <line x1="50" y1="75" x2="390" y2="75" stroke="var(--primary-dark)" stroke-width="var(--line-width)"/>
+  <!-- Main Content -->
+  <text x="220" y="120" text-anchor="middle" class="noto-sans" font-size="24" font-weight="500" fill="var(--primary-dark)">专注的修行</text>
+  <text x="220" y="160" text-anchor="middle" class="noto-sans" font-size="14" font-weight="300" fill="var(--secondary-gray)">L'art de la concentration</text>
+  <!-- Quote Section -->
+  <text x="220" y="240" text-anchor="middle" class="noto-serif" font-size="16" font-weight="400" fill="var(--primary-dark)" style="line-height: 1.6">
+    <tspan x="220" dy="0">专注非天生</tspan>
+    <tspan x="220" dy="28">而是日日修行</tspan>
+    <tspan x="220" dy="28">察觉分心便即刻抽离</tspan>
+    <tspan x="220" dy="28">周而复始直至成为本能</tspan>
+  </text>
+  <!-- Divider -->
+  <line x1="150" y1="340" x2="290" y2="340" stroke="var(--primary-dark)" stroke-width="var(--line-width)"/>
+  <!-- Key Points -->
+  <text x="80" y="380" class="noto-sans" font-size="12" font-weight="400" fill="var(--primary-dark)">• 专注需要刻意练习</text>
+  <text x="80" y="405" class="noto-sans" font-size="12" font-weight="400" fill="var(--primary-dark)">• 察觉分心是第一步</text>
+  <text x="80" y="430" class="noto-sans" font-size="12" font-weight="400" fill="var(--primary-dark)">• 重复训练形成本能</text>
+  <text x="80" y="455" class="noto-sans" font-size="12" font-weight="400" fill="var(--primary-dark)">• 大多数人高估专注力</text>
+  <!-- Editor's Note -->
+  <rect x="50" y="490" width="340" height="60" fill="none" stroke="var(--primary-dark)" stroke-width="var(--line-width)"/>
+  <text x="60" y="510" class="noto-sans" font-size="10" font-weight="300" fill="var(--secondary-gray)">EDITOR'S NOTE</text>
+  <text x="60" y="530" class="noto-sans" font-size="11" font-weight="400" fill="var(--primary-dark)">真正的专注源于日常训练，而非天赋</text>
+  <!-- Bottom Accent -->
+  <line x1="50" y1="570" x2="390" y2="570" stroke="var(--primary-dark)" stroke-width="var(--line-width)"/>
+</svg>

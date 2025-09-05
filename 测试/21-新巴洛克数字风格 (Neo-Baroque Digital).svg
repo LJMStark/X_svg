@@ -1,0 +1,91 @@
+<svg width="440" height="580" viewBox="0 0 440 580" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#FFD700" stop-opacity="0.9"/>
+    </linearGradient>
+    <pattern id="baroquePattern" patternUnits="userSpaceOnUse" width="40" height="40">
+      <path d="M0,20 Q10,0 20,20 T40,20 M20,0 Q30,20 20,40 T0,20" fill="none" stroke="#D4AF37" stroke-width="0.8" opacity="0.3"/>
+    </pattern>
+    <filter id="goldGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="100%" height="100%" fill="#1a1a1a"/>
+  <rect x="10" y="10" width="420" height="560" fill="#0d0d0d" rx="8" ry="8"/>
+  
+  <rect x="15" y="15" width="410" height="550" fill="url(#baroquePattern)" opacity="0.1"/>
+  
+  <path d="M25,25 L415,25 L415,565 L25,565 Z" fill="none" stroke="url(#goldGradient)" stroke-width="2"/>
+  
+  <path d="M30,30 L410,30 L410,560 L30,560 Z" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.5"/>
+  
+  <text x="220" y="60" text-anchor="middle" font-family="Noto Serif SC" font-size="24" fill="#D4AF37" font-weight="700" letter-spacing="1.5">
+    MMXXIV
+  </text>
+  
+  <rect x="40" y="80" width="360" height="2" fill="#D4AF37" opacity="0.6"/>
+  
+  <text x="220" y="120" text-anchor="middle" font-family="Noto Serif SC" font-size="28" fill="#FFFFFF" font-weight="700" letter-spacing="2">
+    L'ART DE LA CONCENTRATION
+  </text>
+  
+  <text x="220" y="150" text-anchor="middle" font-family="Noto Serif SC" font-size="16" fill="#D4AF37" font-style="italic">
+    Maîtrisez votre esprit, maîtrisez votre vie
+  </text>
+  
+  <path d="M50,170 Q220,180 390,170" fill="none" stroke="#D4AF37" stroke-width="1" opacity="0.4"/>
+  
+  <text x="220" y="210" text-anchor="middle" font-family="Noto Serif SC" font-size="18" fill="#FFFFFF" font-weight="600">
+    « La concentration n'est pas magique,
+  </text>
+  <text x="220" y="235" text-anchor="middle" font-family="Noto Serif SC" font-size="18" fill="#FFFFFF" font-weight="600">
+    c'est une discipline qui se cultive »
+  </text>
+  
+  <g transform="translate(60, 270)">
+    <circle cx="10" cy="10" r="6" fill="#D4AF37" opacity="0.8"/>
+    <text x="25" y="15" font-family="Noto Sans SC" font-size="14" fill="#FFFFFF">Noter vos distractions, reprenez le contrôle</text>
+  </g>
+  
+  <g transform="translate(60, 310)">
+    <circle cx="10" cy="10" r="6" fill="#D4AF37" opacity="0.8"/>
+    <text x="25" y="15" font-family="Noto Sans SC" font-size="14" fill="#FFFFFF">Répétez jusqu'à ce que cela devienne naturel</text>
+  </g>
+  
+  <g transform="translate(60, 350)">
+    <circle cx="10" cy="10" r="6" fill="#D4AF37" opacity="0.8"/>
+    <text x="25" y="15" font-family="Noto Sans SC" font-size="14" fill="#FFFFFF">Entraînez votre muscle mental chaque jour</text>
+  </g>
+  
+  <rect x="40" y="400" width="360" height="120" rx="6" ry="6" fill="#1a1a1a" stroke="#D4AF37" stroke-width="1" opacity="0.3"/>
+  
+  <text x="60" y="425" font-family="Noto Serif SC" font-size="16" fill="#D4AF37" font-weight="600">EDITOR'S NOTE</text>
+  
+  <text x="60" y="450" font-family="Noto Sans SC" font-size="13" fill="#FFFFFF" font-weight="300">
+    La véritable maîtrise de la concentration
+  </text>
+  <text x="60" y="470" font-family="Noto Sans SC" font-size="13" fill="#FFFFFF" font-weight="300">
+    réside dans la conscience constante de
+  </text>
+  <text x="60" y="490" font-family="Noto Sans SC" font-size="13" fill="#FFFFFF" font-weight="300">
+    vos états mentaux et la discipline
+  </text>
+  <text x="60" y="510" font-family="Noto Sans SC" font-size="13" fill="#FFFFFF" font-weight="300">
+    de recentrage immédiat.
+  </text>
+  
+  <path d="M40,530 L400,530" stroke="#D4AF37" stroke-width="0.5" opacity="0.4"/>
+  
+  <text x="220" y="550" text-anchor="middle" font-family="Noto Serif SC" font-size="12" fill="#D4AF37" font-style="italic">
+    VOGUE • ELLE • HARPER'S BAZAAR
+  </text>
+  
+  <path d="M30,30 Q50,15 70,30 T110,30 T150,30 T190,30 T230,30 T270,30 T310,30 T350,30 T390,30 T430,30" 
+        fill="none" stroke="#D4AF37" stroke-width="0.8" opacity="0.2"/>
+  
+  <path d="M30,560 Q50,575 70,560 T110,560 T150,560 T190,560 T230,560 T270,560 T310,560 T350,560 T390,560 T430,560" 
+        fill="none" stroke="#D4AF37" stroke-width="0.8" opacity="0.2"/>
+</svg>

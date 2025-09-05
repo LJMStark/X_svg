@@ -1,0 +1,69 @@
+<svg width="440" height="580" viewBox="0 0 440 580" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="metalGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0E0E0"/>
+      <stop offset="50%" stop-color="#F5F5F5"/>
+      <stop offset="100%" stop-color="#E0E0E0"/>
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00B4FF"/>
+      <stop offset="100%" stop-color="#FF00A8"/>
+    </linearGradient>
+    <filter id="materialShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4"/>
+      <feOffset dx="2" dy="2" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.2"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <path id="fluidPath" d="M50,300 C100,250 150,350 200,300 S300,250 350,300" fill="none"/>
+  </defs>
+
+  <rect width="440" height="580" fill="url(#metalGradient)" filter="url(#materialShadow)"/>
+  
+  <text x="220" y="60" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="24" font-weight="700" fill="#2C2C2C">
+    2024
+  </text>
+
+  <g transform="translate(220 180) rotate(-5)">
+    <text text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="32" font-weight="800" fill="#00B4FF">
+      专注力修炼指南
+    </text>
+    <text y="40" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="18" font-weight="300" fill="#666">
+      L'Art de la Concentration
+    </text>
+  </g>
+
+  <text font-family="'Noto Serif SC', serif" font-size="16" font-weight="400" fill="#333" text-anchor="middle" x="220" y="280">
+    "专注不是天赋，而是需要反复练习的技艺"
+  </text>
+
+  <g font-family="'Noto Sans SC', sans-serif" font-size="14" font-weight="400" fill="#444">
+    <text x="50" y="330">• 觉察分心立即回归</text>
+    <text x="50" y="360">• 重复练习形成本能</text>
+    <text x="50" y="390">• 专注肌肉需要训练</text>
+    <text x="50" y="420">• 真实专注远超想象</text>
+  </g>
+
+  <rect x="280" y="460" width="120" height="80" rx="8" fill="rgba(0,180,255,0.1)" stroke="url(#accentGradient)" stroke-width="2"/>
+  <text x="340" y="485" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="12" font-weight="600" fill="#00B4FF">
+    Editor's Note
+  </text>
+  <text x="340" y="505" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="10" font-weight="300" fill="#666">
+    每日专注练习
+  </text>
+  <text x="340" y="525" text-anchor="middle" font-family="'Noto Sans SC', sans-serif" font-size="10" font-weight="300" fill="#666">
+    5分钟×3次
+  </text>
+
+  <path d="M100,500 C150,480 200,520 250,500 S350,480 390,500" stroke="url(#accentGradient)" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+  
+  <circle cx="80" cy="520" r="6" fill="url(#accentGradient)" opacity="0.7"/>
+  <circle cx="180" cy="515" r="4" fill="url(#accentGradient)" opacity="0.5"/>
+  <circle cx="280" cy="520" r="5" fill="url(#accentGradient)" opacity="0.6"/>
+  <circle cx="380" cy="518" r="3" fill="url(#accentGradient)" opacity="0.4"/>
+</svg>

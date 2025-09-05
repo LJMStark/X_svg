@@ -1,0 +1,84 @@
+<svg width="440" height="580" viewBox="0 0 440 580" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    
+    @font-face {
+      font-family: 'PunkFont';
+      src: url('data:font/woff2;base64,d09GMgABAAAAAA7sAA8AAAAAIYQAAA6QAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhYGYACCcAqEUIPLATYCJAOBOAteC4NeAAQgBYNZB4QRDCIFhUYHgYoHkfsHERX8/3t2Z2cWYlGJ1LQkFImk1E1Kk6LtP7Lq+49s9r8zO7Ozu5s9sBdgA1AAkAQFAIQBAAEBAUgABAQEBAUBAQFBKAgICgkKCQsLCgsMDQ0ODg8PDxAQERESEhMTFBQUFRUWFhYXFxgYGRkaGhsbHBwdHR4eHx8gICAgISAhIiIjIyQkJCUlJiYnJygoKCkpKSoqKyssLC0tLi4vLy8wMDAxMTIyMjMzNDQ0NTU2NjY3Nzg4ODk5OTo6Ojs7PDw8PT0+Pj4/Pz9AQEBBQUFCQkJDQ0NERERFRUZGRkdHSEhISUlKSkpLS0xMTE1NTk5PT1BQUFFRUVJSUlNTVFRUVVVVVlZWV1dXWFhYWVlZWlpaW1tbXFxcXV1dXl5eX19fYGBgYWFhYmJiY2NjZGRkZWVlZmZmZ2dnaGhoaWlpampqa2trbGxsbW1tbm5ub29vcHBwcXFxcnJyc3NzdHR0dXV1dnZ2d3d3eHh4eXl5enp6e3t7fHx8fX19fn5+f39/gICAgYGBgoKCg4ODhISEhYWGhoaHh4eIiIiJiYmKioqLi4uMjIyNjY2Ojo6Pj4+QkJCRkZGSkpKTk5OUlJSVlZWWlpaXl5eYmJiZmZmampqbm5ucnJydnZ2enp6fn5+goKChoaGioqKjo6OkpKSlpaWmpqanp6eoqKipqamqqqqrq6usrKytra2urq6vr6+wsLCxsbGysrKzs7O0tLS1tbW2tra3t7e4uLi5ubm6urq7u7u8vLy9vb2+vr6/v7/AwMDBwcHCwsLDw8PExMTFxcXGxsbHx8fIyMjJycnKysrLy8vMzMzNzc3Ozs7Pz8/Q0NDR0dHS0tLT09PU1NTV1dXW1tbX19fY2NjZ2dna2trb29vc3Nzd3d3e3t7f39/g4ODh4eHi4uLj4+Pk5OTl5eXm5ubn5+fo6Ojp6enq6urr6+vs7Ozt7e3u7u7v7+/w8PDx8fHy8vLz8/P09PT19fX29vb39/f4+Pj5+fn6+vr7+/v8/Pz9/f3+/v7///+FJ3t0');
+    }
+    .punk-bg { fill: #000; }
+    .punk-red { fill: #ff003c; }
+    .punk-white { fill: #fff; }
+    .punk-stripe { stroke: #ff003c; stroke-width: 3; }
+    .punk-text { font-family: 'PunkFont', sans-serif; fill: #fff; }
+    .punk-handwriting { font-family: 'PunkFont', sans-serif; fill: #ff003c; }
+    .punk-safety-pin { fill: none; stroke: #ff003c; stroke-width: 2; }
+  </style>
+
+  <!-- Background -->
+  <rect width="440" height="580" fill="#000"/>
+  
+  <!-- Distressed texture -->
+  <path d="M0,0 L440,0 L440,580 L0,580 Z" fill="url(#noise-texture)" opacity="0.1"/>
+  
+  <!-- Red diagonal stripe -->
+  <line x1="0" y1="80" x2="440" y2="200" class="punk-stripe"/>
+  <line x1="0" y1="100" x2="440" y2="220" class="punk-stripe" opacity="0.7"/>
+  
+  <!-- Safety pins -->
+  <path d="M30,50 C25,45 20,48 25,53 C20,58 25,61 30,56" class="punk-safety-pin"/>
+  <path d="M410,520 C405,515 400,518 405,523 C400,528 405,531 410,526" class="punk-safety-pin"/>
+  
+  <!-- Tape effect -->
+  <rect x="50" y="120" width="340" height="30" fill="#ff003c" opacity="0.3"/>
+  <rect x="60" y="450" width="320" height="20" fill="#ff003c" opacity="0.3"/>
+  
+  <!-- Year -->
+  <text x="400" y="40" class="punk-handwriting" font-size="24" text-anchor="end">2024</text>
+  
+  <!-- Main title -->
+  <text x="220" y="100" class="punk-text" font-size="32" text-anchor="middle" font-weight="700">专注力训练手册</text>
+  <text x="220" y="130" class="punk-text" font-size="18" text-anchor="middle" opacity="0.8">HOW TO CULTIVATE REAL FOCUS</text>
+  
+  <!-- Main content with cut-out effect -->
+  <text x="220" y="220" class="punk-text" font-size="16" text-anchor="middle" letter-spacing="1">
+    <tspan x="220" dy="0">专注不是魔法</tspan>
+    <tspan x="220" dy="30">需要反复练习</tspan>
+    <tspan x="220" dy="30">觉察分心立刻回归</tspan>
+    <tspan x="220" dy="30">成为第二本能</tspan>
+  </text>
+  
+  <!-- Quote block with torn edges -->
+  <rect x="40" y="280" width="360" height="100" fill="#222" rx="2"/>
+  <path d="M40,280 L400,280 L400,380 L40,380 Z" fill="none" stroke="#ff003c" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="220" y="310" class="punk-text" font-size="14" text-anchor="middle">
+    <tspan x="220">"大多数人未曾训练</tspan>
+    <tspan x="220" dy="25">专注肌群</tspan>
+    <tspan x="220" dy="25">远未达到自认的专注水平"</tspan>
+  </text>
+  
+  <!-- Key points with X marks -->
+  <g class="punk-text" font-size="12">
+    <text x="50" y="420">✓ 即时觉察分心状态</text>
+    <text x="50" y="440">✓ 立即回归专注目标</text>
+    <text x="50" y="460">✓ 重复练习形成本能</text>
+    <text x="50" y="480">✓ 打破虚假专注幻觉</text>
+  </g>
+  
+  <!-- Editor's note with graffiti effect -->
+  <rect x="280" y="500" width="140" height="60" fill="#222" rx="2"/>
+  <text x="290" y="520" class="punk-handwriting" font-size="10">EDITOR'S NOTE:</text>
+  <text x="290" y="540" class="punk-text" font-size="9">专注力是肌肉，需要</text>
+  <text x="290" y="555" class="punk-text" font-size="9">每日刻意训练</text>
+  
+  <!-- Grunge texture overlay -->
+  <defs>
+    <filter id="noise" x="0%" y="0%" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.02" numOctaves="3" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2"/>
+    </filter>
+    <pattern id="noise-texture" patternUnits="userSpaceOnUse" width="200" height="200">
+      <rect width="200" height="200" fill="#000"/>
+      <rect width="200" height="200" fill="#fff" opacity="0.02" filter="url(#noise)"/>
+    </pattern>
+  </defs>
+</svg>

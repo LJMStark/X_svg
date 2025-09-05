@@ -1,0 +1,48 @@
+<svg width="440" height="580" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 580">
+  <defs>
+    <style>
+      .font-body { font-family: 'Noto Sans SC', sans-serif; }
+      .font-heading { font-family: 'Fira Sans', sans-serif; }
+      .text-blue { fill: #6D9DC5; }
+      .text-pink { fill: #F3D3BD; }
+      .text-grey { fill: #7D8CA3; }
+      .text-dark { fill: #2D3748; }
+      .bg-white { fill: #FFFFFF; }
+      .bg-soft { fill: #F7F9FC; }
+    </style>
+  </defs>
+  <!-- Background -->
+  <rect width="440" height="580" fill="#FFFFFF"/>
+  <!-- Decorative geometric elements -->
+  <circle cx="50" cy="120" r="15" fill="#F3D3BD" opacity="0.4"/>
+  <line x1="380" y1="80" x2="420" y2="120" stroke="#6D9DC5" stroke-width="2"/>
+  <polygon points="400,180 420,160 380,160" fill="#7D8CA3" opacity="0.3"/>
+  <!-- Content Container -->
+  <rect x="40" y="40" width="360" height="500" rx="8" fill="#F7F9FC" stroke="#E2E8F0" stroke-width="1"/>
+  <!-- Date -->
+  <text x="400" y="70" text-anchor="end" class="font-heading text-grey" font-size="12" font-weight="300">2024</text>
+  <!-- Title -->
+  <text x="220" y="110" text-anchor="middle" class="font-heading text-dark" font-size="24" font-weight="500">专注的艺术</text>
+  <text x="220" y="140" text-anchor="middle" class="font-heading text-grey" font-size="16" font-weight="400">Practice Makes Perfect</text>
+  <!-- Quote Section -->
+  <rect x="60" y="180" width="320" height="120" rx="4" class="bg-white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="220" y="210" text-anchor="middle" class="font-heading text-blue" font-size="18" font-weight="500">专注力需要刻意训练</text>
+  <text x="220" y="245" text-anchor="middle" class="font-body text-dark" font-size="14" font-weight="400" style="max-width: 300px;">
+    <tspan x="220" dy="0">专注于非天生能力，而是</tspan>
+    <tspan x="220" dy="24">通过反复练习获得的技艺</tspan>
+  </text>
+  <!-- Key Points -->
+  <text x="70" y="320" class="font-heading text-dark" font-size="14" font-weight="500">核心要点：</text>
+  <g class="font-body text-grey" font-size="12" font-weight="400">
+    <text x="75" y="355">• 察觉分心并立即回归</text>
+    <text x="75" y="380">• 反复练习直至成为本能</text>
+    <text x="75" y="405">• 专注力如肌肉需训练</text>
+    <text x="75" y="430">• 多数人高估自身专注力</text>
+  </g>
+  <!-- Editor Note -->
+  <rect x="60" y="470" width="320" height="50" rx="4" class="bg-white" stroke="#E2E8F0" stroke-width="1"/>
+  <text x="70" y="490" class="font-heading text-dark" font-size="12" font-weight="500">编辑笔记</text>
+  <text x="70" y="510" class="font-body text-grey" font-size="11" font-weight="400">每日专注训练15分钟，创造高效工作状态</text>
+  <!-- Scandinavian decorative line -->
+  <line x1="40" y1="540" x2="400" y2="540" stroke="#6D9DC5" stroke-width="1" stroke-dasharray="4 2"/>
+</svg>

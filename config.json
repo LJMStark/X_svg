@@ -4,31 +4,31 @@
       "enabled": true,
       "key": "",
       "base_url": "https://openrouter.ai/api/v1",
-      "timeout": 30
+      "timeout": 180
     },
     "gemini": {
       "enabled": false,
       "key": "",
       "base_url": "http://xai-studio.top:8000/openai/v1",
-      "timeout": 30
+      "timeout": 180
     },
     "siliconflow": {
       "enabled": true,
       "key": "",
       "base_url": "https://api.siliconflow.cn/v1",
-      "timeout": 30
+      "timeout": 180
     },
     "moonshot": {
       "enabled": true,
       "key": "",
       "base_url": "https://api.moonshot.cn/v1",
-      "timeout": 30
+      "timeout": 180
     },
     "novita": {
       "enabled": true,
       "key": "",
       "base_url": "https://api.novita.ai/openai",
-      "timeout": 30
+      "timeout": 180
     }
   },
   "tasks": {
@@ -55,11 +55,19 @@
     "svg": {
       "primary": {
         "provider": "openrouter",
-        "model": "moonshotai/kimi-k2:free"
+        "model": "deepseek/deepseek-chat"
       },
       "fallback": {
-        "provider": "openrouter",
-        "model": "deepseek/deepseek-chat"
+        "provider": "novita",
+        "model": "deepseek/deepseek-v3.1"
+      },
+      "fallback2": {
+        "provider": "siliconflow",
+        "model": "deepseek-ai/DeepSeek-V3.1"
+      },
+      "fallback3": {
+        "provider": "moonshot",
+        "model": "kimi-k2-0711-preview"
       }
     }
   },

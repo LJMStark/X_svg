@@ -48,6 +48,9 @@ class TweetProcessor:
         self.output_dir = Path(config["files"]["output_dir"])
         self.output_dir.mkdir(exist_ok=True)
         
+        # 进度记录文件
+        self.progress_file = Path("processing_progress.json")
+        
         self.clients: Dict[str, BaseAPIClient] = {} # API客户端缓存
         self.task_config = self.config.get("tasks", {})
         self.api_stats = {} # API使用统计
@@ -109,40 +112,41 @@ class TweetProcessor:
         return client
 
     def _call_api_for_task(self, task_name: str, system_prompt: str, user_content: str, max_retries: int = 3) -> Optional[str]:
-        """为特定任务调用API，带重试和故障转移"""
+        """为特定任务调用API，带重试和多级故障转移"""
         task_info = self.task_config.get(task_name)
         if not task_info:
             logger.error(f"任务 '{task_name}' 未在配置中定义")
             return None
 
-        for attempt in range(max_retries):
-            # 尝试主API
-            primary_info = task_info.get("primary")
-            client = self._get_client(primary_info["provider"], primary_info["model"])
-            if client:
-                response = client.call_api(system_prompt, user_content)
-                if response:
-                    logger.info(f"主API {primary_info['provider']} 为任务 {task_name} 调用成功")
-                    self.api_stats[primary_info['provider']] = self.api_stats.get(primary_info['provider'], 0) + 1
-                    return response
-            
-            logger.warning(f"主API为任务 {task_name} 调用失败 (尝试 {attempt + 1}/{max_retries})")
+        # 获取所有可用的API配置（按优先级排序）
+        api_configs = []
+        if "primary" in task_info:
+            api_configs.append(("主API", task_info["primary"]))
+        if "fallback" in task_info:
+            api_configs.append(("备用API", task_info["fallback"]))
+        if "fallback2" in task_info:
+            api_configs.append(("备用API2", task_info["fallback2"]))
+        if "fallback3" in task_info:
+            api_configs.append(("备用API3", task_info["fallback3"]))
 
-            # 尝试备用API
-            fallback_info = task_info.get("fallback")
-            if fallback_info:
-                client = self._get_client(fallback_info["provider"], fallback_info["model"])
+        for attempt in range(max_retries):
+            # 依次尝试所有配置的API
+            for api_label, api_info in api_configs:
+                client = self._get_client(api_info["provider"], api_info["model"])
                 if client:
                     response = client.call_api(system_prompt, user_content)
                     if response:
-                        logger.info(f"备用API {fallback_info['provider']} 为任务 {task_name} 调用成功")
-                        self.api_stats[fallback_info['provider']] = self.api_stats.get(fallback_info['provider'], 0) + 1
+                        logger.info(f"{api_label} {api_info['provider']} 为任务 {task_name} 调用成功")
+                        self.api_stats[api_info['provider']] = self.api_stats.get(api_info['provider'], 0) + 1
                         return response
-                logger.warning(f"备用API为任务 {task_name} 调用失败 (尝试 {attempt + 1}/{max_retries})")
+                
+                logger.warning(f"{api_label} {api_info['provider']} 为任务 {task_name} 调用失败 (尝试 {attempt + 1}/{max_retries})")
 
-            wait_time = 5 * (attempt + 1)
-            logger.info(f"等待 {wait_time} 秒后重试")
-            time.sleep(wait_time)
+            # 所有API都失败后，等待重试
+            if attempt < max_retries - 1:
+                wait_time = 5 * (attempt + 1)
+                logger.info(f"等待 {wait_time} 秒后重试")
+                time.sleep(wait_time)
         
         logger.error(f"任务 {task_name} 的所有API均调用失败")
         self.api_stats["failed"] = self.api_stats.get("failed", 0) + 1
@@ -181,6 +185,80 @@ class TweetProcessor:
             API使用统计字典
         """
         return self.api_stats.copy()
+
+    def _load_progress(self) -> Dict[str, Any]:
+        """
+        加载处理进度
+        
+        Returns:
+            进度信息字典
+        """
+        try:
+            if self.progress_file.exists():
+                with open(self.progress_file, 'r', encoding='utf-8') as f:
+                    progress = json.load(f)
+                logger.info(f"加载进度记录: 已处理 {progress.get('last_processed_index', -1) + 1} 条记录")
+                return progress
+            else:
+                logger.info("未找到进度记录文件，从头开始处理")
+                return {"last_processed_index": -1, "total_processed": 0, "total_success": 0, "total_failed": 0}
+        except Exception as e:
+            logger.warning(f"加载进度记录失败: {e}，从头开始处理")
+            return {"last_processed_index": -1, "total_processed": 0, "total_success": 0, "total_failed": 0}
+
+    def _save_progress(self, last_index: int, success_count: int, failed_count: int):
+        """
+        保存处理进度
+        
+        Args:
+            last_index: 最后处理的索引
+            success_count: 成功数量
+            failed_count: 失败数量
+        """
+        try:
+            progress = {
+                "last_processed_index": last_index,
+                "total_processed": last_index + 1,
+                "total_success": success_count,
+                "total_failed": failed_count,
+                "last_update": time.strftime("%Y-%m-%d %H:%M:%S")
+            }
+            with open(self.progress_file, 'w', encoding='utf-8') as f:
+                json.dump(progress, f, ensure_ascii=False, indent=2)
+            logger.debug(f"进度已保存: 索引 {last_index}")
+        except Exception as e:
+            logger.error(f"保存进度失败: {e}")
+
+    def get_auto_start_index(self, json_file: str) -> int:
+        """
+        获取自动开始索引（从上次停止的地方继续）
+        
+        Args:
+            json_file: JSON数据文件路径
+            
+        Returns:
+            建议的开始索引
+        """
+        progress = self._load_progress()
+        last_index = progress.get("last_processed_index", -1)
+        
+        # 验证数据文件是否存在且有效
+        try:
+            with open(json_file, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            total_count = len(data)
+            
+            if last_index >= total_count - 1:
+                logger.info("所有记录已处理完成")
+                return total_count
+            else:
+                next_index = last_index + 1
+                logger.info(f"从索引 {next_index} 开始继续处理 (剩余 {total_count - next_index} 条)")
+                return next_index
+                
+        except Exception as e:
+            logger.error(f"验证数据文件失败: {e}")
+            return 0
 
     def _generate_svg(self, full_text: str) -> Optional[str]:
         """
@@ -383,14 +461,15 @@ class TweetProcessor:
             logger.info(f"推文 {index} 处理完成")
         return success
 
-    def process_dataset(self, json_file: str, start_index: int = 0, max_count: Optional[int] = None):
+    def process_dataset(self, json_file: str, start_index: int = None, max_count: Optional[int] = None, auto_continue: bool = True):
         """
         批量处理数据集
 
         Args:
             json_file: JSON数据文件路径
-            start_index: 开始索引
+            start_index: 开始索引，如果为None且auto_continue=True，则自动从上次停止处继续
             max_count: 最大处理数量
+            auto_continue: 是否自动从上次停止的地方继续
         """
         try:
             # 读取数据
@@ -403,6 +482,17 @@ class TweetProcessor:
 
             total_count = len(data)
             logger.info(f"数据集包含 {total_count} 条记录")
+
+            # 确定开始索引
+            if start_index is None and auto_continue:
+                start_index = self.get_auto_start_index(json_file)
+            elif start_index is None:
+                start_index = 0
+
+            # 如果已经处理完所有记录
+            if start_index >= total_count:
+                logger.info("所有记录已处理完成，无需继续处理")
+                return
 
             # 确定处理范围
             end_index = min(start_index + max_count, total_count) if max_count else total_count
@@ -424,15 +514,23 @@ class TweetProcessor:
                     else:
                         failed_count += 1
 
+                    # 每处理一条记录就保存进度
+                    self._save_progress(actual_index, success_count, failed_count)
+
                 except KeyboardInterrupt:
                     logger.info("用户中断处理")
+                    # 保存当前进度
+                    self._save_progress(actual_index, success_count, failed_count)
                     break
                 except Exception as e:
                     logger.error(f"处理推文 {actual_index} 时发生致命错误: {e}", exc_info=True)
                     failed_count += 1
+                    # 即使失败也保存进度
+                    self._save_progress(actual_index, success_count, failed_count)
 
             # 输出统计结果
             logger.info(f"处理完成 - 成功: {success_count}, 失败: {failed_count}")
+            logger.info(f"进度已保存到: {self.progress_file}")
 
         except Exception as e:
             logger.error(f"批量处理失败: {e}", exc_info=True)
@@ -447,9 +545,11 @@ def main():
     parser.add_argument('--input', help='输入JSON文件（覆盖配置文件）')
     parser.add_argument('--svg-prompt', help='SVG提示词文件（覆盖配置文件）')
     parser.add_argument('--xiaohongshu-prompt', help='小红书提示词文件（覆盖配置文件）')
-    parser.add_argument('--start', type=int, default=0, help='开始索引')
+    parser.add_argument('--start', type=int, help='开始索引（不指定则自动从上次停止处继续）')
     parser.add_argument('--count', type=int, help='处理数量限制')
     parser.add_argument('--stats', action='store_true', help='显示API使用统计')
+    parser.add_argument('--no-auto-continue', action='store_true', help='禁用自动继续功能，从头开始处理')
+    parser.add_argument('--reset-progress', action='store_true', help='重置进度记录，从头开始处理')
 
     args = parser.parse_args()
 
@@ -467,10 +567,21 @@ def main():
         
         processor = TweetProcessor(config)
 
+        # 处理重置进度选项
+        if args.reset_progress:
+            if processor.progress_file.exists():
+                processor.progress_file.unlink()
+                logger.info("进度记录已重置")
+
+        # 确定开始索引
+        start_index = args.start
+        auto_continue = not args.no_auto_continue
+
         processor.process_dataset(
             json_file=config["files"]["input_json"],
-            start_index=args.start,
-            max_count=args.count
+            start_index=start_index,
+            max_count=args.count,
+            auto_continue=auto_continue
         )
         
         # 显示统计信息

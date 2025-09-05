@@ -1,0 +1,38 @@
+<svg width="440" height="580" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 440 580">
+  <defs>
+    <style>
+      
+      .text-ultralight { font-family: 'Noto Sans SC', sans-serif; font-weight: 100; }
+      .text-light { font-family: 'Noto Sans SC', sans-serif; font-weight: 300; }
+      .text-regular { font-family: 'Noto Sans SC', sans-serif; font-weight: 400; }
+    </style>
+  </defs>
+  
+  <rect width="440" height="580" fill="#FFFFFF"/>
+  
+  <text x="220" y="60" text-anchor="middle" class="text-light" font-size="10" fill="#333333">2024</text>
+  
+  <line x1="80" y1="70" x2="360" y2="70" stroke="#333333" stroke-width="0.5"/>
+  
+  <text x="220" y="120" text-anchor="middle" class="text-light" font-size="12" fill="#333333">专注的艺术</text>
+  
+  <text x="220" y="280" text-anchor="middle" class="text-light" font-size="9" fill="#333333" letter-spacing="0.5">
+    <tspan x="220" dy="0">专注不是天赋，而是修炼</tspan>
+    <tspan x="220" dy="16">觉察分心，立即回归</tspan>
+    <tspan x="220" dy="16">重复练习，直至成为本能</tspan>
+    <tspan x="220" dy="16">多数人高估了自己的专注力</tspan>
+  </text>
+  
+  <line x1="80" y1="350" x2="360" y2="350" stroke="#333333" stroke-width="0.5"/>
+  
+  <text x="220" y="380" text-anchor="middle" class="text-light" font-size="8" fill="#666666">
+    <tspan x="220" dy="0">「专注是当下的修行」</tspan>
+  </text>
+  
+  <text x="220" y="520" text-anchor="middle" class="text-light" font-size="7" fill="#999999">
+    <tspan x="220" dy="0">编辑笔记：真正的专注需要刻意训练</tspan>
+    <tspan x="220" dy="12">而非依赖天赋或偶然</tspan>
+  </text>
+  
+  <circle cx="220" cy="480" r="1" fill="#333333"/>
+</svg>

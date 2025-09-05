@@ -1,0 +1,65 @@
+<svg width="440" height="580" viewBox="0 0 440 580" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <style>
+      :root {
+        --neon-pink: #ff2d95;
+        --electric-blue: #00f0ff;
+        --vibrant-yellow: #ffed00;
+        --dark-bg: #0a0a14;
+      }
+      text {
+        font-family: 'Noto Sans SC', sans-serif;
+        font-weight: 700;
+        fill: white;
+      }
+    </style>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0a14"/>
+      <stop offset="100%" stop-color="#1a1a2e"/>
+    </linearGradient>
+    <pattern id="geometricPattern" patternUnits="userSpaceOnUse" width="40" height="40">
+      <rect width="40" height="40" fill="var(--dark-bg)"/>
+      <path d="M0,0 L40,40 M40,0 L0,40" stroke="var(--neon-pink)" stroke-width="0.5" opacity="0.3"/>
+    </pattern>
+  </defs>
+  <rect width="100%" height="100%" fill="url(#bgGradient)"/>
+  <rect x="20" y="20" width="400" height="540" fill="url(#geometricPattern)" rx="2"/>
+  <rect x="30" y="80" width="380" height="2" fill="var(--electric-blue)"/>
+  <text x="220" y="50" text-anchor="middle" font-size="24" fill="var(--neon-pink)" opacity="0.8">
+    2024 FOCUS EDITION
+  </text>
+  <text x="30" y="120" font-size="38" font-weight="900" fill="var(--vibrant-yellow)">
+    专注力训练指南
+  </text>
+  <text x="410" y="150" font-size="32" text-anchor="end" font-weight="800" fill="var(--neon-pink)" opacity="0.7">
+    THE ART OF
+  </text>
+  <text x="410" y="190" font-size="32" text-anchor="end" font-weight="800" fill="var(--electric-blue)">
+    FOCUS
+  </text>
+  <text x="30" y="250" font-size="16" font-weight="400" fill="white" opacity="0.9">
+    "专注不是天赋，而是需要反复练习的技艺"
+  </text>
+  <g font-size="14" font-weight="500" fill="white" opacity="0.8">
+    <text x="30" y="300">• 觉察分心并立即回归</text>
+    <text x="30" y="330">• 反复练习形成本能</text>
+    <text x="30" y="360">• 训练专注力肌肉记忆</text>
+    <text x="30" y="390">• 多数人高估自身专注力</text>
+  </g>
+  <rect x="280" y="450" width="120" height="80" fill="none" stroke="var(--electric-blue)" stroke-width="2" rx="3"/>
+  <text x="340" y="480" text-anchor="middle" font-size="12" fill="var(--electric-blue)" font-weight="600">
+    编辑笔记
+  </text>
+  <text x="340" y="505" text-anchor="middle" font-size="10" fill="white" opacity="0.7">
+    每日15分钟
+  </text>
+  <text x="340" y="525" text-anchor="middle" font-size="10" fill="white" opacity="0.7">
+    专注训练
+  </text>
+  <rect x="30" y="520" width="200" height="2" fill="var(--neon-pink)" opacity="0.5"/>
+  <text x="30" y="540" font-size="10" fill="white" opacity="0.6">
+    FOCUS MASTERY • MENTAL DISCIPLINE • 2024
+  </text>
+  <circle cx="380" y="530" r="8" fill="none" stroke="var(--vibrant-yellow)" stroke-width="1.5"/>
+  <path d="M375 525 L385 535 M385 525 L375 535" stroke="var(--vibrant-yellow)" stroke-width="1.5"/>
+</svg>
