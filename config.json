@@ -44,10 +44,14 @@
     },
     "body": {
       "primary": {
+        "provider": "openrouter",
+        "model": "anthropic/claude-3.5-sonnet"
+      },
+      "fallback": {
         "provider": "novita",
         "model": "deepseek/deepseek-v3.1"
       },
-      "fallback": {
+      "fallback2": {
         "provider": "moonshot",
         "model": "kimi-k2-0711-preview"
       }

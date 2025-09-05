@@ -317,7 +317,36 @@ class TweetProcessor:
             system_prompt=self.title_prompt,
             user_content=full_text
         )
-        return title.strip() if title else None
+        
+        if not title:
+            return None
+            
+        # 处理API返回的多个标题，提取第一个有效标题
+        title = title.strip()
+        
+        # 如果返回的内容包含多个标题（以"标题："开头），则提取第一个
+        if "标题：" in title:
+            # 分割内容并找到所有有效的标题行
+            lines = title.split('\n')
+            for line in lines:
+                line = line.strip()
+                if line.startswith("标题："):
+                    # 提取标题内容（去掉"标题："前缀）
+                    extracted_title = line[3:].strip()
+                    if extracted_title:
+                        logger.info(f"提取标题: {extracted_title}")
+                        return extracted_title
+        
+        # 如果没有找到"标题："格式，但内容很长，尝试按行分割并返回第一行
+        if len(title) > 50:
+            lines = title.split('\n')
+            first_line = lines[0].strip()
+            if first_line:
+                logger.info(f"使用第一行作为标题: {first_line}")
+                return first_line
+        
+        # 如果都不符合，直接返回原始内容
+        return title
 
     def _generate_body(self, full_text: str, title: str) -> Optional[str]:
         """生成小红书正文"""
