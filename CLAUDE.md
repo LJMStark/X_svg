@@ -22,8 +22,9 @@ The tool processes tweets from a sorted JSON dataset and generates organized out
 
 ### Main Components
 
-- **`process_tweets.py`** - Simple processor with basic functionality
 - **`batch_process_tweets.py`** - Advanced processor with class-based architecture, CLI arguments, and enhanced error handling
+- **`batch_generate_svg.py`** - Specialized SVG generation script with style parsing
+- **`run_example.py`** - User-friendly example script with automatic configuration
 - **`TweetProcessor` class** - Main processing logic with multi-provider API support and progress tracking
 - **`api_client.py`** - Unified API client module with provider abstraction and fallback mechanisms
 - **Configuration Files** - `config.json` and `.env` support for flexible multi-provider configuration
@@ -41,7 +42,7 @@ The system supports 5 API providers with task-specific model assignment:
 **Task-to-Provider Mapping**:
 - **Title Generation**: SiliconFlow (DeepSeek-V3.1) → Moonshot (kimi-k2-0711-preview)
 - **Body Generation**: Novita.ai (DeepSeek-V3.1) → Moonshot (kimi-k2-0711-preview)  
-- **SVG Generation**: Novita.ai (DeepSeek-V3.1) → SiliconFlow (DeepSeek-V3.1) → OpenRouter (DeepSeek-Chat) → Moonshot (kimi-k2-0711-preview)
+- **SVG Generation**: OpenRouter (DeepSeek-Chat) → Novita.ai (DeepSeek-V3.1) → SiliconFlow (DeepSeek-V3.1) → Moonshot (kimi-k2-0711-preview)
 
 **Provider Endpoints**:
 - OpenRouter: `https://openrouter.ai/api/v1`
@@ -104,11 +105,13 @@ python -c "import json; print(json.load(open('config.json')))"
 
 The project expects these files in the working directory:
 - `twillot-public-post-sorted.json` - Tweet dataset (1667 records)
-- `svg提示词.txt` - SVG generation system prompt (29 design styles)
+- `svg提示词.txt` - SVG generation system prompt (17 design styles)
 - `小红书文案提示词.txt` - Xiaohongshu copywriting system prompt
-- `小红书标题提示词.txt` - Title generation system prompt
+- `小红书标题提示词.txt` - Title generation system prompt (浪浪GPT风格)
 - `config.json` - Multi-provider configuration file
 - `.env` - Environment variables for API keys
+- `svg测试提示词.txt` - Test SVG generation with 29 design styles
+- `测试/` - Directory containing test SVG files
 
 ### Required Environment Variables
 - `OPENROUTER_API_KEY` - OpenRouter API key
@@ -168,10 +171,12 @@ Multi-provider API configuration with automatic failover:
 - **File conflict resolution**: Automatic numeric suffixes for duplicates
 
 ### Content Generation
-- **SVG Design**: 29 magazine-style templates (minimalist, luxury, tech, etc.)
+- **SVG Design**: 17 magazine-style templates (minimalist, luxury, tech, etc.)
+- **Separate Title Generation**: Dedicated title generation using 浪浪GPT style prompts
 - **Content parsing**: Extracts titles and body from API responses
 - **File sanitization**: Handles invalid filename characters
 - **Font fallback**: Replaces Google Fonts with system fonts for compatibility
+- **XML Validation**: Automatic SVG XML validation and error fixing
 
 ## Error Handling & Logging
 
@@ -199,12 +204,15 @@ Multi-provider API configuration with automatic failover:
 - **Font processing**: Strips @import statements, replaces with system fonts
 - **Compatibility optimization**: Ensures cross-browser SVG compatibility
 - **Chinese text enhancement**: Improved handling of Chinese characters and typography
+- **XML validation**: Automatic detection and fixing of XML syntax errors
+- **Style parsing**: Support for 29 different design styles in test mode
 
 ### Content Generation Pipeline
-- **Separate title generation**: Dedicated provider for optimal title creation
+- **Separate title generation**: Dedicated provider for optimal title creation using 浪浪GPT style
 - **Body content optimization**: Provider-specific handling for body content
 - **Content filtering**: Removes section headers and formatting artifacts
 - **Emoji/hashtag preservation**: Maintains social media formatting elements
+- **Context-aware generation**: Body generation uses title as context for better coherence
 
 ### File Management System
 - **Conflict resolution**: Automatic numeric suffixes for duplicate filenames
@@ -235,6 +243,15 @@ Multi-provider API configuration with automatic failover:
 3. **Task-Specific Routing**: Different providers optimized for different content types
 4. **Enhanced Error Handling**: Multi-level fallback and retry mechanisms
 5. **Provider Health Monitoring**: Success rate tracking and automatic failover
+6. **OpenRouter Integration**: Added OpenRouter as primary SVG generation provider
+7. **Style System Refinement**: Reduced from 29 to 17 core design styles
+
+### Recent Updates (2025-09-05)
+- **API Priority Reordering**: OpenRouter now primary for SVG generation
+- **Title Generation Enhancement**: Implemented 浪浪GPT style title generation
+- **SVG Quality Control**: Added XML validation and error fixing
+- **Test Suite Expansion**: Added comprehensive SVG test files
+- **Documentation Updates**: Complete technical documentation refresh
 
 ### Benefits of Multi-Provider Architecture
 - **Reliability**: No single point of failure
@@ -242,3 +259,4 @@ Multi-provider API configuration with automatic failover:
 - **Performance**: Provider-specific optimization for different content types
 - **Scalability**: Easy to add new providers without code changes
 - **Resilience**: Automatic failover ensures continuous operation
+- **Quality Assurance**: Multiple providers for content validation

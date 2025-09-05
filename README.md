@@ -4,13 +4,14 @@
 
 ## 功能特性
 
-- 🎨 **SVG图像生成**: 使用DeepSeek模型根据推文内容生成高级杂志风格SVG图像
-- 📝 **小红书文案生成**: 使用DeepSeek模型生成小红书风格的标题和正文
+- 🎨 **SVG图像生成**: 使用多AI模型根据推文内容生成高级杂志风格SVG图像
+- 📝 **小红书文案生成**: 分离式标题和正文生成，使用专门的小红书风格提示词
 - 📁 **自动文件组织**: 为每条记录创建独立文件夹，包含所有生成的内容
 - 🔄 **断点续传**: 支持跳过已处理的记录，可随时中断和恢复
-- 🛡️ **错误处理**: 完善的重试机制和错误日志
+- 🛡️ **多API故障转移**: 支持5个API提供商，4级故障转移机制
 - 📊 **进度显示**: 实时显示处理进度和统计信息
-- ⚡ **智能速度限制**: 自动处理OpenRouter API的速度限制，避免429错误
+- ⚡ **智能速度限制**: 自动处理各API的速度限制，避免429错误
+- 🎯 **质量控制**: SVG内容验证、XML修复、字体替换等
 
 ## 安装依赖
 
@@ -20,27 +21,50 @@ pip install -r requirements.txt
 
 ## 配置说明
 
-### 1. 获取OpenRouter API密钥
+### 1. 多API提供商支持
 
-1. 访问 [OpenRouter.ai](https://openrouter.ai/keys) 注册账号
-2. 获取API密钥
-3. 设置环境变量（推荐）：
+系统支持5个API提供商，每个任务可配置独立的API调用顺序：
+
+- **OpenRouter**: 主API，支持多种模型
+- **Novita**: 备用API，DeepSeek模型
+- **SiliconFlow**: 备用API，DeepSeek模型
+- **Moonshot**: 备用API，Kimi模型
+- **Gemini**: 备用API，通过代理服务
+
+### 2. 环境变量配置
 
 ```bash
-export OPENROUTER_API_KEY="your_api_key_here"
+# 设置API密钥（推荐）
+export OPENROUTER_API_KEY="your_openrouter_key"
+export NOVITA_API_KEY="your_novita_key"
+export SILICONFLOW_API_KEY="your_siliconflow_key"
+export MOONSHOT_API_KEY="your_moonshot_key"
+export GEMINI_API_KEY="your_gemini_key"
 ```
 
-或者使用配置文件：
+### 3. 配置文件
 
-1. 复制 `config.example.json` 为 `config.json`
-2. 在 `config.json` 中填入您的API密钥
+系统使用 `config.json` 进行配置管理：
 
-### 2. 环境变量配置（可选）
-
-```bash
-# 复制环境变量示例文件
-cp .env.example .env
-# 编辑 .env 文件，填入您的API密钥
+```json
+{
+  "tasks": {
+    "title": {
+      "primary": {"provider": "siliconflow", "model": "deepseek-ai/DeepSeek-V3.1"},
+      "fallback": {"provider": "moonshot", "model": "kimi-k2-0711-preview"}
+    },
+    "body": {
+      "primary": {"provider": "novita", "model": "deepseek/deepseek-v3.1"},
+      "fallback": {"provider": "moonshot", "model": "kimi-k2-0711-preview"}
+    },
+    "svg": {
+      "primary": {"provider": "openrouter", "model": "deepseek/deepseek-chat"},
+      "fallback": {"provider": "novita", "model": "deepseek/deepseek-v3.1"},
+      "fallback2": {"provider": "siliconflow", "model": "deepseek-ai/DeepSeek-V3.1"},
+      "fallback3": {"provider": "moonshot", "model": "kimi-k2-0711-preview"}
+    }
+  }
+}
 ```
 
 ## 文件准备
@@ -49,62 +73,66 @@ cp .env.example .env
 
 1. `twillot-public-post-sorted.json` - 已排序的推文数据集
 2. `svg提示词.txt` - SVG生成的系统提示词
-3. `小红书文案提示词.txt` - 小红书文案生成的系统提示词
+3. `小红书标题提示词.txt` - 小红书标题生成的系统提示词
+4. `小红书文案提示词.txt` - 小红书正文生成的系统提示词
+5. `config.json` - 系统配置文件
+6. `.env` - 环境变量文件（可选）
 
 ## 使用方法
 
-### 方法1: 命令行使用
-
-```bash
-# 基本使用（处理前5条记录）
-python batch_process_tweets.py --api-key "your_openrouter_api_key_here" --count 5
-
-# 处理所有记录
-python batch_process_tweets.py --api-key "your_openrouter_api_key_here"
-
-# 从第10条开始处理20条记录
-python batch_process_tweets.py --api-key "your_openrouter_api_key_here" --start 10 --count 20
-
-# 指定自定义文件路径
-python batch_process_tweets.py \
-    --api-key "your_openrouter_api_key_here" \
-    --input "custom_data.json" \
-    --svg-prompt "custom_svg_prompt.txt" \
-    --xiaohongshu-prompt "custom_xhs_prompt.txt"
-```
-
-### 方法2: 使用环境变量
+### 方法1: 使用示例脚本（推荐）
 
 ```bash
 # 设置环境变量
 export OPENROUTER_API_KEY="your_api_key_here"
 
-# 运行程序（会自动读取环境变量）
-python batch_process_tweets.py --count 5
-```
-
-### 方法3: 使用示例脚本
-
-1. 设置环境变量：
-
-```bash
-export OPENROUTER_API_KEY="your_api_key_here"
-```
-
-2. 运行脚本：
-
-```bash
+# 运行示例脚本（自动从上次停止处继续）
 python run_example.py
+```
+
+### 方法2: 命令行使用
+
+```bash
+# 基本使用（处理前5条记录）
+python batch_process_tweets.py --count 5
+
+# 处理所有记录
+python batch_process_tweets.py
+
+# 从第10条开始处理20条记录
+python batch_process_tweets.py --start 10 --count 20
+
+# 重置进度，从头开始
+python batch_process_tweets.py --reset-progress
+
+# 显示API使用统计
+python batch_process_tweets.py --stats
+
+# 指定自定义文件路径
+python batch_process_tweets.py \
+    --input "custom_data.json" \
+    --svg-prompt "custom_svg_prompt.txt" \
+    --xiaohongshu-prompt "custom_xhs_prompt.txt"
+```
+
+### 方法3: 批量SVG生成
+
+```bash
+# 使用专门的SVG生成脚本
+python batch_generate_svg.py
 ```
 
 ### 命令行参数说明
 
-- `--api-key`: OpenRouter API密钥（必需，或者设置环境变量）
+- `--config`: 配置文件路径（默认: config.json）
 - `--input`: 输入JSON文件路径（默认: twillot-public-post-sorted.json）
 - `--svg-prompt`: SVG提示词文件路径（默认: svg提示词.txt）
 - `--xiaohongshu-prompt`: 小红书提示词文件路径（默认: 小红书文案提示词.txt）
-- `--start`: 开始处理的索引（默认: 0）
+- `--start`: 开始处理的索引（默认: 自动从上次停止处继续）
 - `--count`: 处理数量限制（默认: 处理所有）
+- `--stats`: 显示API使用统计
+- `--reset-progress`: 重置进度记录，从头开始处理
+- `--no-auto-continue`: 禁用自动继续功能
 
 ## 输出结构
 
@@ -125,62 +153,70 @@ output/
 
 ## API配置
 
-脚本使用OpenRouter API，配置如下：
+### 多API故障转移机制
 
-```python
-client = openai.OpenAI(
-    api_key="your_api_key_here",  # 从 https://openrouter.ai/keys 获取
-    base_url="https://openrouter.ai/api/v1",
-    default_headers={
-        "HTTP-Referer": "https://github.com",
-        "X-Title": "TweetProcessor"
-    }
-)
-```
+系统支持5个API提供商，每个任务都有独立的故障转移配置：
 
-### 使用的模型
+#### 标题生成 (title)
+1. **主API**: SiliconFlow + DeepSeek-V3.1
+2. **备用API**: Moonshot + Kimi-K2
 
-- **SVG生成**: moonshotai/kimi-k2:free
-- **小红书文案生成**: moonshotai/kimi-k2:free
+#### 正文生成 (body)
+1. **主API**: Novita + DeepSeek-V3.1
+2. **备用API**: Moonshot + Kimi-K2
 
-### API限制
+#### SVG生成 (svg)
+1. **主API**: OpenRouter + DeepSeek-Chat
+2. **备用API**: Novita + DeepSeek-V3.1
+3. **备用API2**: SiliconFlow + DeepSeek-V3.1
+4. **备用API3**: Moonshot + Kimi-K2
 
-- **免费模型限制**: 每分钟16次请求
+### API限制和速度控制
+
+- **OpenRouter**: 4秒间隔限制
+- **Gemini**: 2秒间隔限制
+- **其他API**: 根据提供商限制自动调整
+- **重试机制**: 最多3次重试，429错误递增延迟
 - **自动处理**: 程序会自动处理速度限制，避免429错误
-- **建议间隔**: 4秒每次请求（程序自动控制）
 
 ## 性能优化
 
-- **智能速度限制**: 默认4秒间隔，自动处理OpenRouter API限制
-- **重试机制**: 失败时自动重试3次，429错误会延长等待时间
-- **断点续传**: 自动跳过已处理的记录
+- **多API故障转移**: 5个API提供商，4级故障转移机制
+- **智能速度限制**: 根据API提供商自动调整间隔时间
+- **重试机制**: 失败时自动重试3次，429错误递增延迟
+- **断点续传**: 自动跳过已处理的记录，支持中断恢复
 - **内存优化**: 逐条处理，不会占用大量内存
 - **错误恢复**: 网络错误自动重试，保证处理稳定性
+- **进度跟踪**: 实时保存处理进度，支持统计信息
 
 ## 错误处理
 
-- 所有操作都有完善的异常处理
-- 详细的日志记录（同时输出到控制台和 `batch_process.log` 文件）
-- API调用失败时自动重试
-- 文件名冲突自动处理（添加数字后缀）
+- **多级异常处理**: 所有操作都有完善的异常处理
+- **详细日志记录**: 同时输出到控制台和 `batch_process.log` 文件
+- **API故障转移**: 主API失败时自动切换到备用API
+- **重试机制**: API调用失败时自动重试，429错误特殊处理
+- **文件冲突处理**: 文件名冲突自动处理（添加数字后缀）
+- **进度保护**: 即使出现错误也会保存处理进度
 
 ## 注意事项
 
-1. **API费用**: DeepSeek模型目前免费，但请注意OpenRouter的价格政策变化
-2. **处理时间**: 大量数据处理需要较长时间（每条约4秒），建议分批处理
+1. **API费用**: 大部分模型目前免费，但请注意各API提供商的价格政策变化
+2. **处理时间**: 大量数据处理需要较长时间，建议分批处理
 3. **网络稳定**: 确保网络连接稳定，避免API调用中断
 4. **磁盘空间**: 确保有足够磁盘空间存储生成的文件
 5. **速度限制**: 程序会自动处理API速度限制，请耐心等待
+6. **多API配置**: 建议配置多个API密钥以提高系统可用性
 
 ## 故障排除
 
 ### 常见问题
 
-1. **API密钥错误**: 检查OpenRouter密钥是否正确
+1. **API密钥错误**: 检查各API提供商的密钥是否正确配置
 2. **文件不存在**: 确保所有必需文件都在正确位置
 3. **速度限制429错误**: 程序会自动处理，如果频繁出现请检查网络连接
-4. **网络超时**: 检查网络连接，可能需要重试
+4. **网络超时**: 检查网络连接，系统会自动重试和故障转移
 5. **磁盘空间不足**: 清理磁盘空间或更改输出目录
+6. **API故障转移**: 如果主API失败，系统会自动切换到备用API
 
 ### 日志查看
 
@@ -191,10 +227,45 @@ client = openai.OpenAI(
 处理成功后，您会看到类似以下的输出：
 
 ```
-2024-01-01 12:00:00 - INFO - 读取数据文件: twillot-public-post-sorted.json
-2024-01-01 12:00:01 - INFO - 数据集包含 1667 条记录
-2024-01-01 12:00:01 - INFO - 开始处理记录 0 到 4 (共 5 条)
-处理推文: 100%|██████████| 5/5 [00:20<00:00,  4.12s/it]
-2024-01-01 12:00:21 - INFO - 处理完成 - 成功: 5, 失败: 0
+API配置:
+✅ OpenRouter API已配置
+✅ Gemini API已配置
+开始批量处理推文数据集...
+支持多API故障转移:
+- 主API: OpenRouter (moonshotai/kimi-k2:free)
+- 备用API: Gemini (gemini-2.5-pro)
+- 自动切换: 当主API失败时自动使用备用API
+2025-09-05 10:37:58,660 - INFO - 读取数据文件: twillot-public-post-sorted.json
+2025-09-05 10:37:58,677 - INFO - 数据集包含 1667 条记录
+2025-09-05 10:37:58,677 - INFO - 开始处理记录 0 到 0 (共 1 条)
+处理推文: 100%|█████████████████████████████████████████████████████████| 1/1 [00:22<00:00, 22.31s/it]
+2025-09-05 10:38:20,998 - INFO - 处理完成 - 成功: 1, 失败: 0
+2025-09-05 10:38:20,999 - INFO - 进度已保存到: processing_progress.json
+
+API使用统计:
+  siliconflow: 1 次
+  novita: 1 次
+  openrouter: 1 次
+
+处理完成！请查看output文件夹中的结果。
 ```
-# X_svg
+
+## 项目结构
+
+```
+X_svg/
+├── batch_process_tweets.py      # 主处理脚本
+├── batch_generate_svg.py        # SVG批量生成脚本
+├── run_example.py              # 示例运行脚本
+├── api_client.py               # API客户端模块
+├── config.json                 # 配置文件
+├── requirements.txt            # 依赖包
+├── .env                        # 环境变量
+├── svg提示词.txt               # SVG生成提示词
+├── 小红书标题提示词.txt         # 标题生成提示词
+├── 小红书文案提示词.txt         # 正文生成提示词
+├── twillot-public-post-sorted.json  # 推文数据
+├── output/                     # 输出目录
+├── 测试/                       # 测试SVG文件
+└── README.md                   # 项目文档
+```
