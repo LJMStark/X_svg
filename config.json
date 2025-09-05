@@ -92,8 +92,8 @@
   "batch": {
     "batch_size": 5,
     "progress_save_interval": 5,
-    "api_call_buffer_time": 0.1,
-    "batch_rest_time": 0.5,
+    "api_call_buffer_time": 0.05,
+    "batch_rest_time": 0.2,
     "enable_batching": true,
     "fast_mode": true
   }

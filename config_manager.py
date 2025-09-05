@@ -62,10 +62,10 @@ class BatchConfig:
     """批处理配置"""
     batch_size: int = 5  # 小批量大小
     progress_save_interval: int = 5  # 每处理N个批次保存一次进度
-    api_call_buffer_time: float = 0.1  # API调用缓冲时间（秒）
-    batch_rest_time: float = 0.5  # 批次间休息时间（秒）
+    api_call_buffer_time: float = 0.05  # API调用缓冲时间（秒）
+    batch_rest_time: float = 0.2  # 批次间休息时间（秒）
     enable_batching: bool = True  # 启用批处理模式
-    fast_mode: bool = False  # 快速模式（更少等待）
+    fast_mode: bool = True  # 快速模式（更少等待）
 
 class ConfigValidator:
     """配置验证器"""
@@ -351,9 +351,10 @@ class ConfigManager:
             "batch": {
                 "batch_size": 5,
                 "progress_save_interval": 5,
-                "api_call_buffer_time": 0.2,
-                "batch_rest_time": 1.0,
-                "enable_batching": True
+                "api_call_buffer_time": 0.05,
+                "batch_rest_time": 0.2,
+                "enable_batching": True,
+                "fast_mode": True
             }
         }
     

@@ -616,6 +616,7 @@ def main():
     parser.add_argument('--batch-size', type=int, help='批处理大小（覆盖配置文件）')
     parser.add_argument('--no-batching', action='store_true', help='禁用批处理模式，使用逐条处理')
     parser.add_argument('--progress-interval', type=int, help='进度保存间隔（批次数）')
+    parser.add_argument('--slow-mode', action='store_true', help='启用慢速模式，增加API调用间隔')
 
     args = parser.parse_args()
 
@@ -646,6 +647,15 @@ def main():
             if "batch" not in config_manager.config:
                 config_manager.config["batch"] = {}
             config_manager.config["batch"]["progress_save_interval"] = args.progress_interval
+        
+        # 慢速模式配置
+        if args.slow_mode:
+            if "batch" not in config_manager.config:
+                config_manager.config["batch"] = {}
+            config_manager.config["batch"]["fast_mode"] = False
+            config_manager.config["batch"]["api_call_buffer_time"] = 0.2
+            config_manager.config["batch"]["batch_rest_time"] = 1.0
+            logger.info("已启用慢速模式，增加API调用间隔")
         
         processor = TweetProcessor(args.config)
 

@@ -81,8 +81,8 @@ export GEMINI_API_KEY="your_gemini_key"
   "batch": {
     "batch_size": 5,
     "progress_save_interval": 5,
-    "api_call_buffer_time": 0.1,
-    "batch_rest_time": 0.5,
+    "api_call_buffer_time": 0.05,
+    "batch_rest_time": 0.2,
     "enable_batching": true,
     "fast_mode": true
   }
@@ -168,6 +168,7 @@ python batch_generate_svg.py
 - `--batch-size`: 批处理大小（覆盖配置文件设置）
 - `--no-batching`: 禁用批处理模式，使用逐条处理
 - `--progress-interval`: 进度保存间隔（批次数）
+- `--slow-mode`: 启用慢速模式，增加API调用间隔（默认为快速模式）
 
 ## 输出结构
 
@@ -227,11 +228,12 @@ output/
 ### 批处理优化 (新增)
 
 - **智能批处理**: 可配置的批处理大小（默认5条），减少I/O操作
-- **速度优化**: 批处理模式下的API调用缓冲时间（默认0.1秒）
+- **快速模式默认**: 系统默认启用快速模式，优化处理速度
+- **速度优化**: 批处理模式下的API调用缓冲时间（默认0.05秒）
 - **进度保存优化**: 批量完成后统一保存进度，减少文件I/O
 - **速率限制重置**: 批处理开始时重置所有API客户端速率限制计时器
-- **快速模式**: 可启用fast_mode进一步优化性能
-- **批次间休息**: 可配置的批次间休息时间，避免API速率限制
+- **慢速模式选项**: 可通过--slow-mode参数启用保守模式，增加API调用间隔
+- **批次间休息**: 可配置的批次间休息时间（默认0.2秒），避免API速率限制
 
 ## 错误处理
 
