@@ -44,10 +44,24 @@ export GEMINI_API_KEY="your_gemini_key"
 
 ### 3. 配置文件
 
-系统使用 `config.json` 进行配置管理：
+系统使用 `config.json` 进行配置管理，支持完整的配置验证和管理：
 
 ```json
 {
+  "api_providers": {
+    "openrouter": {
+      "enabled": true,
+      "key": "sk-or-v1-xxxxx",
+      "base_url": "https://openrouter.ai/api/v1",
+      "timeout": 180
+    },
+    "siliconflow": {
+      "enabled": true,
+      "key": "sk-xxxxx",
+      "base_url": "https://api.siliconflow.cn/v1",
+      "timeout": 180
+    }
+  },
   "tasks": {
     "title": {
       "primary": {"provider": "siliconflow", "model": "deepseek-ai/DeepSeek-V3.1"},
@@ -63,9 +77,27 @@ export GEMINI_API_KEY="your_gemini_key"
       "fallback2": {"provider": "siliconflow", "model": "deepseek-ai/DeepSeek-V3.1"},
       "fallback3": {"provider": "moonshot", "model": "kimi-k2-0711-preview"}
     }
+  },
+  "batch": {
+    "batch_size": 5,
+    "progress_save_interval": 5,
+    "api_call_buffer_time": 0.1,
+    "batch_rest_time": 0.5,
+    "enable_batching": true,
+    "fast_mode": true
   }
 }
 ```
+
+### 4. 配置管理器 (新增)
+
+系统包含完整的配置管理器 (`config_manager.py`)，提供以下功能：
+
+- **配置验证**: JSON Schema验证配置文件格式
+- **环境变量覆盖**: 支持环境变量覆盖配置文件设置
+- **API密钥验证**: 验证API密钥格式和存在性
+- **文件存在性检查**: 验证必需文件是否存在
+- **便捷函数**: 提供各类配置的便捷获取函数
 
 ## 文件准备
 
@@ -133,6 +165,9 @@ python batch_generate_svg.py
 - `--stats`: 显示API使用统计
 - `--reset-progress`: 重置进度记录，从头开始处理
 - `--no-auto-continue`: 禁用自动继续功能
+- `--batch-size`: 批处理大小（覆盖配置文件设置）
+- `--no-batching`: 禁用批处理模式，使用逐条处理
+- `--progress-interval`: 进度保存间隔（批次数）
 
 ## 输出结构
 
@@ -188,6 +223,15 @@ output/
 - **内存优化**: 逐条处理，不会占用大量内存
 - **错误恢复**: 网络错误自动重试，保证处理稳定性
 - **进度跟踪**: 实时保存处理进度，支持统计信息
+
+### 批处理优化 (新增)
+
+- **智能批处理**: 可配置的批处理大小（默认5条），减少I/O操作
+- **速度优化**: 批处理模式下的API调用缓冲时间（默认0.1秒）
+- **进度保存优化**: 批量完成后统一保存进度，减少文件I/O
+- **速率限制重置**: 批处理开始时重置所有API客户端速率限制计时器
+- **快速模式**: 可启用fast_mode进一步优化性能
+- **批次间休息**: 可配置的批次间休息时间，避免API速率限制
 
 ## 错误处理
 
@@ -257,8 +301,10 @@ X_svg/
 ├── batch_process_tweets.py      # 主处理脚本
 ├── batch_generate_svg.py        # SVG批量生成脚本
 ├── run_example.py              # 示例运行脚本
+├── config_manager.py           # 配置管理器 (新增)
 ├── api_client.py               # API客户端模块
 ├── config.json                 # 配置文件
+├── processing_progress.json    # 进度跟踪文件
 ├── requirements.txt            # 依赖包
 ├── .env                        # 环境变量
 ├── svg提示词.txt               # SVG生成提示词

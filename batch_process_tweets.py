@@ -13,6 +13,7 @@ import logging
 from tqdm import tqdm
 from dotenv import load_dotenv
 from api_client import create_client, BaseAPIClient
+from config_manager import get_config_manager, get_file_config, get_task_config, get_batch_config
 
 # 加载环境变量
 load_dotenv()
@@ -29,23 +30,26 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 class TweetProcessor:
-    def __init__(self, config: Dict[str, Any] = None):
+    def __init__(self, config_file: str = None):
         """
         初始化推文处理器
         
         Args:
-            config: 配置字典，如果为None则从文件加载
+            config_file: 配置文件路径，如果为None则使用默认配置
         """
-        if config is None:
-            config = self._load_config()
-        self.config = config
+        # 使用新的配置管理器
+        self.config_manager = get_config_manager(config_file)
+        self.config = self.config_manager.get_config()
+        
+        # 获取文件配置
+        file_config = get_file_config()
         
         # 读取提示词文件
-        self.svg_prompt = self._read_prompt_file(config["files"]["svg_prompt"])
-        self.title_prompt = self._read_prompt_file(config["files"]["title_prompt"])
-        self.xiaohongshu_prompt = self._read_prompt_file(config["files"]["xiaohongshu_prompt"])
+        self.svg_prompt = self._read_prompt_file(file_config.svg_prompt)
+        self.title_prompt = self._read_prompt_file(file_config.title_prompt)
+        self.xiaohongshu_prompt = self._read_prompt_file(file_config.xiaohongshu_prompt)
         
-        self.output_dir = Path(config["files"]["output_dir"])
+        self.output_dir = Path(file_config.output_dir)
         self.output_dir.mkdir(exist_ok=True)
         
         # 进度记录文件
@@ -54,6 +58,10 @@ class TweetProcessor:
         self.clients: Dict[str, BaseAPIClient] = {} # API客户端缓存
         self.task_config = self.config.get("tasks", {})
         self.api_stats = {} # API使用统计
+        
+        # 获取批处理配置
+        self.batch_config = get_batch_config()
+        logger.info(f"批处理配置: 批量大小={self.batch_config.batch_size}, 保存间隔={self.batch_config.progress_save_interval}")
 
     def _read_prompt_file(self, file_path: str) -> str:
         """读取提示词文件"""
@@ -98,36 +106,39 @@ class TweetProcessor:
         if client_key in self.clients:
             return self.clients[client_key]
 
-        provider_config = self.config.get("api_providers", {}).get(provider, {})
-        api_key = provider_config.get("key")
-        timeout = provider_config.get("timeout", 30)
+        # 使用配置管理器获取API配置
+        provider_config = self.config_manager.get_api_provider_config(provider)
+        if not provider_config.enabled:
+            logger.error(f"API提供商 {provider} 未启用")
+            return None
 
-        if not api_key:
+        if not provider_config.key:
             logger.error(f"未找到提供商 {provider} 的API密钥")
             return None
         
-        client = create_client(provider, api_key, model, timeout=timeout)
+        client = create_client(provider, provider_config.key, model, timeout=provider_config.timeout)
         if client:
             self.clients[client_key] = client
         return client
 
     def _call_api_for_task(self, task_name: str, system_prompt: str, user_content: str, max_retries: int = 3) -> Optional[str]:
         """为特定任务调用API，带重试和多级故障转移"""
-        task_info = self.task_config.get(task_name)
-        if not task_info:
+        # 使用配置管理器获取任务配置
+        task_config = get_task_config(task_name)
+        if not task_config:
             logger.error(f"任务 '{task_name}' 未在配置中定义")
             return None
 
         # 获取所有可用的API配置（按优先级排序）
         api_configs = []
-        if "primary" in task_info:
-            api_configs.append(("主API", task_info["primary"]))
-        if "fallback" in task_info:
-            api_configs.append(("备用API", task_info["fallback"]))
-        if "fallback2" in task_info:
-            api_configs.append(("备用API2", task_info["fallback2"]))
-        if "fallback3" in task_info:
-            api_configs.append(("备用API3", task_info["fallback3"]))
+        if task_config.primary:
+            api_configs.append(("主API", task_config.primary))
+        if task_config.fallback:
+            api_configs.append(("备用API", task_config.fallback))
+        if task_config.fallback2:
+            api_configs.append(("备用API2", task_config.fallback2))
+        if task_config.fallback3:
+            api_configs.append(("备用API3", task_config.fallback3))
 
         for attempt in range(max_retries):
             # 依次尝试所有配置的API
@@ -151,31 +162,6 @@ class TweetProcessor:
         logger.error(f"任务 {task_name} 的所有API均调用失败")
         self.api_stats["failed"] = self.api_stats.get("failed", 0) + 1
         return None
-    
-    def _load_config(self) -> Dict[str, Any]:
-        """加载配置文件并使用环境变量覆盖"""
-        config_file = os.getenv("CONFIG_FILE", "config.json")
-        try:
-            with open(config_file, 'r', encoding='utf-8') as f:
-                config = json.load(f)
-        except (FileNotFoundError, json.JSONDecodeError) as e:
-            logger.error(f"加载或解析配置文件 {config_file} 失败: {e}")
-            raise
-
-        # 从环境变量覆盖API密钥
-        providers = config.get("api_providers", {})
-        key_mapping = {
-            "OPENROUTER_API_KEY": "openrouter",
-            "GEMINI_API_KEY": "gemini",
-            "SILICONFLOW_API_KEY": "siliconflow",
-            "MOONSHOT_API_KEY": "moonshot",
-            "NOVITA_API_KEY": "novita"
-        }
-        for env_var, provider_name in key_mapping.items():
-            if env_var in os.environ and provider_name in providers:
-                providers[provider_name]["key"] = os.environ[env_var]
-        
-        return config
     
     def get_api_stats(self) -> Dict[str, int]:
         """
@@ -228,6 +214,49 @@ class TweetProcessor:
             logger.debug(f"进度已保存: 索引 {last_index}")
         except Exception as e:
             logger.error(f"保存进度失败: {e}")
+    
+    def _process_batch(self, batch_data: List[Dict], start_index: int) -> Tuple[int, int]:
+        """
+        处理一批推文数据
+        
+        Args:
+            batch_data: 批量推文数据
+            start_index: 开始索引
+            
+        Returns:
+            (成功数量, 失败数量)
+        """
+        batch_success = 0
+        batch_failed = 0
+        
+        # 批处理开始时重置所有API客户端的速率限制计时器
+        for client in self.clients.values():
+            if hasattr(client, 'reset_rate_limit'):
+                client.reset_rate_limit()
+        
+        for i, tweet_data in enumerate(batch_data):
+            actual_index = start_index + i
+            
+            try:
+                if self.process_single_tweet(tweet_data, actual_index):
+                    batch_success += 1
+                else:
+                    batch_failed += 1
+                    
+                # 仅在批处理模式下使用短缓冲时间
+                if (i < len(batch_data) - 1 and 
+                    self.batch_config.enable_batching and 
+                    self.batch_config.api_call_buffer_time > 0):
+                    time.sleep(self.batch_config.api_call_buffer_time)
+                    
+            except KeyboardInterrupt:
+                logger.info("用户中断处理")
+                break
+            except Exception as e:
+                logger.error(f"处理推文 {actual_index} 时发生错误: {e}")
+                batch_failed += 1
+        
+        return batch_success, batch_failed
 
     def get_auto_start_index(self, json_file: str) -> int:
         """
@@ -504,29 +533,62 @@ class TweetProcessor:
             success_count = 0
             failed_count = 0
 
-            # 处理每条记录
-            for i, tweet_data in enumerate(tqdm(process_data, desc="处理推文")):
-                actual_index = start_index + i
+            # 批量处理逻辑
+            if self.batch_config.enable_batching:
+                logger.info(f"启用批处理模式: 批量大小={self.batch_config.batch_size}")
+                
+                # 分批处理
+                total_batches = (len(process_data) + self.batch_config.batch_size - 1) // self.batch_config.batch_size
+                batch_count = 0
+                
+                for batch_start in range(0, len(process_data), self.batch_config.batch_size):
+                    batch_end = min(batch_start + self.batch_config.batch_size, len(process_data))
+                    batch_data = process_data[batch_start:batch_end]
+                    batch_actual_start = start_index + batch_start
+                    
+                    batch_count += 1
+                    logger.info(f"处理第 {batch_count}/{total_batches} 批 (索引 {batch_actual_start}-{batch_actual_start + len(batch_data) - 1})")
+                    
+                    # 处理当前批次
+                    batch_success, batch_failed = self._process_batch(batch_data, batch_actual_start)
+                    success_count += batch_success
+                    failed_count += batch_failed
+                    
+                    # 定期保存进度（减少I/O操作）
+                    if batch_count % self.batch_config.progress_save_interval == 0 or batch_count == total_batches:
+                        last_index = batch_actual_start + len(batch_data) - 1
+                        self._save_progress(last_index, success_count, failed_count)
+                        logger.info(f"批次 {batch_count} 完成，进度已保存")
+                    
+                    # 批次间休息（避免API速率限制）
+                    if batch_count < total_batches and self.batch_config.batch_rest_time > 0:
+                        logger.info(f"批次间休息 {self.batch_config.batch_rest_time} 秒...")
+                        time.sleep(self.batch_config.batch_rest_time)
+            else:
+                # 原有的逐条处理模式
+                logger.info("使用逐条处理模式")
+                for i, tweet_data in enumerate(tqdm(process_data, desc="处理推文")):
+                    actual_index = start_index + i
 
-                try:
-                    if self.process_single_tweet(tweet_data, actual_index):
-                        success_count += 1
-                    else:
+                    try:
+                        if self.process_single_tweet(tweet_data, actual_index):
+                            success_count += 1
+                        else:
+                            failed_count += 1
+
+                        # 每处理一条记录就保存进度
+                        self._save_progress(actual_index, success_count, failed_count)
+
+                    except KeyboardInterrupt:
+                        logger.info("用户中断处理")
+                        # 保存当前进度
+                        self._save_progress(actual_index, success_count, failed_count)
+                        break
+                    except Exception as e:
+                        logger.error(f"处理推文 {actual_index} 时发生致命错误: {e}", exc_info=True)
                         failed_count += 1
-
-                    # 每处理一条记录就保存进度
-                    self._save_progress(actual_index, success_count, failed_count)
-
-                except KeyboardInterrupt:
-                    logger.info("用户中断处理")
-                    # 保存当前进度
-                    self._save_progress(actual_index, success_count, failed_count)
-                    break
-                except Exception as e:
-                    logger.error(f"处理推文 {actual_index} 时发生致命错误: {e}", exc_info=True)
-                    failed_count += 1
-                    # 即使失败也保存进度
-                    self._save_progress(actual_index, success_count, failed_count)
+                        # 即使失败也保存进度
+                        self._save_progress(actual_index, success_count, failed_count)
 
             # 输出统计结果
             logger.info(f"处理完成 - 成功: {success_count}, 失败: {failed_count}")
@@ -539,6 +601,7 @@ class TweetProcessor:
 def main():
     """主函数"""
     import argparse
+    from config_manager import get_config_manager
 
     parser = argparse.ArgumentParser(description='批量处理推文数据集')
     parser.add_argument('--config', default='config.json', help='配置文件路径')
@@ -550,22 +613,41 @@ def main():
     parser.add_argument('--stats', action='store_true', help='显示API使用统计')
     parser.add_argument('--no-auto-continue', action='store_true', help='禁用自动继续功能，从头开始处理')
     parser.add_argument('--reset-progress', action='store_true', help='重置进度记录，从头开始处理')
+    parser.add_argument('--batch-size', type=int, help='批处理大小（覆盖配置文件）')
+    parser.add_argument('--no-batching', action='store_true', help='禁用批处理模式，使用逐条处理')
+    parser.add_argument('--progress-interval', type=int, help='进度保存间隔（批次数）')
 
     args = parser.parse_args()
 
     try:
-        # 加载配置
-        config = TweetProcessor._load_config(None)
+        # 使用配置管理器
+        config_manager = get_config_manager(args.config)
         
         # 命令行参数覆盖配置
         if args.input:
-            config["files"]["input_json"] = args.input
+            config_manager.config["files"]["input_json"] = args.input
         if args.svg_prompt:
-            config["files"]["svg_prompt"] = args.svg_prompt
+            config_manager.config["files"]["svg_prompt"] = args.svg_prompt
         if args.xiaohongshu_prompt:
-            config["files"]["xiaohongshu_prompt"] = args.xiaohongshu_prompt
+            config_manager.config["files"]["xiaohongshu_prompt"] = args.xiaohongshu_prompt
         
-        processor = TweetProcessor(config)
+        # 批处理参数覆盖
+        if args.batch_size:
+            if "batch" not in config_manager.config:
+                config_manager.config["batch"] = {}
+            config_manager.config["batch"]["batch_size"] = args.batch_size
+        
+        if args.no_batching:
+            if "batch" not in config_manager.config:
+                config_manager.config["batch"] = {}
+            config_manager.config["batch"]["enable_batching"] = False
+        
+        if args.progress_interval:
+            if "batch" not in config_manager.config:
+                config_manager.config["batch"] = {}
+            config_manager.config["batch"]["progress_save_interval"] = args.progress_interval
+        
+        processor = TweetProcessor(args.config)
 
         # 处理重置进度选项
         if args.reset_progress:
@@ -577,8 +659,11 @@ def main():
         start_index = args.start
         auto_continue = not args.no_auto_continue
 
+        # 获取文件配置
+        file_config = get_file_config()
+        
         processor.process_dataset(
-            json_file=config["files"]["input_json"],
+            json_file=file_config.input_json,
             start_index=start_index,
             max_count=args.count,
             auto_continue=auto_continue

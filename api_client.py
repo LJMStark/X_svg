@@ -38,9 +38,31 @@ class BaseAPIClient(ABC):
         time_since_last = current_time - self._last_call_time
         if time_since_last < min_interval:
             wait_time = min_interval - time_since_last
-            logger.info(f"等待速度限制: {wait_time:.1f}秒")
+            logger.debug(f"等待速度限制: {wait_time:.1f}秒")
             time.sleep(wait_time)
         self._last_call_time = time.time()
+    
+    def reset_rate_limit(self):
+        """重置速率限制计时器"""
+        self._last_call_time = 0
+    
+    def _get_adaptive_interval(self, base_interval: float = 1.0) -> float:
+        """获取自适应间隔时间"""
+        # 根据提供商调整基础间隔
+        provider_intervals = {
+            "openrouter": 4.0,  # OpenRouter 4秒间隔
+            "gemini": 2.0,      # Gemini 2秒间隔
+            "siliconflow": 2.0, # SiliconFlow 2秒间隔
+            "moonshot": 2.0,    # Moonshot 2秒间隔
+            "novita": 2.0       # Novita 2秒间隔
+        }
+        
+        # 从base_url推断提供商
+        for provider, interval in provider_intervals.items():
+            if provider in self.base_url.lower():
+                return max(base_interval, interval)
+        
+        return base_interval
 
 class OpenAICompatibleClient(BaseAPIClient):
     """通用OpenAI兼容API客户端"""
@@ -55,7 +77,10 @@ class OpenAICompatibleClient(BaseAPIClient):
     
     def call_api(self, system_prompt: str, user_content: str, **kwargs) -> Optional[str]:
         try:
-            self._enforce_rate_limit(kwargs.get("min_interval", 1.0))
+            # 使用自适应间隔时间
+            base_interval = kwargs.get("min_interval", 1.0)
+            adaptive_interval = self._get_adaptive_interval(base_interval)
+            self._enforce_rate_limit(adaptive_interval)
             
             messages = [
                 {"role": "system", "content": system_prompt},
@@ -73,6 +98,8 @@ class OpenAICompatibleClient(BaseAPIClient):
             error_msg = str(e)
             if "429" in error_msg or "rate limit" in error_msg.lower():
                 logger.warning(f"{self.base_url} 速度限制: {e}")
+                # 遇到429错误时增加等待时间
+                time.sleep(5)  # 额外等待5秒
             else:
                 logger.error(f"API call to {self.base_url} failed: {e}")
             return None
@@ -149,7 +176,10 @@ class SiliconFlowClient(BaseAPIClient):
         }
         
         try:
-            self._enforce_rate_limit(kwargs.get("min_interval", 1.0))
+            # 使用自适应间隔时间
+            base_interval = kwargs.get("min_interval", 1.0)
+            adaptive_interval = self._get_adaptive_interval(base_interval)
+            self._enforce_rate_limit(adaptive_interval)
             
             response = requests.post(self.endpoint, json=payload, headers=self.headers, timeout=self.timeout)
             response.raise_for_status()
@@ -162,7 +192,13 @@ class SiliconFlowClient(BaseAPIClient):
                 return None
             
         except requests.exceptions.RequestException as e:
-            logger.error(f"SiliconFlow API调用失败: {e}")
+            error_msg = str(e)
+            if "429" in error_msg or "rate limit" in error_msg.lower():
+                logger.warning(f"SiliconFlow API 速度限制: {e}")
+                # 遇到429错误时增加等待时间
+                time.sleep(5)  # 额外等待5秒
+            else:
+                logger.error(f"SiliconFlow API调用失败: {e}")
             return None
 
 # --- Client Factory ---

@@ -6,29 +6,35 @@
 import os
 from dotenv import load_dotenv
 from batch_process_tweets import TweetProcessor
+from config_manager import get_config_manager
 
 # 加载环境变量
 load_dotenv()
 
 def main():
-    # 检查API密钥配置
-    openrouter_key = os.getenv("OPENROUTER_API_KEY")
-    gemini_key = os.getenv("GEMINI_API_KEY")
+    # 使用配置管理器检查配置
+    try:
+        config_manager = get_config_manager()
+        print("配置管理器初始化成功")
+        
+        # 显示已启用的API提供商
+        enabled_providers = config_manager.get_enabled_providers()
+        print("已启用的API提供商:")
+        for provider in enabled_providers:
+            key_display = config_manager.get_provider_key(provider)
+            print(f"✅ {provider}: {key_display}")
+        
+        if not enabled_providers:
+            print("错误：未启用任何API提供商")
+            print("请在配置文件中启用至少一个API提供商")
+            return
     
-    if not openrouter_key and not gemini_key:
-        print("错误：请至少设置一个API密钥")
-        print("选项1: export OPENROUTER_API_KEY='your_openrouter_key'")
-        print("选项2: export GEMINI_API_KEY='your_gemini_key'")
+    except Exception as e:
+        print(f"配置管理器初始化失败: {e}")
         return
     
-    print("API配置:")
-    if openrouter_key:
-        print("✅ OpenRouter API已配置")
-    if gemini_key:
-        print("✅ Gemini API已配置")
-    
     try:
-        # 创建处理器（自动从配置文件加载）
+        # 创建处理器（使用新的配置管理）
         processor = TweetProcessor()
         
         # 批量处理数据集

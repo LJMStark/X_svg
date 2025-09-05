@@ -10,6 +10,7 @@ import logging
 from pathlib import Path
 from dotenv import load_dotenv
 from api_client import create_client
+from config_manager import get_config_manager
 
 # 加载环境变量
 load_dotenv()
@@ -97,10 +98,11 @@ def main():
     print("批量SVG生成工具")
     print("=" * 50)
     
-    # 加载配置和风格
+    # 使用配置管理器加载配置
     try:
-        with open("config.json", 'r', encoding='utf-8') as f:
-            config = json.load(f)
+        config_manager = get_config_manager()
+        config = config_manager.get_config()
+        print("配置管理器初始化成功")
     except Exception as e:
         logger.error(f"加载配置失败: {e}")
         return
